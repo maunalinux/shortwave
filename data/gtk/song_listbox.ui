@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkBox" id="song_listbox">
+    <property name="orientation">vertical</property>
+    <property name="spacing">6</property>
+    <child>
+      <object class="GtkStack" id="stack">
+        <property name="hhomogeneous">False</property>
+        <property name="vhomogeneous">False</property>
+        <property name="transition_type">crossfade</property>
+        <property name="interpolate_size">True</property>
+        <child>
+          <object class="GtkStackPage">
+            <property name="name">empty</property>
+            <property name="child">
+              <object class="GtkBox">
+                <property name="margin_top">30</property>
+                <property name="margin_bottom">30</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkImage">
+                    <property name="pixel_size">64</property>
+                    <property name="icon_name">dialog-information-symbolic</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">No Songs Detected</property>
+                    <property name="wrap">True</property>
+                    <property name="margin_top">18</property>
+                    <property name="margin_bottom">18</property>
+                    <style>
+                      <class name="title-4"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Songs are automatically recognized using the stream metadata.
+
+If the station does not send any metadata, no songs can be recognized.</property>
+                    <property name="justify">center</property>
+                    <property name="wrap">True</property>
+                  </object>
+                </child>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+              </object>
+            </property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStackPage">
+            <property name="name">content</property>
+            <property name="child">
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">12</property>
+                <child>
+                  <object class="GtkListBox" id="listbox">
+                    <property name="selection_mode">none</property>
+                    <property name="activate_on_single_click">True</property>
+                    <style>
+                      <class name="content"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="halign">center</property>
+                    <property name="margin_start">6</property>
+                    <property name="margin_end">6</property>
+                    <property name="margin_top">12</property>
+                    <property name="label" translatable="yes">Saved songs are located in your Music folder.</property>
+                    <property name="justify">center</property>
+                    <property name="wrap">True</property>
+                    <style>
+                      <class name="dim-label"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="open_music_folder_button">
+                    <property name="label" translatable="yes">_Open</property>
+                    <property name="use_underline">True</property>
+                    <property name="halign">center</property>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </child>
+        <style>
+          <class name="songlistbox"/>
+        </style>
+      </object>
+    </child>
+  </object>
+</interface>

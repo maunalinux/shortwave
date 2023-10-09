@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkBox" id="toolbar_controller">
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkSeparator">
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <child>
+          <object class="GtkBox">
+            <property name="hexpand">True</property>
+            <child>
+              <object class="GtkGestureClick" id="toolbox_gesture">
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="favicon_box">
+                <property name="halign">center</property>
+                <property name="orientation">vertical</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSeparator">
+                <property name="orientation">vertical</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="valign">center</property>
+                <property name="margin_start">8</property>
+                <property name="margin_end">8</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkLabel" id="title_label">
+                    <property name="halign">start</property>
+                    <property name="label" translatable="yes">No Playback</property>
+                    <property name="justify">center</property>
+                    <property name="wrap">True</property>
+                    <property name="ellipsize">end</property>
+                    <property name="xalign">0</property>
+                    <attributes>
+                      <attribute name="weight" value="bold"/>
+                    </attributes>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkRevealer" id="subtitle_revealer">
+                    <child>
+                      <object class="GtkLabel" id="subtitle_label">
+                        <property name="halign">start</property>
+                        <property name="label">subtitle</property>
+                        <property name="justify">center</property>
+                        <property name="wrap">True</property>
+                        <property name="ellipsize">end</property>
+                        <property name="xalign">0</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkRevealer" id="action_revealer">
+            <property name="valign">center</property>
+            <property name="margin_end">6</property>
+            <property name="transition_type">slide-left</property>
+            <child>
+              <object class="GtkStack" id="playback_button_stack">
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">stop_playback</property>
+                    <property name="child">
+                      <object class="GtkButton" id="stop_playback_button">
+                        <property name="icon_name">media-playback-stop-symbolic</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">start_playback</property>
+                    <property name="child">
+                      <object class="GtkButton" id="start_playback_button">
+                        <property name="icon_name">media-playback-start-symbolic</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">loading</property>
+                    <property name="child">
+                      <object class="GtkButton" id="loading_button">
+                        <child>
+                          <object class="GtkSpinner" id="loading_spinner"/>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

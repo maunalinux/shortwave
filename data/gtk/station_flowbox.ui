@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="SwStationFlowBox" parent="AdwBin">
+    <child>
+      <object class="GtkFlowBox" id="flowbox">
+        <property name="homogeneous">True</property>
+        <property name="column_spacing">12</property>
+        <property name="row_spacing">12</property>
+        <property name="min_children_per_line">1</property>
+        <property name="max_children_per_line">3</property>
+        <property name="selection_mode">none</property>
+        <property name="valign">start</property>
+        <style>
+          <class name="transparent"/>
+        </style>
+      </object>
+    </child>
+  </template>
+</interface>

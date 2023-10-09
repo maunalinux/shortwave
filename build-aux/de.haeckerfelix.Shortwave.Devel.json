@@ -1,0 +1,69 @@
+{
+    "app-id" : "de.haeckerfelix.Shortwave.Devel",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "master",
+    "sdk" : "org.gnome.Sdk",
+    "sdk-extensions" : [
+        "org.freedesktop.Sdk.Extension.rust-nightly",
+        "org.freedesktop.Sdk.Extension.llvm16"
+    ],
+    "command" : "shortwave",
+    "tags" : [
+        "nightly"
+    ],
+    "finish-args" : [
+        "--share=network",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--socket=pulseaudio",
+        "--filesystem=xdg-music",
+        "--env=RUST_LOG=shortwave=debug",
+        "--env=RUST_BACKTRACE=1"
+    ],
+    "build-options" : {
+        "append-path" : "/usr/lib/sdk/rust-nightly/bin:/usr/lib/sdk/llvm16/bin",
+        "env": {
+            "RUSTFLAGS": "-C force-frame-pointers=yes -C symbol-mangling-version=v0",
+            "CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER": "clang",
+            "CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUSTFLAGS": "-C link-arg=-fuse-ld=/usr/lib/sdk/rust-nightly/bin/mold"
+        },
+        "build-args" : [
+            "--share=network"
+        ]
+    },
+    "modules" : [
+        {
+            "name": "libshumate",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dgir=false",
+                "-Dvapi=false",
+                "-Dgtk_doc=false",
+                "-Dlibsoup3=true"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/libshumate/",
+                    "branch": "1.0.1"
+                }
+            ]
+        },
+        {
+            "name" : "shortwave",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dprofile=development"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/World/Shortwave.git",
+                    "branch" : "main"
+                }
+            ]
+        }
+    ]
+}

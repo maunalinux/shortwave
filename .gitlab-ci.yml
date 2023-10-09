@@ -1,0 +1,41 @@
+include: 'https://gitlab.gnome.org/GNOME/citemplates/raw/master/flatpak/flatpak_ci_initiative.yml'
+
+stages:
+  - check
+  - test
+
+variables:
+  BUNDLE: "de.haeckerfelix.Shortwave.Devel.flatpak"
+  MANIFEST_PATH: "build-aux/de.haeckerfelix.Shortwave.Devel.json"
+  FLATPAK_MODULE: "shortwave"
+  APP_ID: "de.haeckerfelix.Shortwave.Devel"
+  RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
+  CI_IMAGE_X86_64: "quay.io/gnome_infrastructure/gnome-runtime-images:gnome-master"
+
+flatpak@x86_64:
+  before_script: "flatpak install --user flathub-beta org.freedesktop.Sdk.Extension.rust-nightly//23.08beta -y"
+  extends: ".flatpak@x86_64"
+
+flatpak@aarch64:
+  before_script: "flatpak install --user flathub-beta org.freedesktop.Sdk.Extension.rust-nightly//23.08beta -y"
+  extends: ".flatpak@aarch64"
+
+# Configure and run code checks
+# Exits and fails if an error is encountered
+checks:
+  image: "rustlang/rust:nightly-slim"
+  stage: check
+  script:
+    - apt update && apt install --no-install-recommends perl perl-modules-5.32 make -y
+    - build-aux/checks.sh --verbose --force-install
+
+# Lint the code
+cargo-clippy:
+  image: '${CI_IMAGE_X86_64}'
+  before_script: "flatpak install --user flathub-beta org.freedesktop.Sdk.Extension.rust-nightly//23.08beta -y"
+  stage: check
+  tags:
+    - flatpak
+  script:
+    - flatpak-builder --keep-build-dirs --user --disable-rofiles-fuse --stop-at=${FLATPAK_MODULE} flatpak_app --repo=repo ${BRANCH:+--default-branch=$BRANCH} ${MANIFEST_PATH}
+    - echo "cargo clippy -- -D warnings" | flatpak-builder --disable-rofiles-fuse --build-shell=${FLATPAK_MODULE} flatpak_app ${MANIFEST_PATH}

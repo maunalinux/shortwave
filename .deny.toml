@@ -1,0 +1,16 @@
+[advisories]
+ignore = [
+    "RUSTSEC-2020-0071",
+    "RUSTSEC-2020-0159",
+]
+
+[licenses]
+allow-osi-fsf-free = "either"
+copyleft = "allow"
+
+[[licenses.clarify]]
+name = "encoding_rs"
+expression = "(Apache-2.0 OR MIT) AND BSD-3-Clause"
+license-files = [
+    { path = "COPYRIGHT", hash = 0x39f8ad31 },
+]

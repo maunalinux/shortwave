@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2020-2023 Felix Häcker -->
+<component type="desktop-application">
+  <id>@APP_ID@</id>
+  <name>@NAME@</name>
+  <summary>Listen to internet radio</summary>
+  <translation type="gettext">@PKGNAME@</translation>
+  <developer_name>Felix Häcker</developer_name>
+  <update_contact>haeckerfelix@gnome.org</update_contact>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <launchable type="desktop-id">@APP_ID@.desktop</launchable>
+  <content_rating type="oars-1.1"/>
+
+  <description>
+    <p>
+      Shortwave is an internet radio player that provides access to a station database with over 30,000 stations.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Create your own library where you can add your favorite stations</li>
+      <li>Easily search and discover new radio stations</li>
+      <li>Automatic recognition of songs, with the possibility to save them individually</li>
+      <li>Responsive application layout, compatible for small and large screens</li>
+      <li>Play audio on supported network devices (e.g. Google Chromecasts)</li>
+      <li>Seamless integration into the GNOME desktop environment</li>
+    </ul>
+  </description>
+
+  <screenshots>
+    <screenshot type="default" height="1072" width="772">
+      <image>https://gitlab.gnome.org/World/Shortwave/raw/main/data/screenshots/1.png</image>
+    </screenshot>
+    <screenshot height="1072" width="772">
+      <image>https://gitlab.gnome.org/World/Shortwave/raw/main/data/screenshots/2.png</image>
+    </screenshot>
+    <screenshot height="1072" width="772">
+      <image>https://gitlab.gnome.org/World/Shortwave/raw/main/data/screenshots/3.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://gitlab.gnome.org/World/Shortwave</url>
+  <url type="bugtracker">https://gitlab.gnome.org/World/Shortwave/issues</url>
+  <url type="donation">https://liberapay.com/haecker-felix</url>
+  <url type="translate">https://l10n.gnome.org/module/Shortwave/</url>
+
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+    <kudo>Notifications</kudo>
+  </kudos>
+
+  <custom>
+    <value key="Purism::form_factor">workstation</value>
+    <value key="Purism::form_factor">mobile</value>
+  </custom>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </recommends>
+
+  <releases>
+    <release version="3.2.0" date="2023-02-07">
+      <description>
+        <p>
+          This version includes minor improvements and bug fixes.
+        </p>
+        <ul>
+          <li>Small user interface improvements</li>
+          <li>App can now be closed with CTRL+W</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.1.0" date="2022-10-15">
+      <description>
+        <p>
+          This version includes minor improvements and bug fixes.
+        </p>
+        <ul>
+          <li>Small user interface improvements</li>
+          <li>Use new Adwaita about dialog</li>
+          <li>Fixed a crash when the "Music" directory is not available</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.0.0" date="2022-04-23">
+      <description>
+        <p>
+          Version 3.0.0 is a stable release, with the following major
+          improvements since 2.0.1:
+        </p>
+        <ul>
+          <li>Updated user interface that uses the new Adwaita design, with many improvements.</li>
+          <li>Support for the new GNOME 42 dark mode.</li>
+          <li>New option to add private stations to the library, which should not (or cannot) be available on radio-browser.info (e.g. local network or paid streams).</li>
+          <li>Display station bitrate information, which can also be used as a sorting option.</li>
+          <li>Save station data to disk so that it is still available when a station gets removed from the online database.</li>
+          <li>New button on the search page that allows to sort the search results.</li>
+          <li>Overhauled station dialog, with more clearly displayed information.</li>
+          <li>Update desktop notification on song change instead of generating a new separate notification for each song.</li>
+          <li>Shortwave can now be used normally, even if radio-browser.info is offline / unavailable.</li>
+        </ul>
+        <p>
+          Besides these improvements, this version also includes many changes
+          under the hood changes, so many crashes and other bugs have been
+          fixed. It also contains updated translations for 31 different
+          languages.
+        </p>
+      </description>
+    </release>
+    <release version="2.0.1" date="2021-04-23">
+      <description>
+        <p>
+          This version contains minor improvements and bug fixes.
+        </p>
+        <ul>
+          <li>Improve buffering to avoid audio issues for streams with a high bitrate.</li>
+          <li>Fix issue that no connection could be established when a VPN connection was active.</li>
+          <li>Automatically select search entry when the search view gets activated.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.0.0" date="2021-03-10">
+      <description>
+        <p>
+          Version 2.0.0 is a stable release, with the following major
+          improvements since 1.1.0:
+        </p>
+        <ul>
+          <li>Get notified about new songs via desktop notifications.</li>
+          <li>New mini player window mode. Control important features with a super compact window widget.</li>
+          <li>Redesigned station information dialog window. Added ability to copy the stream url.</li>
+          <li>Improved keyboard navigation of the user interface.</li>
+          <li>Inhibit sleep/hibernate mode during audio playback.</li>
+        </ul>
+        <p>
+          Besides these improvements, this version contains many under the hood
+          changes. The complete user interface has been updated from GTK3 to
+          GTK4. Many app components have been modernised or completely
+          rewritten. As a result, many crashes or other bugs have been fixed.
+        </p>
+        <p>
+          This version also contains updated translations for 27 different
+          languages.
+        </p>
+      </description>
+    </release>
+    <release version="1.1.1" date="2020-06-07">
+      <description>
+        <p>This version fixes a bug that caused some users not to be able to record songs.</p>
+        <p>This release also updates translations in several languages.</p>
+        <p>
+          This might be the last release with the feature to import Gradio
+          databases. The needed API server will be deactivated / no longer
+          available in August 2020.
+        </p>
+      </description>
+    </release>
+    <release version="1.1.0" date="2020-06-01">
+      <description>
+        <p>
+          Version 1.1.0 is a stable release, with the following major
+          improvements since 1.0.1:
+        </p>
+        <ul>
+          <li>Add CTRL + spacebar as shortcut to start/stop audio playback.</li>
+          <li>Add stream buffering to prevent playback stuttering.</li>
+          <li>Add featured carousel to discover page.</li>
+          <li>Add support for non pulseaudio systems / environments.</li>
+          <li>Add support for additional mouse buttons to switch between views.</li>
+          <li>Improve stability of audio/recording backend.</li>
+          <li>Fixed issue that the volume didn't get calculated correctly (linear/cubic).</li>
+          <li>Fixed issue that broken stations are getting displayed in search results.</li>
+          <li>Fixed issue with random scrolling in search page.</li>
+          <li>Fixed issues which prevented to import Gradio databases.</li>
+        </ul>
+        <p>This release also updates translations in several languages.</p>
+        <p>
+          This might be the last release with the feature to import Gradio
+          databases. The needed API server will be deactivated / no longer
+          available in August 2020.
+        </p>
+      </description>
+    </release>
+    <release version="1.0.1" date="2020-03-15">
+      <description>
+        <p>Fixes a bug that no songs can be saved.</p>
+        <p>Add Finnish translation.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2020-03-14">
+      <description>
+        <p>First stable release.</p>
+      </description>
+    </release>
+    <release version="0.0.3" date="2020-03-08">
+      <description>
+        <p>Third beta release.</p>
+      </description>
+    </release>
+    <release version="0.0.2" date="2020-02-17">
+      <description>
+        <p>Second beta release.</p>
+      </description>
+    </release>
+    <release version="0.0.1" date="2019-11-09">
+      <description>
+        <p>First beta release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,694 @@
+# German translation for shortwave.
+# Copyright (C) 2020 shortwave's COPYRIGHT HOLDER
+# This file is distributed under the same license as the shortwave package.
+#
+# Peter Sonntag <peter@sonniger-tag.eu>, 2020.
+# Wolfgang Stoeggl <c72578@yahoo.de>, 2020.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2020.
+# Christian Kirbach <christian.kirbach@gmail.com>, 2020-2021.
+# Philipp Kiemle <philipp.kiemle@gmail.com>, 2021-2022.
+# Jürgen Benvenuti <gastoris@posteo.org>, 2022, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shortwave master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
+"POT-Creation-Date: 2023-05-16 12:59+0000\n"
+"PO-Revision-Date: 2023-05-16 18:47+0200\n"
+"Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
+"Language-Team: German <gnome-de@gnome.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: data/gtk/create_station_dialog.ui:8
+msgid "Create new station"
+msgstr "Neuen Sender erstellen"
+
+#: data/gtk/create_station_dialog.ui:32
+msgid "Create New Station"
+msgstr "Neuen Sender erstellen"
+
+#: data/gtk/create_station_dialog.ui:33
+msgid ""
+"You can decide if you want the new station to be visible for all users "
+"worldwide or if you want to create a local station."
+msgstr ""
+"Sie können entscheiden, ob der neue Sender für alle Nutzer weltweit sichtbar "
+"sein soll, oder ob Sie einen lokalen Sender erstellen möchten."
+
+#: data/gtk/create_station_dialog.ui:43
+msgid "Create _Public Station"
+msgstr "Ö_ffentlichen Sender erstellen"
+
+#: data/gtk/create_station_dialog.ui:54
+msgid "Create _Local Station"
+msgstr "_Lokalen Sender erstellen"
+
+#: data/gtk/create_station_dialog.ui:80
+msgid "Create Local Station"
+msgstr "Lokalen Sender erstellen"
+
+#: data/gtk/create_station_dialog.ui:113
+msgid "Change station image"
+msgstr "Senderbild ändern"
+
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+msgid "Name"
+msgstr "Name"
+
+#: data/gtk/create_station_dialog.ui:145
+msgid "Stream URL"
+msgstr "Stream-Adresse"
+
+#: data/gtk/create_station_dialog.ui:153
+msgid "Create Station"
+msgstr "Sender erstellen"
+
+#: data/gtk/discover_page.ui:28
+msgid "Most Voted Stations"
+msgstr "Beliebteste Sender"
+
+#: data/gtk/discover_page.ui:43
+msgid "Trending"
+msgstr "Im Trend"
+
+#: data/gtk/discover_page.ui:58
+msgid "Other Users Are Listening To…"
+msgstr "Andere Nutzer hören gerade …"
+
+#: data/gtk/library_page.ui:60
+msgid "Receiving Station Data…"
+msgstr "Senderdaten werden empfangen …"
+
+#: data/gtk/library_page.ui:87
+msgid "_Discover New Stations"
+msgstr "N_eue Sender entdecken"
+
+#: data/gtk/mini_controller.ui:87
+msgid "SHORTWAVE INTERNET RADIO"
+msgstr "SHORTWAVE INTERNETRADIO"
+
+#: data/gtk/mini_controller.ui:109 data/gtk/sidebar_controller.ui:63
+#: data/gtk/toolbar_controller.ui:38
+msgid "No Playback"
+msgstr "Keine Wiedergabe"
+
+#: data/gtk/settings_window.ui:7 data/gtk/help_overlay.ui:11
+msgid "General"
+msgstr "Allgemein"
+
+#: data/gtk/settings_window.ui:10
+msgid "Appearance"
+msgstr "Erscheinungsbild"
+
+#: data/gtk/settings_window.ui:14
+msgid "_Dark Mode"
+msgstr "_Dunkler Modus"
+
+#: data/gtk/settings_window.ui:16
+msgid "Whether the application should use a dark theme"
+msgstr "Legt fest, ob die Anwendung ein dunkles Thema verwenden soll"
+
+#: data/gtk/settings_window.ui:29
+msgid "Features"
+msgstr "Funktionen"
+
+#: data/gtk/settings_window.ui:32
+msgid "_Notifications"
+msgstr "Be_nachrichtigungen"
+
+#: data/gtk/settings_window.ui:34
+msgid "Show desktop notifications when a new song gets played"
+msgstr "Eine Benachrichtigung anzeigen, wenn ein neuer Titel beginnt"
+
+#: data/gtk/help_overlay.ui:14
+msgctxt "shortcut window"
+msgid "Open shortcut window"
+msgstr "Tastenkürzel-Fenster öffnen"
+
+#: data/gtk/help_overlay.ui:21
+msgctxt "shortcut window"
+msgid "Open application menu"
+msgstr "Anwendungsmenü öffnen"
+
+#: data/gtk/help_overlay.ui:26
+msgctxt "shortcut window"
+msgid "Open preferences"
+msgstr "Einstellungen öffnen"
+
+#: data/gtk/help_overlay.ui:32
+msgctxt "shortcut window"
+msgid "Close the window"
+msgstr "Das Fenster schließen"
+
+#: data/gtk/help_overlay.ui:38
+msgctxt "shortcut window"
+msgid "Quit the application"
+msgstr "Die Anwendung beenden"
+
+#: data/gtk/help_overlay.ui:46
+msgid "Window"
+msgstr "Fenster"
+
+#: data/gtk/help_overlay.ui:49
+msgctxt "shortcut window"
+msgid "Open library view"
+msgstr "Bibliotheksansicht öffnen"
+
+#: data/gtk/help_overlay.ui:55
+msgctxt "shortcut window"
+msgid "Open discover view"
+msgstr "Entdecken-Ansicht öffnen"
+
+#: data/gtk/help_overlay.ui:61
+msgctxt "shortcut window"
+msgid "Open search view"
+msgstr "Suchansicht öffnen"
+
+#: data/gtk/help_overlay.ui:67
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "Zurück"
+
+#: data/gtk/help_overlay.ui:73
+msgctxt "shortcut window"
+msgid "Refresh station data"
+msgstr "Senderdaten auffrischen"
+
+#: data/gtk/help_overlay.ui:81
+msgid "Playback"
+msgstr "Wiedergabe"
+
+#: data/gtk/help_overlay.ui:84
+msgctxt "shortcut window"
+msgid "Toggle playback"
+msgstr "Wiedergabe umschalten"
+
+#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
+#: src/ui/pages/search_page.rs:197
+msgid "Votes"
+msgstr "Stimmen"
+
+#: data/gtk/search_page.ui:36
+msgid "Change the sorting of the search results"
+msgstr "Die Sortierung der Suchergebnisse ändern"
+
+#: data/gtk/search_page.ui:63
+msgid "No Results"
+msgstr "Keine Ergebnisse"
+
+#: data/gtk/search_page.ui:64
+msgid "Try using a different search term"
+msgstr "Versuchen Sie es mit einem neuen Suchbegriff"
+
+#: data/gtk/search_page.ui:148 data/gtk/window.ui:170
+msgid "_Name"
+msgstr "_Name"
+
+#: data/gtk/search_page.ui:153 data/gtk/window.ui:175
+msgid "_Language"
+msgstr "_Sprache"
+
+#: data/gtk/search_page.ui:158 data/gtk/window.ui:180
+msgid "_Country"
+msgstr "_Land"
+
+#: data/gtk/search_page.ui:163 data/gtk/window.ui:185
+msgid "S_tate"
+msgstr "_Bundesstaat"
+
+#: data/gtk/search_page.ui:168 data/gtk/window.ui:190
+msgid "_Votes"
+msgstr "St_immen"
+
+#: data/gtk/search_page.ui:173 data/gtk/window.ui:195
+msgid "_Bitrate"
+msgstr "_Bitrate"
+
+#: data/gtk/search_page.ui:180 data/gtk/window.ui:202
+msgid "_Ascending"
+msgstr "A_ufsteigend"
+
+#: data/gtk/search_page.ui:185 data/gtk/window.ui:207
+msgid "_Descending"
+msgstr "A_bsteigend"
+
+#: data/gtk/sidebar_controller.ui:22
+msgid "An error occurred"
+msgstr "Es ist ein Fehler aufgetreten"
+
+#: data/gtk/sidebar_controller.ui:187
+msgid "_Show Station Details"
+msgstr "Details zum Sender an_zeigen"
+
+#: data/gtk/sidebar_controller.ui:191
+msgid "Stream to a _Device"
+msgstr "Auf ein _Gerät streamen"
+
+#: data/gtk/song_listbox.ui:28
+msgid "No Songs Detected"
+msgstr "Keine Titel erkannt"
+
+#: data/gtk/song_listbox.ui:39
+msgid ""
+"Songs are automatically recognized using the stream metadata.\n"
+"\n"
+"If the station does not send any metadata, no songs can be recognized."
+msgstr ""
+"Titel werden automatisch anhand der Stream-Metadaten erkannt.\n"
+"\n"
+"Wenn der Sender keine Metadaten sendet, können keine Titel erkannt werden."
+
+#: data/gtk/song_listbox.ui:75
+msgid "Saved songs are located in your Music folder."
+msgstr "Gespeicherte Titel befinden sich in Ihrem Musik-Ordner."
+
+#: data/gtk/song_listbox.ui:85
+msgid "_Open"
+msgstr "_Öffnen"
+
+#: data/gtk/song_row.ui:16
+msgid "Save recorded song"
+msgstr "Aufgenommenen Titel speichern"
+
+#: data/gtk/station_dialog.ui:8
+msgid "Station details"
+msgstr "Senderdetails"
+
+#: data/gtk/station_dialog.ui:87
+msgid "_Play Station"
+msgstr "Sender _abspielen"
+
+#: data/gtk/station_dialog.ui:101
+msgid "_Add to Library"
+msgstr "Zur Bibliothek _hinzufügen"
+
+#: data/gtk/station_dialog.ui:116
+msgid "_Remove From Library"
+msgstr "Aus der Bibliothek _entfernen"
+
+#: data/gtk/station_dialog.ui:133
+msgid "Local Station"
+msgstr "Lokaler Sender"
+
+#: data/gtk/station_dialog.ui:134
+msgid ""
+"This station exists only in your library, and is not part of the public "
+"online station database."
+msgstr ""
+"Dieser Sender existiert nur in Ihrer Bibliothek und ist nicht Teil der "
+"öffentlichen Online-Senderdatenbank."
+
+#: data/gtk/station_dialog.ui:149
+msgid "Orphaned Station"
+msgstr "Verlassener Sender"
+
+#: data/gtk/station_dialog.ui:150
+msgid ""
+"The information could not be updated, probably this station was removed from "
+"the public online station database."
+msgstr ""
+"Die Informationen konnten nicht aktualisiert werden, wahrscheinlich wurde "
+"der Sender aus der öffentlichen Online-Senderdatenbank entfernt."
+
+#: data/gtk/station_dialog.ui:162
+msgid "Information"
+msgstr "Information"
+
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+msgid "Language"
+msgstr "Sprache"
+
+#: data/gtk/station_dialog.ui:180
+msgid "Tags"
+msgstr "Stichworte"
+
+#: data/gtk/station_dialog.ui:216
+msgid "Location"
+msgstr "Ort"
+
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:195
+msgid "Country"
+msgstr "Land"
+
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:196
+msgid "State"
+msgstr "Bundesstaat"
+
+#: data/gtk/station_dialog.ui:285
+msgid "Audio"
+msgstr "Ton"
+
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:198
+msgid "Bitrate"
+msgstr "Bitrate"
+
+#: data/gtk/station_dialog.ui:304
+msgid "Codec"
+msgstr "Codec"
+
+#. This is a noun/label for the station stream url
+#: data/gtk/station_dialog.ui:319
+msgid "Stream"
+msgstr "Stream"
+
+#: data/gtk/streaming_dialog.ui:10
+msgid "Stream to a Device"
+msgstr "Auf ein Gerät streamen"
+
+#: data/gtk/streaming_dialog.ui:26
+msgid ""
+"Audio playback can be streamed to a network device (requires Google Cast "
+"support)."
+msgstr ""
+"Die Audio-Wiedergabe kann über ein Netzwerkgerät gestreamt werden (benötigt "
+"Unterstützung für Google Cast)."
+
+#: data/gtk/streaming_dialog.ui:41
+msgid "No Devices Found"
+msgstr "Keine Geräte gefunden"
+
+#: data/gtk/streaming_dialog.ui:47 data/gtk/streaming_dialog.ui:70
+msgid "Search again"
+msgstr "Erneut suchen"
+
+#: data/gtk/streaming_dialog.ui:64
+msgid "Search Completed"
+msgstr "Suche abgeschlossen"
+
+#: data/gtk/streaming_dialog.ui:87
+msgid "Searching for Devices…"
+msgstr "Geräte werden gesucht …"
+
+#: data/gtk/window.ui:27
+msgid "Add Stations"
+msgstr "Sender hinzufügen"
+
+#: data/gtk/window.ui:34
+msgid "Back"
+msgstr "Zurück"
+
+#: data/gtk/window.ui:41
+msgid "Main Menu"
+msgstr "Hauptmenü"
+
+#: data/gtk/window.ui:50
+msgid "Search"
+msgstr "Suchen"
+
+#: data/gtk/window.ui:74
+msgid "Unable to connect to radio-browser.info"
+msgstr "Verbindung zu »radio-browser.info« nicht möglich"
+
+#: data/gtk/window.ui:84
+msgid ""
+"Access to the public online station database is not available. Ensure that "
+"you are connected to the internet."
+msgstr ""
+"Der Zugriff auf die öffentliche Online-Senderdatenbank ist nicht möglich. "
+"Stellen Sie sicher, dass Sie mit dem Internet verbunden sind."
+
+#: data/gtk/window.ui:93
+msgid "Try again"
+msgstr "Erneut versuchen"
+
+#: data/gtk/window.ui:159 data/gtk/window.ui:248
+msgid "_Enable Mini Player"
+msgstr "_Mini-Player aktivieren"
+
+#: data/gtk/window.ui:163 data/gtk/window.ui:244
+msgid "_Refresh Station Data"
+msgstr "Senderdaten _auffrischen"
+
+#: data/gtk/window.ui:167
+msgid "_Sorting"
+msgstr "_Sortierung"
+
+#: data/gtk/window.ui:216 data/gtk/window.ui:254
+msgid "_Open radio-browser.info <sup>↗</sup>"
+msgstr "»radio-browser.info« ö_ffnen <sup>↗</sup>"
+
+#: data/gtk/window.ui:221 data/gtk/window.ui:259
+msgid "_Create New Station"
+msgstr "_Neuen Sender erstellen"
+
+#: data/gtk/window.ui:228 data/gtk/window.ui:266
+msgid "_Preferences"
+msgstr "_Einstellungen"
+
+#: data/gtk/window.ui:232 data/gtk/window.ui:270
+msgid "_Keyboard Shortcuts"
+msgstr "Tasten_kürzel"
+
+#: data/gtk/window.ui:236 data/gtk/window.ui:274
+msgid "_About Shortwave"
+msgstr "_Info zu Shortwave"
+
+#. Fallback to xdg-home when xdg-music is not available
+#: src/audio/backend/song_backend.rs:96
+msgid "Unable to access music directory. Saving song in home directory."
+msgstr ""
+"Auf den Musik-Ordner konnte nicht zugegriffen werden. Der Titel wird im "
+"persönlichen Ordner gespeichert."
+
+#: src/audio/player.rs:198
+msgid "Station cannot be streamed. URL is not valid."
+msgstr "Sender kann nicht gestreamt werden. Die Adresse ist ungültig."
+
+#: src/audio/player.rs:253
+msgid "Cannot save song."
+msgstr "Titel konnte nicht gespeichert werden."
+
+#: src/ui/about_window.rs:35
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:6
+msgid "Listen to internet radio"
+msgstr "Internet-Radio hören"
+
+#: src/ui/about_window.rs:46
+msgid "translator-credits"
+msgstr ""
+"Peter Sonntag <peter@sonniger-tag.eu>\n"
+"Christian Kirbach <christian.kirbach@gmail.com>\n"
+"Wolfgang Stoeggl <c72578@yahoo.de>\n"
+"Philipp Kiemle <philipp.kiemle@gmail.com>\n"
+"Jürgen Benvenuti <gastornis@posteo.org>"
+
+#. TODO: Implement show-server-stats action
+#: src/ui/pages/discover_page.rs:116
+msgid "Show statistics"
+msgstr "Statistiken anzeigen"
+
+#: src/ui/pages/discover_page.rs:118
+msgid "Browse over 30,000 stations"
+msgstr "Über 30.000 Sender durchsuchen"
+
+#: src/ui/pages/discover_page.rs:120
+msgid "Add new station"
+msgstr "Neuen Sender hinzufügen"
+
+#: src/ui/pages/discover_page.rs:122
+msgid "Your favorite station is missing?"
+msgstr "Ihr Lieblingssender fehlt?"
+
+#: src/ui/pages/discover_page.rs:127
+msgid "Open website"
+msgstr "Internet-Seite"
+
+#: src/ui/pages/discover_page.rs:129
+msgid "Powered by radio-browser.info"
+msgstr "Unterstützt von radio-browser.info"
+
+#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+msgid "Station data could not be received."
+msgstr "Senderdaten konnten nicht empfangen werden."
+
+#: src/ui/pages/library_page.rs:117
+msgid "Welcome to {}"
+msgstr "Willkommen zu {}"
+
+#: src/ui/pages/search_page.rs:103
+msgid ""
+"The number of results is limited to {} item. Try using a more specific "
+"search term."
+msgid_plural ""
+"The number of results is limited to {} items. Try using a more specific "
+"search term."
+msgstr[0] ""
+"Die Zahl der Ergebnisse ist beschränkt auf {} Objekt. Probieren Sie einen "
+"präziseren Suchbegriff."
+msgstr[1] ""
+"Die Zahl der Ergebnisse ist beschränkt auf {} Objekte. Probieren Sie einen "
+"präziseren Suchbegriff."
+
+#: src/ui/station_dialog.rs:286
+msgid "{} kbit/s"
+msgstr "{} kbit/s"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:5
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:3
+msgid "@NAME@"
+msgstr "@NAME@"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:8
+msgid "Felix Häcker"
+msgstr "Felix Häcker"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:16
+msgid ""
+"Shortwave is an internet radio player that provides access to a station "
+"database with over 30,000 stations."
+msgstr ""
+"Shortwave ist eine Internet-Radiowiedergabe, die Zugang zu einer "
+"Senderdatenbank mit über 30.000 Sendern bietet."
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:19
+msgid "Features:"
+msgstr "Funktionen:"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:21
+msgid "Create your own library where you can add your favorite stations"
+msgstr ""
+"Erstellen Sie Ihre eigene Bibliothek, zu der Sie Ihre Lieblingssender "
+"hinzufügen"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:22
+msgid "Easily search and discover new radio stations"
+msgstr "Einfaches Suchen und Entdecken neuer Radiosender"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:23
+msgid ""
+"Automatic recognition of songs, with the possibility to save them "
+"individually"
+msgstr ""
+"Automatische Erkennung von Titeln, mit der Möglichkeit, sie einzeln zu "
+"speichern"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:24
+msgid "Responsive application layout, compatible for small and large screens"
+msgstr ""
+"Dynamisches Anwendungslayout, kompatibel mit kleinen und großen Bildschirmen"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:25
+msgid "Play audio on supported network devices (e.g. Google Chromecasts)"
+msgstr ""
+"Tonwiedergabe auf unterstützten Netzwerkgeräten (z.B. Google Chromecasts)"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:26
+msgid "Seamless integration into the GNOME desktop environment"
+msgstr "Nahtlose Integration in die GNOME-Arbeitsumgebung"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:12
+msgid "Gradio;Radio;Stream;Wave;"
+msgstr "Gradio;Radio;Stream;Welle;"
+
+#~ msgid "Open Application Menu"
+#~ msgstr "Anwendungsmenü öffnen"
+
+#~ msgid "Detected songs will appear here."
+#~ msgstr "Erkannte Titel erscheinen hier."
+
+#~ msgid "_How does this work?"
+#~ msgstr "_Wie funktioniert das?"
+
+#~ msgid "Shortwave"
+#~ msgstr "Shortwave"
+
+#~ msgid "Error details"
+#~ msgstr "Fehlerdetails"
+
+#~ msgid "Connected with"
+#~ msgstr "Verbunden mit"
+
+#~ msgid "_Cancel"
+#~ msgstr "A_bbrechen"
+
+#~ msgid "_Connect"
+#~ msgstr "_Verbinden"
+
+#~ msgid "Devices which implement the Google Cast protocol are supported."
+#~ msgstr ""
+#~ "Geräte, die das Google Cast Protokoll unterstützen, können verwendet "
+#~ "werden."
+
+#~ msgid "_Retry search"
+#~ msgstr "Suche _wiederholen"
+
+#~ msgid "URL is not valid."
+#~ msgstr "Die Adresse ist ungültig."
+
+#~ msgid "An invalid station was removed from the library."
+#~ msgstr "Ein ungültiger Sender wurde aus der Bibliothek entfernt."
+
+#~ msgid "This is a local private station."
+#~ msgstr "Dies ist ein lokaler Privatsender."
+
+#~ msgid ""
+#~ "This station is visible only to you. If you remove this station from your "
+#~ "library, you have to create it again."
+#~ msgstr ""
+#~ "Dieser Sender ist nur für Sie sichtbar. Wenn Sie den Sender aus Ihrer "
+#~ "Bibliothek entfernen, so müssen Sie diesen erneut anlegen."
+
+#~ msgid "This station cannot be played because the stream is offline."
+#~ msgstr ""
+#~ "Dieser Sender kann nicht abgespielt werden, weil die Quelle außer Betrieb "
+#~ "ist."
+
+#~ msgid "Homepage"
+#~ msgstr "Internetseite"
+
+#~ msgid "{} Vote"
+#~ msgid_plural "{} Votes"
+#~ msgstr[0] "{} Stimme"
+#~ msgstr[1] "{} Stimmen"
+
+#~ msgid "{} · {} Vote"
+#~ msgid_plural "{} · {} Votes"
+#~ msgstr[0] "{} · {} Stimme"
+#~ msgstr[1] "{} · {} Stimmen"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search for stations"
+#~ msgstr "Sender suchen"
+
+#~ msgid "Library"
+#~ msgstr "Bibliothek"
+
+#~ msgid "Import from Gradio"
+#~ msgstr "Von Gradio importieren"
+
+#~ msgid "Enable dark mode"
+#~ msgstr "Dunklen Modus aktivieren"
+
+#~ msgid "Discover"
+#~ msgstr "Entdecken"
+
+#~ msgid "Languages"
+#~ msgstr "Sprachen"
+
+#~ msgid "Import stations from Gradio"
+#~ msgstr "Sender von Gradio importieren"
+
+#~ msgid "Select database to import"
+#~ msgstr "Zu importierende Datenbank auswählen"
+
+#~ msgid "Import"
+#~ msgstr "Importieren"
+
+#~ msgid "Converting data…"
+#~ msgstr "Umwandeln der Daten …"
+
+#~ msgid "Importing {} station…"
+#~ msgid_plural "Importing {} stations…"
+#~ msgstr[0] "Importieren von {} Sender …"
+#~ msgstr[1] "Importieren von {} Sendern …"
+
+#~ msgid "Imported {} station!"
+#~ msgid_plural "Imported {} stations!"
+#~ msgstr[0] "{} Sender wurde importiert!"
+#~ msgstr[1] "{} Sender wurden importiert!"

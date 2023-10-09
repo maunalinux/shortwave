@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="SwStationDialog" parent="AdwWindow">
+    <property name="width_request">325</property>
+    <property name="height_request">500</property>
+    <property name="default_width">500</property>
+    <property name="default_height">575</property>
+    <property name="modal">True</property>
+    <child>
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar" id="headerbar">
+            <property name="show-title">False</property>
+          </object>
+        </child>
+        <property name="content">
+          <object class="GtkScrolledWindow">
+            <child>
+              <object class="AdwClamp">
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">18</property>
+                    <property name="margin_start">12</property>
+                    <property name="margin_end">12</property>
+                    <property name="margin_bottom">18</property>
+                    <property name="margin_top">6</property>
+                    <child>
+                      <object class="GtkBox" id="favicon_box">
+                        <property name="halign">center</property>
+                        <property name="overflow">hidden</property>
+                        <style>
+                          <class name="card"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="halign">center</property>
+                        <child>
+                          <object class="GtkLabel" id="title_label">
+                            <property name="label">label</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
+                            <style>
+                              <class name="title-2"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="homepage_label">
+                            <property name="ellipsize">end</property>
+                            <property name="visible">False</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkFlowBox">
+                        <property name="halign">center</property>
+                        <property name="homogeneous">True</property>
+                        <property name="selection-mode">none</property>
+                        <property name="row-spacing">6</property>
+                        <property name="column-spacing">6</property>
+                        <child>
+                          <object class="GtkFlowBoxChild" id="start_playback_button_child">
+                            <property name="focusable">False</property>
+                            <child>
+                              <object class="GtkButton">
+                                <property name="label" translatable="yes">_Play Station</property>
+                                <property name="use_underline">True</property>
+                                <signal name="clicked" handler="start_playback" swapped="true"/>
+                                <style>
+                                  <class name="pill"/>
+                                </style>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkFlowBoxChild" id="library_add_child">
+                            <property name="focusable">False</property>
+                            <child>
+                              <object class="GtkButton">
+                                <property name="label" translatable="yes">_Add to Library</property>
+                                <property name="use_underline">True</property>
+                                <signal name="clicked" handler="add_station" swapped="true"/>
+                                <style>
+                                  <class name="pill"/>
+                                </style>
+                              </object>
+                            </child>
+                            <property name="visible">False</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkFlowBoxChild" id="library_remove_child">
+                            <property name="focusable">False</property>
+                            <child>
+                              <object class="GtkButton">
+                                <property name="label" translatable="yes">_Remove From Library</property>
+                                <property name="use_underline">True</property>
+                                <signal name="clicked" handler="remove_station" swapped="true"/>
+                                <style>
+                                  <class name="pill"/>
+                                </style>
+                              </object>
+                            </child>
+                            <property name="visible">False</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwPreferencesGroup" id="local_station_group">
+                        <property name="visible">False</property>
+                        <child>
+                          <object class="AdwActionRow">
+                            <property name="title" translatable="yes">Local Station</property>
+                            <property name="subtitle" translatable="yes">This station exists only in your library, and is not part of the public online station database.</property>
+                            <property name="icon_name">cloud-disabled-symbolic</property>
+                          </object>
+                        </child>
+                        <style>
+                          <class name="notice-row"/>
+                          <class name="card"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwPreferencesGroup" id="orphaned_station_group">
+                        <property name="visible">False</property>
+                        <child>
+                          <object class="AdwActionRow">
+                            <property name="title" translatable="yes">Orphaned Station</property>
+                            <property name="subtitle" translatable="yes">The information could not be updated, probably this station was removed from the public online station database.</property>
+                            <property name="icon_name">dialog-error-symbolic</property>
+                          </object>
+                        </child>
+                        <style>
+                          <class name="error-row"/>
+                          <class name="card"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwPreferencesGroup" id="information_group">
+                        <property name="title" translatable="yes">Information</property>
+                        <child>
+                          <object class="AdwActionRow" id="language_row">
+                            <property name="title" translatable="yes">Language</property>
+                            <property name="title_lines">1</property>
+                            <property name="visible">False</property>
+                            <style>
+                              <class name="property"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="tags_row">
+                            <property name="title" translatable="yes">Tags</property>
+                            <property name="title_lines">1</property>
+                            <property name="visible">False</property>
+                            <style>
+                              <class name="property"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="votes_row">
+                            <property name="title" translatable="yes">Votes</property>
+                            <property name="title_lines">1</property>
+                            <style>
+                              <class name="property"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwPreferencesGroup" id="location_group">
+                        <property name="title" translatable="yes">Location</property>
+                        <property name="margin_top">6</property>
+                        <property name="visible">False</property>
+                        <child>
+                          <object class="AdwActionRow" id="country_row">
+                            <property name="title" translatable="yes">Country</property>
+                            <property name="title_lines">1</property>
+                            <property name="visible">False</property>
+                            <style>
+                              <class name="property"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="state_row">
+                            <property name="title" translatable="yes">State</property>
+                            <property name="title_lines">1</property>
+                            <property name="visible">False</property>
+                            <style>
+                              <class name="property"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="map_box">
+                        <property name="orientation">vertical</property>
+                        <property name="visible">False</property>
+                        <child>
+                          <object class="GtkFrame">
+                            <property name="halign">center</property>
+                            <property name="child">
+                              <object class="ShumateMap" id="map">
+                                <property name="sensitive">False</property>
+                                <property name="height_request">300</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="ShumateLicense" id="map_license">
+                            <property name="xalign">0</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwPreferencesGroup">
+                        <property name="title" translatable="yes">Audio</property>
+                        <property name="margin_top">6</property>
+                        <child>
+                          <object class="AdwActionRow" id="bitrate_row">
+                            <property name="title" translatable="yes">Bitrate</property>
+                            <property name="title_lines">1</property>
+                            <property name="visible">False</property>
+                            <style>
+                              <class name="property"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="codec_row">
+                            <property name="title" translatable="yes">Codec</property>
+                            <property name="title_lines">1</property>
+                            <property name="visible">False</property>
+                            <style>
+                              <class name="property"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="stream_row">
+                            <property name="title" translatable="yes" comments="This is a noun/label for the station stream url">Stream</property>
+                            <property name="title_lines">1</property>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="spacing">6</property>
+                                <child>
+                                  <object class="GtkButton">
+                                    <property name="icon_name">edit-copy-symbolic</property>
+                                    <property name="valign">center</property>
+                                    <signal name="clicked" handler="copy_stream_clipboard" swapped="true"/>
+                                    <style>
+                                      <class name="flat"/>
+                                    </style>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <style>
+                              <class name="property"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkShortcutController">
+        <property name="scope">local</property>
+        <child>
+          <object class="GtkShortcut">
+            <property name="trigger">Escape</property>
+            <property name="action">action(window.close)</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>
+

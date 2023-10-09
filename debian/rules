@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+export MAKE = ninja -v
+export LC_ALL=C.UTF-8
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	rm -rf debian/build
+
+override_dh_auto_configure:
+	mkdir -p debian/build
+	cd debian/build && LDFLAGS="-Wl,-z,now -Wl,-z,relro" meson --buildtype plain --prefix=/usr --libdir=/usr/lib --sysconfdir=/etc ../..
+
+override_dh_auto_build:
+	cd debian/build && $(MAKE)
+
+override_dh_auto_install:
+	dh_auto_install
+	cd debian/build && DESTDIR=$(CURDIR)/debian/shortwave $(MAKE) install
+

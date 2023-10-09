@@ -1,0 +1,532 @@
+# Czech translation for shortwave.
+# Copyright (C) 2020 shortwave's COPYRIGHT HOLDER
+# This file is distributed under the same license as the shortwave package.
+#
+# Jiri Eischmann <jiri@eischmann.cz>, 2020, 2021.
+# Marek Černocký <marek@manet.cz>, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shortwave master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
+"POT-Creation-Date: 2022-03-29 17:19+0000\n"
+"PO-Revision-Date: 2022-04-04 10:30+0100\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"X-Generator: Gtranslator 3.36.0\n"
+
+#: data/gtk/create_station_dialog.ui:8
+msgid "Create new station"
+msgstr "Vytvoření nové stanice"
+
+#: data/gtk/create_station_dialog.ui:32
+msgid "Create New Station"
+msgstr "Vytvoření nové stanice"
+
+#: data/gtk/create_station_dialog.ui:33
+msgid ""
+"You can decide if you want the new station to be visible for all users "
+"worldwide or if you want to create a local station."
+msgstr ""
+"Můžete se rozhodnout, jestli chcete, aby nová stanice byla viditelná pro "
+"všechny uživatele na celém světe, nebo jestli má jít pouze místní stanici."
+
+#: data/gtk/create_station_dialog.ui:43
+msgid "Create _Public Station"
+msgstr "Vytvořit _veřejnou stanici"
+
+#: data/gtk/create_station_dialog.ui:54
+msgid "Create _Local Station"
+msgstr "Vytvořit _místní stanici"
+
+#: data/gtk/create_station_dialog.ui:80
+msgid "Create Local Station"
+msgstr "Vytvoření místní stanice"
+
+#: data/gtk/create_station_dialog.ui:113
+msgid "Change station image"
+msgstr "Změnit obrázek stanice"
+
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:179
+msgid "Name"
+msgstr "Název"
+
+#: data/gtk/create_station_dialog.ui:151
+msgid "Stream URL"
+msgstr "Adresa URL vysílání"
+
+#: data/gtk/create_station_dialog.ui:165
+msgid "Create Station"
+msgstr "Vytvořit stanici"
+
+#: data/gtk/discover_page.ui:28
+msgid "Most Voted Stations"
+msgstr "Nejpopulárnější stanice"
+
+#: data/gtk/discover_page.ui:43
+msgid "Trending"
+msgstr "Nabírající na popularitě"
+
+#: data/gtk/discover_page.ui:58
+msgid "Other Users Are Listening To…"
+msgstr "Ostatní uživatelé poslouchají…"
+
+#: data/gtk/library_page.ui:60
+msgid "Receiving Station Data…"
+msgstr "Přijímají se data stanice…"
+
+#: data/gtk/library_page.ui:87
+msgid "_Discover New Stations"
+msgstr "O_bjevovat nové stanice"
+
+#: data/gtk/mini_controller.ui:87
+msgid "SHORTWAVE INTERNET RADIO"
+msgstr "INTERNETOVÉ RÁDIO SHORTWAVE"
+
+#: data/gtk/mini_controller.ui:109 data/gtk/sidebar_controller.ui:63
+#: data/gtk/toolbar_controller.ui:38
+msgid "No Playback"
+msgstr "Nepřehrává se"
+
+#: data/gtk/notification.ui:58
+msgid "Error details"
+msgstr "Podrobnosti o chybě"
+
+#: data/gtk/player.ui:44
+msgid "Connected with"
+msgstr "Spojeno s"
+
+#: data/gtk/settings_window.ui:7 data/gtk/help_overlay.ui:11
+msgid "General"
+msgstr "Obecné"
+
+#: data/gtk/settings_window.ui:10
+msgid "Appearance"
+msgstr "Vzhled"
+
+#: data/gtk/settings_window.ui:14
+msgid "_Dark Mode"
+msgstr "_Tmavý režim"
+
+#: data/gtk/settings_window.ui:16
+msgid "Whether the application should use a dark theme"
+msgstr "Jestli má aplikace používat tmavý motiv"
+
+#: data/gtk/settings_window.ui:29
+msgid "Features"
+msgstr "Vlastnosti"
+
+#: data/gtk/settings_window.ui:32
+msgid "_Notifications"
+msgstr "Upozor_nění"
+
+#: data/gtk/settings_window.ui:34
+msgid "Show desktop notifications when a new song gets played"
+msgstr ""
+"Když se začne hrát nová skladba, zobrazit upozornění v uživatelském prostředí"
+
+#: data/gtk/help_overlay.ui:15
+msgctxt "shortcut window"
+msgid "Open shortcut window"
+msgstr "Otevřít okno s klávesovými zkratkami"
+
+#: data/gtk/help_overlay.ui:21
+msgctxt "shortcut window"
+msgid "Open application menu"
+msgstr "Otevřít nabídku aplikace"
+
+#: data/gtk/help_overlay.ui:27
+msgctxt "shortcut window"
+msgid "Open preferences"
+msgstr "Otevřít předvolby"
+
+#: data/gtk/help_overlay.ui:33
+msgctxt "shortcut window"
+msgid "Quit the application"
+msgstr "Ukončit aplikaci"
+
+#: data/gtk/help_overlay.ui:40
+msgid "Window"
+msgstr "Okno"
+
+#: data/gtk/help_overlay.ui:44
+msgctxt "shortcut window"
+msgid "Open library view"
+msgstr "Otevřít zobrazení knihovny"
+
+#: data/gtk/help_overlay.ui:50
+msgctxt "shortcut window"
+msgid "Open discover view"
+msgstr "Otevřít zobrazení pro procházení"
+
+#: data/gtk/help_overlay.ui:56
+msgctxt "shortcut window"
+msgid "Open search view"
+msgstr "Otevřít zobrazení pro vyhledávání"
+
+#: data/gtk/help_overlay.ui:62
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "Přejít zpět"
+
+#: data/gtk/help_overlay.ui:69
+msgid "Playback"
+msgstr "Přehrávání"
+
+#: data/gtk/help_overlay.ui:73
+msgctxt "shortcut window"
+msgid "Toggle playback"
+msgstr "Zapnout/vypnout přehrávání"
+
+#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:184
+#: src/ui/pages/search_page.rs:183
+msgid "Votes"
+msgstr "Hlasy"
+
+#: data/gtk/search_page.ui:36
+msgid "Change the sorting of the search results"
+msgstr "Změnit řazení výsledků vyhledávání"
+
+#: data/gtk/search_page.ui:63
+msgid "No Results"
+msgstr "Žádné výsledky"
+
+#: data/gtk/search_page.ui:64
+msgid "Try using a different search term"
+msgstr "Zkuste hledat něco jiného"
+
+#: data/gtk/search_page.ui:148 data/gtk/window.ui:109
+msgid "_Name"
+msgstr "_Název"
+
+#: data/gtk/search_page.ui:153 data/gtk/window.ui:114
+msgid "_Language"
+msgstr "_Jazyk"
+
+#: data/gtk/search_page.ui:158 data/gtk/window.ui:119
+msgid "_Country"
+msgstr "Z_emě"
+
+#: data/gtk/search_page.ui:163 data/gtk/window.ui:124
+msgid "S_tate"
+msgstr "S_tát"
+
+#: data/gtk/search_page.ui:168 data/gtk/window.ui:129
+msgid "_Votes"
+msgstr "_Hlasy"
+
+#: data/gtk/search_page.ui:173 data/gtk/window.ui:134
+msgid "_Bitrate"
+msgstr "_Datový tok"
+
+#: data/gtk/search_page.ui:180 data/gtk/window.ui:141
+msgid "_Ascending"
+msgstr "Vzest_upně"
+
+#: data/gtk/search_page.ui:185 data/gtk/window.ui:146
+msgid "_Descending"
+msgstr "_Sestupně"
+
+#: data/gtk/sidebar_controller.ui:22
+msgid "An error occurred"
+msgstr "Vyskytla se chyba"
+
+#: data/gtk/sidebar_controller.ui:188
+msgid "_Show Station Details"
+msgstr "Zobrazit podrobnosti o _stanici"
+
+#: data/gtk/sidebar_controller.ui:192
+msgid "Stream to a _Device"
+msgstr "Vysílat _do zařízení"
+
+#: data/gtk/sidebar_controller.ui:198
+msgid "_Enable Mini Player"
+msgstr "Povolit minipř_ehrávač"
+
+#: data/gtk/song_listbox.ui:23
+msgid ""
+"Songs are automatically recognized using the stream metadata.\n"
+"\n"
+"If the station does not send any metadata, no songs can be recognized."
+msgstr ""
+"Skladby jsou automaticky rozpoznávány díky metadatům ve vysílání.\n"
+"\n"
+"Pokud stanice žádná metadata neposílá, nelze skladby rozpoznat."
+
+#: data/gtk/song_listbox.ui:66
+msgid "No Songs Detected"
+msgstr "Nezjištěny žádné skladby"
+
+#: data/gtk/song_listbox.ui:76
+msgid "Detected songs will appear here."
+msgstr "Rozpoznané skladby se zobrazí zde."
+
+#: data/gtk/song_listbox.ui:85
+msgid "_How does this work?"
+msgstr "Jak to _funguje?"
+
+#: data/gtk/song_listbox.ui:124
+msgid "Saved songs are located in your Music folder."
+msgstr "Uložené skladby jsou umístěné ve složce Hudba."
+
+#: data/gtk/song_listbox.ui:137
+msgid "_Open"
+msgstr "_Otevřít"
+
+#: data/gtk/song_row.ui:15
+msgid "Save recorded song"
+msgstr "Uložit nahranou skladbu"
+
+#: data/gtk/station_dialog.ui:8
+msgid "Station details"
+msgstr "Podrobnosti o stanici"
+
+#: data/gtk/station_dialog.ui:88
+msgid "_Play Station"
+msgstr "_Hrát tuto statinic"
+
+#: data/gtk/station_dialog.ui:102
+msgid "_Add to Library"
+msgstr "Přid_at do knihovny"
+
+#: data/gtk/station_dialog.ui:117
+msgid "_Remove From Library"
+msgstr "Odeb_rat z knihovny"
+
+#: data/gtk/station_dialog.ui:134
+msgid "Local Station"
+msgstr "Místní stanice"
+
+#: data/gtk/station_dialog.ui:135
+msgid ""
+"This station exists only in your library, and is not part of the public "
+"online station database."
+msgstr ""
+"Tato stanice existuje pouze ve vaší knihovně a není součástí veřejné on-line "
+"databáze stanic."
+
+#: data/gtk/station_dialog.ui:146
+msgid "Information"
+msgstr "Informace"
+
+#: data/gtk/station_dialog.ui:149 src/ui/pages/search_page.rs:180
+msgid "Language"
+msgstr "Jazyk"
+
+#: data/gtk/station_dialog.ui:164
+msgid "Tags"
+msgstr "Štítky"
+
+#: data/gtk/station_dialog.ui:200
+msgid "Location"
+msgstr "Místo"
+
+#: data/gtk/station_dialog.ui:205 src/ui/pages/search_page.rs:181
+msgid "Country"
+msgstr "Země"
+
+#: data/gtk/station_dialog.ui:225 src/ui/pages/search_page.rs:182
+msgid "State"
+msgstr "Stát"
+
+#: data/gtk/station_dialog.ui:269
+msgid "Audio"
+msgstr "Zvuk"
+
+#: data/gtk/station_dialog.ui:273 src/ui/pages/search_page.rs:184
+msgid "Bitrate"
+msgstr "Datový tok"
+
+#: data/gtk/station_dialog.ui:288
+msgid "Codec"
+msgstr "Kodek"
+
+#. This is a noun/label for the station stream url
+#: data/gtk/station_dialog.ui:303
+msgid "Stream"
+msgstr "Vysílání"
+
+#: data/gtk/streaming_dialog.ui:43
+msgid "Stream to a Device"
+msgstr "Vysílání do zařízení"
+
+#: data/gtk/streaming_dialog.ui:48
+msgid "_Cancel"
+msgstr "_Zrušit"
+
+#: data/gtk/streaming_dialog.ui:54
+msgid "_Connect"
+msgstr "_Připojit"
+
+#: data/gtk/streaming_dialog.ui:86
+msgid "Devices which implement the Google Cast protocol are supported."
+msgstr "Podporována jsou zařízení, která implementují protokol Google Cast."
+
+#: data/gtk/streaming_dialog.ui:118
+msgid "No devices found"
+msgstr "Žádná zařízení nenalezena"
+
+#: data/gtk/streaming_dialog.ui:128
+msgid "_Retry search"
+msgstr "_Zkusit znovu"
+
+#: data/gtk/streaming_dialog.ui:176 data/gtk/streaming_dialog.ui:207
+msgid "Searching for Devices…"
+msgstr "Vyhledávají se zařízení…"
+
+#: data/gtk/window.ui:106
+msgid "_Sorting"
+msgstr "Ř_azení"
+
+#: data/gtk/window.ui:155 data/gtk/window.ui:183
+msgid "_Open radio-browser.info <sup>↗</sup>"
+msgstr "_Otevřít radio-browser.info <sup>↗</sup>"
+
+#: data/gtk/window.ui:160 data/gtk/window.ui:188
+msgid "_Create New Station"
+msgstr "_Vytvořit novou stanici"
+
+#: data/gtk/window.ui:167 data/gtk/window.ui:195
+msgid "_Preferences"
+msgstr "_Předvolby"
+
+#: data/gtk/window.ui:171 data/gtk/window.ui:199
+msgid "_Keyboard Shortcuts"
+msgstr "_Klávesové zkratky"
+
+#: data/gtk/window.ui:175 data/gtk/window.ui:203
+msgid "_About Shortwave"
+msgstr "O _aplikaci Shortwave"
+
+#: src/audio/player.rs:188
+msgid "Station cannot be streamed."
+msgstr "Stanici nelze vysílat."
+
+#: src/audio/player.rs:188
+msgid "URL is not valid."
+msgstr "Adresa URL není platná."
+
+#: src/database/library.rs:276
+msgid "An invalid station was removed from the library."
+msgstr "Neplatná stanice byla odstraněna z knihovny."
+
+#: src/ui/about_dialog.rs:32
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:6
+msgid "Listen to internet radio"
+msgstr "Poslouchejte internetové rádio"
+
+#: src/ui/about_dialog.rs:35
+msgid "translator-credits"
+msgstr "Marek Černocký"
+
+#. TODO: Implement show-server-stats action
+#: src/ui/pages/discover_page.rs:91
+msgid "Show statistics"
+msgstr "Zobrazit statistiky"
+
+#: src/ui/pages/discover_page.rs:92
+msgid "Browse over 30,000 stations"
+msgstr "Procházet více jak 30 000 stanic"
+
+#: src/ui/pages/discover_page.rs:94
+msgid "Add new station"
+msgstr "Přidat novou stanici"
+
+#: src/ui/pages/discover_page.rs:95
+msgid "Your favorite station is missing?"
+msgstr "Schází vaše oblíbená stanice?"
+
+#: src/ui/pages/discover_page.rs:97
+msgid "Open website"
+msgstr "Otevřít webové stránky"
+
+#: src/ui/pages/discover_page.rs:98
+msgid "Powered by radio-browser.info"
+msgstr "Postaveno na radio-browser.info"
+
+#: src/ui/pages/discover_page.rs:137 src/ui/pages/search_page.rs:269
+msgid "Station data could not be received."
+msgstr "Nelze získat data o stanici."
+
+#. Welcome text which gets displayed when the library is empty. "{}" is the application name.
+#: src/ui/pages/library_page.rs:117
+msgid "Welcome to {}"
+msgstr "Vítejte v aplikaci {}"
+
+#: src/ui/pages/search_page.rs:106
+msgid ""
+"The number of results is limited to {} item. Try using a more specific "
+"search term."
+msgid_plural ""
+"The number of results is limited to {} items. Try using a more specific "
+"search term."
+msgstr[0] ""
+"Počet výsledků je omezen na {} položku. Zkuste hledaný vyraz více upřesnit."
+msgstr[1] ""
+"Počet výsledků je omezen na {} položky. Zkuste hledaný vyraz více upřesnit."
+msgstr[2] ""
+"Počet výsledků je omezen na {} položek. Zkuste hledaný vyraz více upřesnit."
+
+#: src/ui/station_dialog.rs:286
+msgid "{} kbit/s"
+msgstr "{} kb/s"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:5
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:3
+msgid "Shortwave"
+msgstr "Shortwave"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:8
+msgid "Felix Häcker"
+msgstr "Felix Häcker"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:16
+msgid ""
+"Shortwave is an internet radio player that provides access to a station "
+"database with over 25,000 stations."
+msgstr ""
+"Shortwave je přehrávač internetových rádií, který poskytuje přístup k "
+"databázi s více než 25 tisíci stanicemi."
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:19
+msgid "Features:"
+msgstr "Vlastnosti:"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:21
+msgid "Create your own library where you can add your favorite stations"
+msgstr "Vytvoření vlastní knihovny, kam si můžete přidat oblíbené stanice"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:22
+msgid "Easily search and discover new radio stations"
+msgstr "Snadné vyhledávání a objevování nových rádiových stanic"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:23
+msgid ""
+"Automatic recognition of songs, with the possibility to save them "
+"individually"
+msgstr "Automatické rozpoznání skladeb s možností je jednotlivě uložit"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:24
+msgid "Responsive application layout, compatible for small and large screens"
+msgstr ""
+"Responzivní rozvržení aplikace kompatibilní s malými a velkými obrazovkami"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:25
+msgid "Play audio on supported network devices (e.g. Google Chromecasts)"
+msgstr ""
+"Přehrávání zvuku na podporovaných síťových zařízeních (např. Google "
+"Chromecast)"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:26
+msgid "Seamless integration into the GNOME desktop environment"
+msgstr "Dokonale zapadne do uživatelského prostředí GNOME"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:12
+msgid "Gradio;Radio;Stream;Wave;"
+msgstr "Gradio;Radio;Rádio;Stream;Wave;"

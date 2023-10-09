@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkBox" id="station_favicon">
+    <child>
+      <object class="GtkStack" id="stack">
+        <property name="halign">center</property>
+        <property name="valign">center</property>
+        <property name="transition_type">crossfade</property>
+        <child>
+          <object class="GtkStackPage">
+            <property name="name">placeholder</property>
+            <property name="child">
+              <object class="GtkImage" id="placeholder">
+                <property name="pixel_size">48</property>
+                <property name="icon_name">emblem-music-symbolic</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
+              </object>
+            </property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkStackPage">
+            <property name="name">image</property>
+            <property name="child">
+              <object class="GtkImage" id="image">
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

@@ -1,0 +1,636 @@
+# Danish translation for shortwave.
+# Copyright (C) 2020 shortwave's COPYRIGHT HOLDER
+# This file is distributed under the same license as the shortwave package.
+# scootergrisen, 2020-2021.
+# Alan Mortensen <alanmortensen.am@gmail.com>, 2022.
+#
+# scootergrisen: tjek om "station data" skal oversættes til "data om stationer", "data om station" eller "stationsdata"
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shortwave master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
+"POT-Creation-Date: 2022-12-19 15:41+0000\n"
+"PO-Revision-Date: 2022-12-26 11:57+0100\n"
+"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: data/gtk/create_station_dialog.ui:8
+msgid "Create new station"
+msgstr "Opret ny station"
+
+#: data/gtk/create_station_dialog.ui:32
+msgid "Create New Station"
+msgstr "Opret ny station"
+
+#: data/gtk/create_station_dialog.ui:33
+msgid ""
+"You can decide if you want the new station to be visible for all users "
+"worldwide or if you want to create a local station."
+msgstr ""
+"Du bestemmer, om den nye station skal være synlig for alle brugere i hele "
+"verden, eller om du vil oprette en lokal station."
+
+#: data/gtk/create_station_dialog.ui:43
+msgid "Create _Public Station"
+msgstr "Opret _offentlig station"
+
+#: data/gtk/create_station_dialog.ui:54
+msgid "Create _Local Station"
+msgstr "Opret _lokal station"
+
+#: data/gtk/create_station_dialog.ui:80
+msgid "Create Local Station"
+msgstr "Opret lokal station"
+
+#: data/gtk/create_station_dialog.ui:113
+msgid "Change station image"
+msgstr "Ændr stationens billede"
+
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
+msgid "Name"
+msgstr "Navn"
+
+#: data/gtk/create_station_dialog.ui:145
+msgid "Stream URL"
+msgstr "Stream-URL"
+
+#: data/gtk/create_station_dialog.ui:153
+msgid "Create Station"
+msgstr "Opret station"
+
+#: data/gtk/discover_page.ui:28
+msgid "Most Voted Stations"
+msgstr "Stationer med flest stemmer"
+
+#: data/gtk/discover_page.ui:43
+msgid "Trending"
+msgstr "Trend"
+
+#: data/gtk/discover_page.ui:58
+msgid "Other Users Are Listening To…"
+msgstr "Andre brugere lytter til …"
+
+#: data/gtk/library_page.ui:60
+msgid "Receiving Station Data…"
+msgstr "Modtager stationsdata …"
+
+#: data/gtk/library_page.ui:87
+msgid "_Discover New Stations"
+msgstr "_Opdag nye stationer"
+
+#: data/gtk/mini_controller.ui:87
+msgid "SHORTWAVE INTERNET RADIO"
+msgstr "SHORTWAVE INTERNETRADIO"
+
+#: data/gtk/mini_controller.ui:109 data/gtk/sidebar_controller.ui:63
+#: data/gtk/toolbar_controller.ui:38
+msgid "No Playback"
+msgstr "Ingen afspilning"
+
+#: data/gtk/settings_window.ui:7 data/gtk/help_overlay.ui:11
+msgid "General"
+msgstr "Generelt"
+
+#: data/gtk/settings_window.ui:10
+msgid "Appearance"
+msgstr "Udseende"
+
+#: data/gtk/settings_window.ui:14
+msgid "_Dark Mode"
+msgstr "_Mørk tilstand"
+
+#: data/gtk/settings_window.ui:16
+msgid "Whether the application should use a dark theme"
+msgstr "Om programmet skal bruge et mørkt tema"
+
+#: data/gtk/settings_window.ui:29
+msgid "Features"
+msgstr "Funktioner"
+
+#: data/gtk/settings_window.ui:32
+msgid "_Notifications"
+msgstr "_Underretninger"
+
+#: data/gtk/settings_window.ui:34
+msgid "Show desktop notifications when a new song gets played"
+msgstr "Vis skrivebordsunderretninger når der afspilles en ny sang"
+
+#: data/gtk/help_overlay.ui:14
+msgctxt "shortcut window"
+msgid "Open shortcut window"
+msgstr "Åbn genvejsvindue"
+
+#: data/gtk/help_overlay.ui:21
+msgctxt "shortcut window"
+msgid "Open application menu"
+msgstr "Åbn programmenu"
+
+#: data/gtk/help_overlay.ui:26
+msgctxt "shortcut window"
+msgid "Open preferences"
+msgstr "Åbn indstillinger"
+
+#: data/gtk/help_overlay.ui:32
+msgctxt "shortcut window"
+msgid "Close the window"
+msgstr "Luk vinduet"
+
+#: data/gtk/help_overlay.ui:38
+msgctxt "shortcut window"
+msgid "Quit the application"
+msgstr "Afslut programmet"
+
+#: data/gtk/help_overlay.ui:46
+msgid "Window"
+msgstr "Vindue"
+
+#: data/gtk/help_overlay.ui:49
+msgctxt "shortcut window"
+msgid "Open library view"
+msgstr "Åbn visningen bibliotek"
+
+#: data/gtk/help_overlay.ui:55
+msgctxt "shortcut window"
+msgid "Open discover view"
+msgstr "Åbn visningen opdag"
+
+#: data/gtk/help_overlay.ui:61
+msgctxt "shortcut window"
+msgid "Open search view"
+msgstr "Åbn visningen søg"
+
+#: data/gtk/help_overlay.ui:67
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "Gå tilbage"
+
+#: data/gtk/help_overlay.ui:73
+msgctxt "shortcut window"
+msgid "Refresh station data"
+msgstr "Genopfrisk stationsdata"
+
+# scootergrisen: fra gennemlæsning: Afspilning forbinder jeg med noget, som er optaget på forhånd. Jeg formoder, der her er tale om live, så "Lyt til" var måske bedre
+#: data/gtk/help_overlay.ui:81
+msgid "Playback"
+msgstr "Afspilning"
+
+# scootergrisen: fra gennemlæsning: Afspilning forbinder jeg med noget, som er optaget på forhånd. Jeg formoder, der her er tale om live, så "Lyt til" var måske bedre
+# scootergrisen: "Start/stop afspilning"
+# scootergrisen: "Afspilning til/fra"
+#: data/gtk/help_overlay.ui:84
+msgctxt "shortcut window"
+msgid "Toggle playback"
+msgstr "Start/stop afspilning"
+
+#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
+#: src/ui/pages/search_page.rs:196
+msgid "Votes"
+msgstr "Stemmer"
+
+#: data/gtk/search_page.ui:36
+msgid "Change the sorting of the search results"
+msgstr "Ændr rækkefølgen af søgeresultaterne"
+
+#: data/gtk/search_page.ui:63
+msgid "No Results"
+msgstr "Ingen resultater"
+
+#: data/gtk/search_page.ui:64
+msgid "Try using a different search term"
+msgstr "Prøv en anden søgeterm"
+
+#: data/gtk/search_page.ui:148 data/gtk/window.ui:170
+msgid "_Name"
+msgstr "_Navn"
+
+#: data/gtk/search_page.ui:153 data/gtk/window.ui:175
+msgid "_Language"
+msgstr "_Sprog"
+
+#: data/gtk/search_page.ui:158 data/gtk/window.ui:180
+msgid "_Country"
+msgstr "_Land"
+
+#: data/gtk/search_page.ui:163 data/gtk/window.ui:185
+msgid "S_tate"
+msgstr "_Delstat"
+
+#: data/gtk/search_page.ui:168 data/gtk/window.ui:190
+msgid "_Votes"
+msgstr "St_emmer"
+
+#: data/gtk/search_page.ui:173 data/gtk/window.ui:195
+msgid "_Bitrate"
+msgstr "_Bithastighed"
+
+#: data/gtk/search_page.ui:180 data/gtk/window.ui:202
+msgid "_Ascending"
+msgstr "S_tigende"
+
+#: data/gtk/search_page.ui:185 data/gtk/window.ui:207
+msgid "_Descending"
+msgstr "_Faldende"
+
+#: data/gtk/sidebar_controller.ui:22
+msgid "An error occurred"
+msgstr "Der opstod en fejl"
+
+#: data/gtk/sidebar_controller.ui:187
+msgid "_Show Station Details"
+msgstr "Vis _detaljer om stationen"
+
+#: data/gtk/sidebar_controller.ui:191
+msgid "Stream to a _Device"
+msgstr "Stream til en _enhed"
+
+#: data/gtk/song_listbox.ui:28
+msgid "No Songs Detected"
+msgstr "Ingen sange registreret"
+
+#: data/gtk/song_listbox.ui:39
+msgid ""
+"Songs are automatically recognized using the stream metadata.\n"
+"\n"
+"If the station does not send any metadata, no songs can be recognized."
+msgstr ""
+"Sangene genkendes automatisk med strømmens metadata.\n"
+"\n"
+"Hvis stationen ikke sender nogen metadata, så kan sangene ikke genkendes."
+
+#: data/gtk/song_listbox.ui:75
+msgid "Saved songs are located in your Music folder."
+msgstr "Gemte sange findes i din musikmappe."
+
+#: data/gtk/song_listbox.ui:85
+msgid "_Open"
+msgstr "_Åbn"
+
+#: data/gtk/song_row.ui:16
+msgid "Save recorded song"
+msgstr "Gem sang som er blevet optaget"
+
+#: data/gtk/station_dialog.ui:8
+msgid "Station details"
+msgstr "Detaljer om stationen"
+
+# scootergrisen: fra gennemlæsning: Afspilning forbinder jeg med noget, som er optaget på forhånd. Jeg formoder, der her er tale om live, så "Lyt til" var måske bedre
+#: data/gtk/station_dialog.ui:87
+msgid "_Play Station"
+msgstr "_Lyt til station"
+
+#: data/gtk/station_dialog.ui:101
+msgid "_Add to Library"
+msgstr "_Tilføj til bibliotek"
+
+#: data/gtk/station_dialog.ui:116
+msgid "_Remove From Library"
+msgstr "_Fjern fra bibliotek"
+
+#: data/gtk/station_dialog.ui:133
+msgid "Local Station"
+msgstr "Lokal station"
+
+#: data/gtk/station_dialog.ui:134
+msgid ""
+"This station exists only in your library, and is not part of the public "
+"online station database."
+msgstr ""
+"Denne station findes kun i dit bibliotek og er ikke del af den offentlige "
+"online stationsdatabase."
+
+#: data/gtk/station_dialog.ui:149
+msgid "Orphaned Station"
+msgstr "Forældreløs station"
+
+#: data/gtk/station_dialog.ui:150
+msgid ""
+"The information could not be updated, probably this station was removed from "
+"the public online station database."
+msgstr ""
+"Informationen kunne ikke opdateres. Sandsynligvis er stationen blevet "
+"fjernet fra den offentlige online stationsdatabase."
+
+#: data/gtk/station_dialog.ui:162
+msgid "Information"
+msgstr "Information"
+
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
+msgid "Language"
+msgstr "Sprog"
+
+#: data/gtk/station_dialog.ui:180
+msgid "Tags"
+msgstr "Mærkater"
+
+#: data/gtk/station_dialog.ui:216
+msgid "Location"
+msgstr "Lokalitet"
+
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
+msgid "Country"
+msgstr "Land"
+
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
+msgid "State"
+msgstr "Delstat"
+
+#: data/gtk/station_dialog.ui:285
+msgid "Audio"
+msgstr "Lyd"
+
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
+msgid "Bitrate"
+msgstr "Bithastighed"
+
+#: data/gtk/station_dialog.ui:304
+msgid "Codec"
+msgstr "Codec"
+
+#. This is a noun/label for the station stream url
+#: data/gtk/station_dialog.ui:319
+msgid "Stream"
+msgstr "Stream"
+
+#: data/gtk/streaming_dialog.ui:10
+msgid "Stream to a Device"
+msgstr "Stream til en enhed"
+
+#: data/gtk/streaming_dialog.ui:26
+msgid ""
+"Audio playback can be streamed to a network device (requires Google Cast "
+"support)."
+msgstr ""
+"Lyd kan streames til en netværksenhed (kræver understøttelse af Google Cast)."
+
+#: data/gtk/streaming_dialog.ui:41
+msgid "No Devices Found"
+msgstr "Ingen enheder fundet"
+
+#: data/gtk/streaming_dialog.ui:47 data/gtk/streaming_dialog.ui:70
+msgid "Search again"
+msgstr "Søg igen"
+
+#: data/gtk/streaming_dialog.ui:64
+msgid "Search Completed"
+msgstr "Søgning færdig"
+
+#: data/gtk/streaming_dialog.ui:87
+msgid "Searching for Devices…"
+msgstr "Søger efter enheder …"
+
+#: data/gtk/window.ui:27
+msgid "Add Stations"
+msgstr "Tilføj stationer"
+
+#: data/gtk/window.ui:34
+msgid "Go Back"
+msgstr "Gå tilbage"
+
+#: data/gtk/window.ui:41
+msgid "Open Application Menu"
+msgstr "Åbn programmenu"
+
+#: data/gtk/window.ui:50
+msgid "Open Search"
+msgstr "Åbn søgning"
+
+#: data/gtk/window.ui:74
+msgid "Unable to connect to radio-browser.info"
+msgstr "Kan ikke forbinde til radio-browser.info"
+
+#: data/gtk/window.ui:84
+msgid ""
+"Access to the public online station database is not available. Ensure that "
+"you are connected to the internet."
+msgstr ""
+"Adgang til den offentlige online stationsdatabase er ikke mulig. Sikr dig, "
+"at du er forbundet til internettet."
+
+#: data/gtk/window.ui:93
+msgid "Try again"
+msgstr "Prøv igen"
+
+#: data/gtk/window.ui:159 data/gtk/window.ui:248
+msgid "_Enable Mini Player"
+msgstr "Aktivér _miniafspiller"
+
+#: data/gtk/window.ui:163 data/gtk/window.ui:244
+msgid "_Refresh Station Data"
+msgstr "_Genopfrisk stationsdata"
+
+#: data/gtk/window.ui:167
+msgid "_Sorting"
+msgstr "_Sortering"
+
+#: data/gtk/window.ui:216 data/gtk/window.ui:254
+msgid "_Open radio-browser.info <sup>↗</sup>"
+msgstr "_Åbn radio-browser.info <sup>↗</sup>"
+
+#: data/gtk/window.ui:221 data/gtk/window.ui:259
+msgid "_Create New Station"
+msgstr "_Opret ny station"
+
+#: data/gtk/window.ui:228 data/gtk/window.ui:266
+msgid "_Preferences"
+msgstr "_Indstillinger"
+
+#: data/gtk/window.ui:232 data/gtk/window.ui:270
+msgid "_Keyboard Shortcuts"
+msgstr "_Tastaturgenveje"
+
+#: data/gtk/window.ui:236 data/gtk/window.ui:274
+msgid "_About Shortwave"
+msgstr "_Om Shortwave"
+
+#. Fallback to xdg-home when xdg-music is not available
+#: src/audio/backend/song_backend.rs:96
+msgid "Unable to access music directory. Saving song in home directory."
+msgstr "Kan ikke tilgå mappen til musik; gemmer sange i hjemmemappen."
+
+#: src/audio/player.rs:198
+msgid "Station cannot be streamed. URL is not valid."
+msgstr "Kan ikke streame stationen. URL'en er ugyldig."
+
+#: src/audio/player.rs:253
+msgid "Cannot save song."
+msgstr "Kan ikke gemme sang."
+
+#: src/ui/about_window.rs:35
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:6
+msgid "Listen to internet radio"
+msgstr "Lyt til internetradio"
+
+#: src/ui/about_window.rs:46
+msgid "translator-credits"
+msgstr "scootergrisen"
+
+#. TODO: Implement show-server-stats action
+#: src/ui/pages/discover_page.rs:117
+msgid "Show statistics"
+msgstr "Vis statistik"
+
+#: src/ui/pages/discover_page.rs:119
+msgid "Browse over 30,000 stations"
+msgstr "Gennemse over 30.000 stationer"
+
+#: src/ui/pages/discover_page.rs:121
+msgid "Add new station"
+msgstr "Tilføj ny station"
+
+#: src/ui/pages/discover_page.rs:123
+msgid "Your favorite station is missing?"
+msgstr "Mangler din favoritstation?"
+
+#: src/ui/pages/discover_page.rs:128
+msgid "Open website"
+msgstr "Åbn websted"
+
+#: src/ui/pages/discover_page.rs:130
+msgid "Powered by radio-browser.info"
+msgstr "Anvender radio-browser.info"
+
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
+msgid "Station data could not be received."
+msgstr "Kunne ikke modtage stationsdata."
+
+#: src/ui/pages/library_page.rs:117
+msgid "Welcome to {}"
+msgstr "Velkommen til {}"
+
+#: src/ui/pages/search_page.rs:102
+msgid ""
+"The number of results is limited to {} item. Try using a more specific "
+"search term."
+msgid_plural ""
+"The number of results is limited to {} items. Try using a more specific "
+"search term."
+msgstr[0] ""
+"Antallet af resultater er begrænset til {} element. Prøv at bruge en mere "
+"specifik søgeterm."
+msgstr[1] ""
+"Antallet af resultater er begrænset til {} elementer. Prøv at bruge en mere "
+"specifik søgeterm."
+
+#: src/ui/station_dialog.rs:286
+msgid "{} kbit/s"
+msgstr "{} kbit/s"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:5
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:3
+msgid "@NAME@"
+msgstr "@NAVN@"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:8
+msgid "Felix Häcker"
+msgstr "Felix Häcker"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:16
+msgid ""
+"Shortwave is an internet radio player that provides access to a station "
+"database with over 30,000 stations."
+msgstr ""
+"Shortwave er en internetradioafspiller, som giver adgang til en database med "
+"over 30.000 stationer."
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:19
+msgid "Features:"
+msgstr "Funktioner:"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:21
+msgid "Create your own library where you can add your favorite stations"
+msgstr "Opret dit eget bibliotek hvor du kan tilføje dine favoritstationer"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:22
+msgid "Easily search and discover new radio stations"
+msgstr "Det er let at søge efter og opdage nye radiostationer"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:23
+msgid ""
+"Automatic recognition of songs, with the possibility to save them "
+"individually"
+msgstr ""
+"Automatisk genkendelse af sange med mulighed for at gemme dem enkeltvis"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:24
+msgid "Responsive application layout, compatible for small and large screens"
+msgstr "Programlayoutet tilpasser sig automatisk på både små og store skærme"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:25
+msgid "Play audio on supported network devices (e.g. Google Chromecasts)"
+msgstr ""
+"Afspil lyd på understøttede netværksenheder (f.eks. Google Chromecasts)"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:26
+msgid "Seamless integration into the GNOME desktop environment"
+msgstr "Perfekt integration i GNOME-skrivebordsmiljøet"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:12
+msgid "Gradio;Radio;Stream;Wave;"
+msgstr "Gradio;Radio;Stream;Strøm;Wave;Bølge;"
+
+#~ msgid "Detected songs will appear here."
+#~ msgstr "Registrerede sange vises her."
+
+#~ msgid "_How does this work?"
+#~ msgstr "_Hvordan virker det?"
+
+#~ msgid "Shortwave"
+#~ msgstr "Shortwave"
+
+#~ msgid "Error details"
+#~ msgstr "Detaljer om fejlen"
+
+#~ msgid "Connected with"
+#~ msgstr "Forbundet med"
+
+#~ msgid "This is a local private station."
+#~ msgstr "Dette er en lokal privatstation."
+
+#~ msgid ""
+#~ "This station is visible only to you. If you remove this station from your "
+#~ "library, you have to create it again."
+#~ msgstr ""
+#~ "Stationen er kun synlig for dig. Fjerner du stationen fra dit bibliotek, "
+#~ "er du nødt til at genskabe den."
+
+#~ msgid "_Cancel"
+#~ msgstr "_Annuller"
+
+#~ msgid "_Connect"
+#~ msgstr "_Opret forbindelse"
+
+#~ msgid "Devices which implement the Google Cast protocol are supported."
+#~ msgstr "Enheder som implementerer Google Cast-protokollen understøttes."
+
+#~ msgid "_Retry search"
+#~ msgstr "_Søg igen"
+
+#~ msgid "This station cannot be played because the stream is offline."
+#~ msgstr "Stationen kan ikke afspilles, da strømmen er offline."
+
+#~ msgid "URL is not valid."
+#~ msgstr "URL'en er ikke gyldig."
+
+#~ msgid "An invalid station was removed from the library."
+#~ msgstr "En ugyldig station blev fjernet fra biblioteket."
+
+#~ msgid "Homepage"
+#~ msgstr "Hjemmeside"
+
+#~ msgid "{} Vote"
+#~ msgid_plural "{} Votes"
+#~ msgstr[0] "{} stemme"
+#~ msgstr[1] "{} stemmer"
+
+#~ msgid "{} · {} Vote"
+#~ msgid_plural "{} · {} Votes"
+#~ msgstr[0] "{} · {} stemme"
+#~ msgstr[1] "{} · {} stemmer"

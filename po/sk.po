@@ -1,0 +1,417 @@
+# Slovak translation for shortwave.
+# Copyright © 2020 the shortwave authors.
+# This file is distributed under the same license as the shortwave package.
+# Olivia Rihova <olivkamelon at gmail dot com>, 2020.
+# Dušan Kazik <prescott66@gmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shortwave\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
+"POT-Creation-Date: 2020-08-02 15:56+0000\n"
+"PO-Revision-Date: 2020-09-23 11:23+0200\n"
+"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
+"Language-Team: Slovak <community-poland@mozilla.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: data/gtk/station_dialog.ui:10
+msgid "Station details"
+msgstr "Podrobnosti o stanici"
+
+#: data/gtk/station_dialog.ui:172 data/gtk/menu/app_menu.ui:169
+msgid "Language"
+msgstr "Jazyk"
+
+#: data/gtk/station_dialog.ui:205 data/gtk/storefront.ui:175
+msgid "Tags"
+msgstr "Štítky"
+
+#: data/gtk/station_dialog.ui:220
+msgid "Codec"
+msgstr "Kodek"
+
+#: data/gtk/station_dialog.ui:235
+msgid "Homepage"
+msgstr "Domovská stránka"
+
+#: data/gtk/discover.ui:54
+msgid "Most voted stations"
+msgstr "Stanice s najvyšším počtom hlasov"
+
+#: data/gtk/discover.ui:88
+msgid "Trending"
+msgstr "Čoraz populárnejšie"
+
+#: data/gtk/discover.ui:122
+msgid "Other users are listening to…"
+msgstr "Ostatní používatelia počúvajú…"
+
+# tooltip
+#: data/gtk/song_row.ui:18
+msgid "Save recorded song"
+msgstr "Uloží nahranú skladbu"
+
+#: data/gtk/streaming_dialog.ui:75 data/gtk/menu/player_menu.ui:33
+msgid "Stream to a device"
+msgstr "Streamovať do zariadenia"
+
+#: data/gtk/streaming_dialog.ui:154
+msgid "Devices which implement the Google Cast protocol are supported."
+msgstr "Podporované sú zariadenia, ktoré implementujú protokol Google Cast."
+
+#: data/gtk/streaming_dialog.ui:209
+msgid "No devices found"
+msgstr "Nenájdené žiadne zariadenia"
+
+#: data/gtk/streaming_dialog.ui:224
+msgid "Retry search"
+msgstr "Vyhľadať znovu"
+
+#: data/gtk/streaming_dialog.ui:302 data/gtk/streaming_dialog.ui:353
+msgid "Searching for devices…"
+msgstr "Vyhľadávajú sa zariadenia…"
+
+#: data/gtk/notification.ui:142
+msgid "Error details"
+msgstr "Podrobnosti o chybe"
+
+#: data/gtk/sidebar_controller.ui:33
+msgid "An error occurred"
+msgstr "Vyskytla sa chyba"
+
+#: data/gtk/sidebar_controller.ui:96 data/gtk/mini_controller.ui:174
+#: data/gtk/toolbar_controller.ui:74
+msgid "No playback"
+msgstr "Nič sa neprehráva"
+
+#: data/gtk/menu/app_menu.ui:17 data/gtk/menu/app_menu.ui:136
+msgid "Sorting"
+msgstr "Usporiadanie"
+
+#: data/gtk/menu/app_menu.ui:43
+msgid "Open radio-browser.info <sup>↗</sup>"
+msgstr "Otvoriť stránku radio-browser.info <sup>↗</sup>"
+
+#: data/gtk/menu/app_menu.ui:58
+msgid "Create new station"
+msgstr "Vytvoriť novú stanicu"
+
+#: data/gtk/menu/app_menu.ui:83
+msgid "Preferences"
+msgstr "Predvoľby"
+
+#: data/gtk/menu/app_menu.ui:97
+msgid "Keyboard Shortcuts"
+msgstr "Klávesové skratky"
+
+#: data/gtk/menu/app_menu.ui:111
+msgid "About Shortwave"
+msgstr "O aplikácii Shortwave"
+
+#: data/gtk/menu/app_menu.ui:154
+msgid "Name"
+msgstr "Názov"
+
+#: data/gtk/menu/app_menu.ui:184
+msgid "Country"
+msgstr "Krajina"
+
+#: data/gtk/menu/app_menu.ui:199
+msgid "State"
+msgstr "Štát"
+
+#: data/gtk/menu/app_menu.ui:214
+msgid "Votes"
+msgstr "Hlasy"
+
+#: data/gtk/menu/app_menu.ui:240
+msgid "Ascending"
+msgstr "Vzostupne"
+
+#: data/gtk/menu/app_menu.ui:255
+msgid "Descending"
+msgstr "Zostupne"
+
+#: data/gtk/menu/player_menu.ui:19
+msgid "Show station details"
+msgstr "Zobraziť podrobnosti o stanici"
+
+#: data/gtk/menu/player_menu.ui:58
+msgid "Enable mini player"
+msgstr "Povoliť mini prehrávač"
+
+#: data/gtk/settings_window.ui:15
+msgid "Appearance"
+msgstr "Vzhľad"
+
+#: data/gtk/settings_window.ui:19
+msgid "Dark Mode"
+msgstr "Tmavý režim"
+
+#: data/gtk/settings_window.ui:20
+msgid "Whether the application should use a dark theme"
+msgstr "Určuje, či má aplikácia použiť tmavý motív"
+
+#: data/gtk/settings_window.ui:36
+msgid "Features"
+msgstr "Funkcie"
+
+#: data/gtk/settings_window.ui:40
+msgid "Notifications"
+msgstr "Oznámenia"
+
+#: data/gtk/settings_window.ui:41
+msgid "Show desktop notifications when a new song gets played"
+msgstr "Zobraziť oznámenia v pracovnom prostredí po prehratí novej skladby"
+
+#: data/gtk/shortcuts.ui:12
+msgid "General"
+msgstr "Všeobecné"
+
+#: data/gtk/shortcuts.ui:18
+msgctxt "shortcut window"
+msgid "Quit the application"
+msgstr "Ukončenie aplikácie"
+
+#: data/gtk/shortcuts.ui:25
+msgctxt "shortcut window"
+msgid "Search for stations"
+msgstr "Vyhľadávanie staníc"
+
+#: data/gtk/storefront.ui:21 data/gtk/library.ui:21
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:5
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:3
+msgid "Shortwave"
+msgstr "Shortwave"
+
+# placeholder
+#: data/gtk/storefront.ui:85
+msgid "Discover"
+msgstr "Objavujte"
+
+# placeholder
+#: data/gtk/storefront.ui:100
+msgid "Search"
+msgstr "Vyhľadajte"
+
+#: data/gtk/storefront.ui:125
+msgid "Locations"
+msgstr "Umiestnenia"
+
+#: data/gtk/storefront.ui:150
+msgid "Languages"
+msgstr "Jazyky"
+
+#: data/gtk/library.ui:121
+msgid "Receiving station data…"
+msgstr "Prijímajú sa údaje stanice…"
+
+#: data/gtk/library.ui:217
+msgid "Discover new stations"
+msgstr "Objavte nové stanice"
+
+#: data/gtk/song_listbox.ui:34
+msgid ""
+"Songs are automatically recognized using the stream metadata.\n"
+"\n"
+"If the station does not send any metadata, no songs can be recognized."
+msgstr ""
+"Skladby sú automaticky rozpoznávané pomocou metadát prúdu.\n"
+"\n"
+"Ak stanica neodosiela žiadne metadáta, skladby nebudú môcť byť rozpoznané."
+
+#: data/gtk/song_listbox.ui:93
+msgid "No songs detected"
+msgstr "Neboli zistené žiadne skladby"
+
+#: data/gtk/song_listbox.ui:110
+msgid "Detected songs will appear here."
+msgstr "Tu budú zobrazené zistené skladby."
+
+#: data/gtk/song_listbox.ui:131
+msgid "How does this work?"
+msgstr "Ako to funguje?"
+
+#: data/gtk/song_listbox.ui:197
+msgid "Saved songs are located in your Music folder."
+msgstr "Uložené skladby sú umiestnené vo vašom priečinku Hudba."
+
+#: data/gtk/song_listbox.ui:215
+msgid "Open"
+msgstr "Otvoriť"
+
+#: data/gtk/player.ui:135
+msgid "Connected with"
+msgstr "Pripojené k"
+
+#: src/audio/player.rs:167
+msgid "This station cannot be played because the stream is offline."
+msgstr "Táto stanica sa nedá prehrať, pretože prúd nie je pripojený."
+
+#: src/audio/player.rs:185
+msgid "Station cannot be streamed."
+msgstr "Stanica sa nedá streamovať."
+
+#: src/audio/player.rs:185
+msgid "URL is not valid."
+msgstr "URL nie je platná."
+
+#. Welcome text which gets displayed when the library is empty. "{}" is the application name.
+#: src/database/library.rs:60
+msgid "Welcome to {}"
+msgstr "Vitajte v aplikácii {}"
+
+#: src/database/library.rs:156
+msgid "No longer existing station removed from library."
+msgstr "Už neexistujúce stanice boli odstránené z knižnice."
+
+#: src/database/library.rs:160 src/discover/pages/discover.rs:127
+#: src/discover/pages/search.rs:95
+msgid "Station data could not be received."
+msgstr "Nepodarilo sa prijať údaje stanice."
+
+#: src/discover/pages/discover.rs:57
+msgid "Show statistics"
+msgstr "Zobrazenie štatistík"
+
+#: src/discover/pages/discover.rs:58
+msgid "Browse over 25,500 stations"
+msgstr "Prehliadajte viac ako 25 500 staníc"
+
+#: src/discover/pages/discover.rs:60
+msgid "Add new station"
+msgstr "Pridanie novej stanice"
+
+#: src/discover/pages/discover.rs:61
+msgid "Your favorite station is missing?"
+msgstr "Chýba vaša obľúbená stanica?"
+
+#: src/discover/pages/discover.rs:63
+msgid "Open website"
+msgstr "Otvorenie webovej stránky"
+
+#: src/discover/pages/discover.rs:64
+msgid "Powered by radio-browser.info"
+msgstr "Používa sa stránka radio-browser.info"
+
+#: src/ui/about_dialog.rs:32
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:6
+msgid "Listen to internet radio"
+msgstr "Počúvajte internetové rádiá"
+
+#: src/ui/about_dialog.rs:34
+msgid "translator-credits"
+msgstr ""
+"Olívia Říhová <olivkamelon@gmail.com>\n"
+"Dušan Kazik <prescott66@gmail.com>"
+
+#: src/utils.rs:110
+msgid "{} Vote"
+msgid_plural "{} Votes"
+msgstr[0] "{} hlasov"
+msgstr[1] "{} hlas"
+msgstr[2] "{} hlasy"
+
+#: src/utils.rs:112
+msgid "{} · {} Vote"
+msgid_plural "{} · {} Votes"
+msgstr[0] "{} · {} hlasov"
+msgstr[1] "{} · {} hlas"
+msgstr[2] "{} · {} hlasy"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:8
+msgid "Felix Häcker"
+msgstr "Felix Häcker"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:16
+msgid ""
+"Shortwave is an internet radio player that provides access to a station "
+"database with over 25,000 stations."
+msgstr ""
+"Shortwave je prehrávač internetových rádií, ktorý poskytuje prístup k "
+"databáze s viac ako 25 000 stanicami."
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:19
+msgid "Features:"
+msgstr "Funkcie:"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:21
+msgid "Create your own library where you can add your favorite stations"
+msgstr ""
+"Vytvorte svoju vlastnú knižnicu, do ktorej si môžete pridať obľúbené stanice"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:22
+msgid "Easily search and discover new radio stations"
+msgstr "Jednoducho vyhľadávajte a objavujte nové rádiové stanice"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:23
+msgid ""
+"Automatic recognition of songs, with the possibility to save them "
+"individually"
+msgstr ""
+"Automatické rozpoznávanie skladieb s možnosťou ich jednotlivého uloženia"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:24
+msgid "Responsive application layout, compatible for small and large screens"
+msgstr ""
+"Dobre reagujúce rozloženie aplikácie, kompatibilné s malými aj veľkými "
+"obrazovkami"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:25
+msgid "Play audio on supported network devices (e.g. Google Chromecasts)"
+msgstr ""
+"Prehrávajte zvuk na podporovaných sieťových zariadeniach (napr. Google "
+"Chromecast)"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:26
+msgid "Seamless integration into the GNOME desktop environment"
+msgstr "Hladká integrácia do pracovného prostredia GNOME"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:12
+msgid "Gradio;Radio;Stream;Wave;"
+msgstr "Gradio;Rádio,Stream;Streamovanie;Prúd;Wave;Frekvencie;"
+
+#~ msgid "Library"
+#~ msgstr "Knižnica"
+
+#~ msgid "Import from Gradio"
+#~ msgstr "Importovať z programu Gradio"
+
+#~ msgid "Enable dark mode"
+#~ msgstr "Povoliť tmavý motív"
+
+#~ msgid "Import stations from Gradio"
+#~ msgstr "Importovať stanice z programu Gradio"
+
+#~ msgid "Select database to import"
+#~ msgstr "Vyberte databázu, ktorá sa má importovať"
+
+#~ msgid "Import"
+#~ msgstr "Importovať"
+
+#~ msgid "Cancel"
+#~ msgstr "Zrušiť"
+
+#~ msgid "Converting data…"
+#~ msgstr "Konvertujem dáta…"
+
+#~ msgid "Importing {} station…"
+#~ msgid_plural "Importing {} stations…"
+#~ msgstr[0] "Importovaných {} staníc"
+#~ msgstr[1] "Importovaná {} stanica"
+#~ msgstr[2] "Importované {} stanice"
+
+#~ msgid "Imported {} station!"
+#~ msgid_plural "Imported {} stations!"
+#~ msgstr[0] "Importovaných {} staníc!"
+#~ msgstr[1] "Importovaná {} stanica!"
+#~ msgstr[2] "Importované {} stanice!"
+
+#~ msgid "Could not import library."
+#~ msgstr "Nepodarilo sa importovať knižnicu."

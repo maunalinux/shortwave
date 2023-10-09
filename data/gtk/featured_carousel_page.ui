@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkBox" id="page_box">
+    <property name="hexpand">True</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkBox">
+        <property name="valign">center</property>
+        <property name="vexpand">True</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">12</property>
+        <child>
+          <object class="GtkLabel" id="title_label">
+            <property name="halign">center</property>
+            <property name="margin_start">12</property>
+            <property name="margin_end">12</property>
+            <property name="label">title label</property>
+            <property name="justify">center</property>
+            <property name="wrap">True</property>
+            <style>
+              <class name="title-1"/>
+              <class name="carousel-banner-title"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="action_button">
+            <property name="visible">False</property>
+            <property name="halign">center</property>
+            <property name="child">
+              <object class="GtkBox">
+                <property name="spacing">6</property>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon_name">go-next-symbolic</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="action_label">
+                    <property name="label">action label</property>
+                  </object>
+                </child>
+              </object>
+            </property>
+            <style>
+              <class name="text-button"/>
+            </style>
+          </object>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="carousel-banner"/>
+    </style>
+  </object>
+</interface>

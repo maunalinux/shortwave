@@ -1,0 +1,429 @@
+# Occitan translation for shortwave.
+# Copyright (C) 2021 shortwave's COPYRIGHT HOLDER
+# This file is distributed under the same license as the shortwave package.
+# Quentin PAGÈS <pages_quentin@hotmail.com>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shortwave master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
+"POT-Creation-Date: 2021-08-14 15:19+0000\n"
+"PO-Revision-Date: 2021-08-28 19:09+0200\n"
+"Language-Team: Occitan <totenoc@gmail.com>\n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: Quentin PAGÈS\n"
+"X-Generator: Poedit 3.0\n"
+
+#: data/gtk/discover_page.ui:28
+msgid "Most voted stations"
+msgstr "Estacions mai votadas"
+
+#: data/gtk/discover_page.ui:43
+msgid "Trending"
+msgstr "Tendéncias"
+
+#: data/gtk/discover_page.ui:58
+msgid "Other users are listening to…"
+msgstr ""
+
+#: data/gtk/library_page.ui:63
+msgid "Receiving station data…"
+msgstr "Recepcion de las donadas de l’estacion…"
+
+#: data/gtk/library_page.ui:90
+msgid "_Discover new stations"
+msgstr ""
+
+#: data/gtk/mini_controller.ui:87
+msgid "SHORTWAVE INTERNET RADIO"
+msgstr "SHORTWAVE INTERNET RADIO"
+
+#: data/gtk/mini_controller.ui:109 data/gtk/sidebar_controller.ui:63
+#: data/gtk/toolbar_controller.ui:38
+msgid "No playback"
+msgstr ""
+
+#: data/gtk/notification.ui:58
+msgid "Error details"
+msgstr ""
+
+#: data/gtk/player.ui:44
+msgid "Connected with"
+msgstr "Conectat amb"
+
+#: data/gtk/settings_window.ui:8 data/gtk/help_overlay.ui:11
+msgid "General"
+msgstr "General"
+
+#: data/gtk/settings_window.ui:11
+msgid "Appearance"
+msgstr "Aparéncia"
+
+#: data/gtk/settings_window.ui:14
+msgid "_Dark Mode"
+msgstr "Mòde _escur"
+
+#: data/gtk/settings_window.ui:16
+msgid "Whether the application should use a dark theme"
+msgstr "Indica se l’aplicacion deu utilizar un tèma escur"
+
+#: data/gtk/settings_window.ui:29
+msgid "Features"
+msgstr "Foncionalitats"
+
+#: data/gtk/settings_window.ui:32
+msgid "_Notifications"
+msgstr "_Notificacions"
+
+#: data/gtk/settings_window.ui:34
+msgid "Show desktop notifications when a new song gets played"
+msgstr ""
+
+#: data/gtk/help_overlay.ui:15
+msgctxt "shortcut window"
+msgid "Open shortcut window"
+msgstr ""
+
+#: data/gtk/help_overlay.ui:21
+msgctxt "shortcut window"
+msgid "Open application menu"
+msgstr "Dobrir lo menú de l’aplicacion"
+
+#: data/gtk/help_overlay.ui:27
+msgctxt "shortcut window"
+msgid "Open preferences"
+msgstr "Dobrir las preferéncias"
+
+#: data/gtk/help_overlay.ui:33
+msgctxt "shortcut window"
+msgid "Quit the application"
+msgstr "Quitar l’aplicacion"
+
+#: data/gtk/help_overlay.ui:40
+msgid "Window"
+msgstr "Fenèstra"
+
+#: data/gtk/help_overlay.ui:44
+msgctxt "shortcut window"
+msgid "Open library view"
+msgstr "Dobrir la vista bibliotèca"
+
+#: data/gtk/help_overlay.ui:50
+msgctxt "shortcut window"
+msgid "Open discover view"
+msgstr ""
+
+#: data/gtk/help_overlay.ui:56
+msgctxt "shortcut window"
+msgid "Open search view"
+msgstr ""
+
+#: data/gtk/help_overlay.ui:62
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "Precedent"
+
+#: data/gtk/help_overlay.ui:69
+msgid "Playback"
+msgstr ""
+
+#: data/gtk/help_overlay.ui:73
+msgctxt "shortcut window"
+msgid "Toggle playback"
+msgstr ""
+
+#: data/gtk/sidebar_controller.ui:22
+msgid "An error occurred"
+msgstr "Una error s'es producha"
+
+#: data/gtk/sidebar_controller.ui:178
+msgid "_Show station details"
+msgstr ""
+
+#: data/gtk/sidebar_controller.ui:182
+msgid "Stream to a _device"
+msgstr ""
+
+#: data/gtk/sidebar_controller.ui:188
+msgid "_Enable mini player"
+msgstr ""
+
+#: data/gtk/song_listbox.ui:23
+msgid ""
+"Songs are automatically recognized using the stream metadata.\n"
+"\n"
+"If the station does not send any metadata, no songs can be recognized."
+msgstr ""
+
+#: data/gtk/song_listbox.ui:63
+msgid "No songs detected"
+msgstr "Cap de cançon pas detectada"
+
+#: data/gtk/song_listbox.ui:73
+msgid "Detected songs will appear here."
+msgstr ""
+
+#: data/gtk/song_listbox.ui:82
+msgid "_How does this work?"
+msgstr ""
+
+#: data/gtk/song_listbox.ui:124
+msgid "Saved songs are located in your Music folder."
+msgstr ""
+
+#: data/gtk/song_listbox.ui:137
+msgid "_Open"
+msgstr "_Dobrir"
+
+#: data/gtk/song_row.ui:14
+msgid "Save recorded song"
+msgstr ""
+
+#: data/gtk/station_dialog.ui:8
+msgid "Station details"
+msgstr ""
+
+#: data/gtk/station_dialog.ui:71
+msgid "Actions"
+msgstr "Accions"
+
+#: data/gtk/station_dialog.ui:74
+msgid "_Play this station"
+msgstr ""
+
+#: data/gtk/station_dialog.ui:82
+msgid "_Add to library"
+msgstr ""
+
+#: data/gtk/station_dialog.ui:91
+msgid "_Remove from Library"
+msgstr ""
+
+#: data/gtk/station_dialog.ui:102
+msgid "Information"
+msgstr ""
+
+#: data/gtk/station_dialog.ui:105
+msgid "Language"
+msgstr ""
+
+#: data/gtk/station_dialog.ui:119
+msgid "Tags"
+msgstr ""
+
+#: data/gtk/station_dialog.ui:133
+msgid "Codec"
+msgstr ""
+
+#: data/gtk/station_dialog.ui:147
+msgid "Homepage"
+msgstr ""
+
+#. This is a noun/label for the station stream url
+#: data/gtk/station_dialog.ui:172
+msgid "Stream"
+msgstr ""
+
+#: data/gtk/streaming_dialog.ui:47
+msgid "Stream to a device"
+msgstr ""
+
+#: data/gtk/streaming_dialog.ui:52
+msgid "_Cancel"
+msgstr ""
+
+#: data/gtk/streaming_dialog.ui:58
+msgid "_Connect"
+msgstr ""
+
+#: data/gtk/streaming_dialog.ui:90
+msgid "Devices which implement the Google Cast protocol are supported."
+msgstr ""
+
+#: data/gtk/streaming_dialog.ui:122
+msgid "No devices found"
+msgstr ""
+
+#: data/gtk/streaming_dialog.ui:132
+msgid "_Retry search"
+msgstr ""
+
+#: data/gtk/streaming_dialog.ui:180 data/gtk/streaming_dialog.ui:211
+msgid "Searching for devices…"
+msgstr ""
+
+#: data/gtk/window.ui:103 data/gtk/window.ui:173
+msgid "_Sorting"
+msgstr ""
+
+#: data/gtk/window.ui:106
+msgid "_Name"
+msgstr "_Nom"
+
+#: data/gtk/window.ui:111
+msgid "_Language"
+msgstr "_Lenga"
+
+#: data/gtk/window.ui:116
+msgid "_Country"
+msgstr "_País"
+
+#: data/gtk/window.ui:121
+msgid "S_tate"
+msgstr ""
+
+#: data/gtk/window.ui:126
+msgid "_Votes"
+msgstr "_Vòtes"
+
+#: data/gtk/window.ui:133
+msgid "_Ascending"
+msgstr "_Ascendent"
+
+#: data/gtk/window.ui:138
+msgid "_Descending"
+msgstr "_Descendent"
+
+#: data/gtk/window.ui:147 data/gtk/window.ui:179
+msgid "_Open radio-browser.info <sup>↗</sup>"
+msgstr ""
+
+#: data/gtk/window.ui:151 data/gtk/window.ui:183
+msgid "_Create new station <sup>↗</sup>"
+msgstr ""
+
+#: data/gtk/window.ui:157 data/gtk/window.ui:189
+msgid "_Preferences"
+msgstr "_Preferéncias"
+
+#: data/gtk/window.ui:161 data/gtk/window.ui:193
+msgid "_Keyboard Shortcuts"
+msgstr "Acorchis de _clavièr"
+
+#: data/gtk/window.ui:165 data/gtk/window.ui:197
+msgid "_About Shortwave"
+msgstr "_A prepaus de Shortwave"
+
+#: src/audio/player.rs:168
+msgid "This station cannot be played because the stream is offline."
+msgstr ""
+
+#: src/audio/player.rs:186
+msgid "Station cannot be streamed."
+msgstr ""
+
+#: src/audio/player.rs:186
+msgid "URL is not valid."
+msgstr "L'URL n'es pas valida."
+
+#: src/database/library.rs:271
+msgid "An invalid station was removed from the library."
+msgstr ""
+
+#: src/ui/about_dialog.rs:32
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:6
+msgid "Listen to internet radio"
+msgstr "Escotar la ràdio Internet"
+
+#: src/ui/about_dialog.rs:35
+msgid "translator-credits"
+msgstr ""
+
+#: src/ui/pages/discover_page.rs:90
+msgid "Show statistics"
+msgstr ""
+
+#: src/ui/pages/discover_page.rs:91
+msgid "Browse over 25,500 stations"
+msgstr ""
+
+#: src/ui/pages/discover_page.rs:93
+msgid "Add new station"
+msgstr "Apondre una estacion novèla"
+
+#: src/ui/pages/discover_page.rs:94
+msgid "Your favorite station is missing?"
+msgstr ""
+
+#: src/ui/pages/discover_page.rs:96
+msgid "Open website"
+msgstr "Dobrir lo site web"
+
+#: src/ui/pages/discover_page.rs:97
+msgid "Powered by radio-browser.info"
+msgstr ""
+
+#: src/ui/pages/discover_page.rs:136 src/ui/pages/search_page.rs:151
+msgid "Station data could not be received."
+msgstr ""
+
+#. Welcome text which gets displayed when the library is empty. "{}" is the application name.
+#: src/ui/pages/library_page.rs:117
+msgid "Welcome to {}"
+msgstr ""
+
+#: src/utils.rs:28
+msgid "{} Vote"
+msgid_plural "{} Votes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/utils.rs:30
+msgid "{} · {} Vote"
+msgid_plural "{} · {} Votes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:5
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:3
+msgid "Shortwave"
+msgstr "Shortwave"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:8
+msgid "Felix Häcker"
+msgstr ""
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:16
+msgid ""
+"Shortwave is an internet radio player that provides access to a station "
+"database with over 25,000 stations."
+msgstr ""
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:19
+msgid "Features:"
+msgstr "Foncionalitats :"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:21
+msgid "Create your own library where you can add your favorite stations"
+msgstr ""
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:22
+msgid "Easily search and discover new radio stations"
+msgstr ""
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:23
+msgid ""
+"Automatic recognition of songs, with the possibility to save them "
+"individually"
+msgstr ""
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:24
+msgid "Responsive application layout, compatible for small and large screens"
+msgstr ""
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:25
+msgid "Play audio on supported network devices (e.g. Google Chromecasts)"
+msgstr ""
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:26
+msgid "Seamless integration into the GNOME desktop environment"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:12
+msgid "Gradio;Radio;Stream;Wave;"
+msgstr "Gradio;Radio;Stream;Wave;ràdio;flux;onda;"

@@ -1,0 +1,361 @@
+# Chinese (Taiwan) translation for shortwave.
+# Copyright (C) 2020 shortwave's COPYRIGHT HOLDER
+# This file is distributed under the same license as the shortwave package.
+# zilliu <zilliu@disroot.org>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shortwave master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
+"POT-Creation-Date: 2020-11-05 12:58+0000\n"
+"PO-Revision-Date: 2020-11-13 04:21-0500\n"
+"Language-Team: Chinese (Taiwan) <chinese-l10n@googlegroups.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: Zijian Liu <zilliu@disroot.org>\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#: data/gtk/station_dialog.ui:10
+msgid "Station details"
+msgstr "電臺資訊"
+
+#: data/gtk/station_dialog.ui:172 data/gtk/menu/app_menu.ui:169
+msgid "Language"
+msgstr "語言"
+
+#: data/gtk/station_dialog.ui:205 data/gtk/storefront.ui:175
+msgid "Tags"
+msgstr "標籤"
+
+#: data/gtk/station_dialog.ui:220
+msgid "Codec"
+msgstr "編碼"
+
+#: data/gtk/station_dialog.ui:235
+msgid "Homepage"
+msgstr "主頁"
+
+#: data/gtk/discover.ui:54
+msgid "Most voted stations"
+msgstr "最高票數電臺"
+
+#: data/gtk/discover.ui:88
+msgid "Trending"
+msgstr "趨勢"
+
+#: data/gtk/discover.ui:122
+msgid "Other users are listening to…"
+msgstr "其他使用者在收聽…"
+
+#: data/gtk/song_row.ui:18
+msgid "Save recorded song"
+msgstr "儲存已錄歌曲"
+
+#: data/gtk/streaming_dialog.ui:75 data/gtk/menu/player_menu.ui:33
+msgid "Stream to a device"
+msgstr "串流到裝置"
+
+#: data/gtk/streaming_dialog.ui:154
+msgid "Devices which implement the Google Cast protocol are supported."
+msgstr "支援實作了 Google Case 協定的裝置。"
+
+#: data/gtk/streaming_dialog.ui:209
+msgid "No devices found"
+msgstr "没有找到裝置"
+
+#: data/gtk/streaming_dialog.ui:224
+msgid "Retry search"
+msgstr "重新搜尋"
+
+#: data/gtk/streaming_dialog.ui:302 data/gtk/streaming_dialog.ui:353
+msgid "Searching for devices…"
+msgstr "正在搜尋裝置…"
+
+#: data/gtk/notification.ui:142
+msgid "Error details"
+msgstr "錯誤詳情"
+
+#: data/gtk/sidebar_controller.ui:33
+msgid "An error occurred"
+msgstr "出現了錯誤"
+
+#: data/gtk/sidebar_controller.ui:96 data/gtk/mini_controller.ui:174
+#: data/gtk/toolbar_controller.ui:74
+msgid "No playback"
+msgstr "没有回放"
+
+#: data/gtk/menu/app_menu.ui:17 data/gtk/menu/app_menu.ui:136
+msgid "Sorting"
+msgstr "排序"
+
+#: data/gtk/menu/app_menu.ui:43
+msgid "Open radio-browser.info <sup>↗</sup>"
+msgstr "開啟 radio-browser.info <sup>↗</sup>"
+
+#: data/gtk/menu/app_menu.ui:58
+msgid "Create new station"
+msgstr "建立新電臺"
+
+#: data/gtk/menu/app_menu.ui:83
+msgid "Preferences"
+msgstr "偏好設定"
+
+#: data/gtk/menu/app_menu.ui:97
+msgid "Keyboard Shortcuts"
+msgstr "鍵盤快捷鍵"
+
+#: data/gtk/menu/app_menu.ui:111
+msgid "About Shortwave"
+msgstr "關於 Shortwave"
+
+#: data/gtk/menu/app_menu.ui:154
+msgid "Name"
+msgstr "名稱"
+
+#: data/gtk/menu/app_menu.ui:184
+msgid "Country"
+msgstr "國家"
+
+#: data/gtk/menu/app_menu.ui:199
+msgid "State"
+msgstr "狀態"
+
+#: data/gtk/menu/app_menu.ui:214
+msgid "Votes"
+msgstr "票數"
+
+#: data/gtk/menu/app_menu.ui:240
+msgid "Ascending"
+msgstr "升序"
+
+#: data/gtk/menu/app_menu.ui:255
+msgid "Descending"
+msgstr "降序"
+
+#: data/gtk/menu/player_menu.ui:19
+msgid "Show station details"
+msgstr "顯示電臺詳情"
+
+#: data/gtk/menu/player_menu.ui:58
+msgid "Enable mini player"
+msgstr "啟用迷你播放器"
+
+#: data/gtk/settings_window.ui:15
+msgid "Appearance"
+msgstr "外觀"
+
+#: data/gtk/settings_window.ui:19
+msgid "Dark Mode"
+msgstr "深色背景"
+
+#: data/gtk/settings_window.ui:20
+msgid "Whether the application should use a dark theme"
+msgstr "應用程式應否使用深色主題背景"
+
+#: data/gtk/settings_window.ui:36
+msgid "Features"
+msgstr "特性"
+
+#: data/gtk/settings_window.ui:40
+msgid "Notifications"
+msgstr "通知"
+
+#: data/gtk/settings_window.ui:41
+msgid "Show desktop notifications when a new song gets played"
+msgstr "播放新曲目時顯示桌面通知"
+
+#: data/gtk/shortcuts.ui:12
+msgid "General"
+msgstr "一般"
+
+#: data/gtk/shortcuts.ui:18
+msgctxt "shortcut window"
+msgid "Quit the application"
+msgstr "退出程式"
+
+#: data/gtk/shortcuts.ui:25
+msgctxt "shortcut window"
+msgid "Search for stations"
+msgstr "搜尋電臺"
+
+#: data/gtk/storefront.ui:21 data/gtk/library.ui:21
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:5
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:3
+msgid "Shortwave"
+msgstr "Shortwave"
+
+#: data/gtk/storefront.ui:85
+msgid "Discover"
+msgstr "探索"
+
+#: data/gtk/storefront.ui:100
+msgid "Search"
+msgstr "搜尋"
+
+#: data/gtk/storefront.ui:125
+msgid "Locations"
+msgstr "位置"
+
+#: data/gtk/storefront.ui:150
+msgid "Languages"
+msgstr "語言"
+
+#: data/gtk/library.ui:121
+msgid "Receiving station data…"
+msgstr "正在取得電臺資料…"
+
+#: data/gtk/library.ui:217
+msgid "Discover new stations"
+msgstr "探索新電臺"
+
+#: data/gtk/song_listbox.ui:34
+msgid ""
+"Songs are automatically recognized using the stream metadata.\n"
+"\n"
+"If the station does not send any metadata, no songs can be recognized."
+msgstr ""
+"串流時會根據元資料自動錄下歌曲。\n"
+"\n"
+"如果電臺没有傳送任何元資料，那麼程式便無法識別出歌曲。"
+
+#: data/gtk/song_listbox.ui:93
+msgid "No songs detected"
+msgstr "未探測到曲目"
+
+#: data/gtk/song_listbox.ui:110
+msgid "Detected songs will appear here."
+msgstr "探測到的曲目會在這裡顯示。"
+
+#: data/gtk/song_listbox.ui:131
+msgid "How does this work?"
+msgstr "工作原理是什麼？"
+
+#: data/gtk/song_listbox.ui:197
+msgid "Saved songs are located in your Music folder."
+msgstr "已儲存的歌曲被存了在您的音樂資料夾裡。"
+
+#: data/gtk/song_listbox.ui:215
+msgid "Open"
+msgstr "開啟"
+
+#: data/gtk/player.ui:135
+msgid "Connected with"
+msgstr "連線到"
+
+#: src/audio/player.rs:167
+msgid "This station cannot be played because the stream is offline."
+msgstr "無法播放這個電臺，因為串流傳送端離線。"
+
+#: src/audio/player.rs:185
+msgid "Station cannot be streamed."
+msgstr "無法串流這個電臺。"
+
+#: src/audio/player.rs:185
+msgid "URL is not valid."
+msgstr "URL 已失效。"
+
+#. Welcome text which gets displayed when the library is empty. "{}" is the application name.
+#: src/database/library.rs:60
+msgid "Welcome to {}"
+msgstr "歡迎使用 {}"
+
+#: src/database/library.rs:156
+msgid "No longer existing station removed from library."
+msgstr "失效的電臺已經被移除出電臺庫。"
+
+#: src/database/library.rs:160 src/discover/pages/discover.rs:127
+#: src/discover/pages/search.rs:95
+msgid "Station data could not be received."
+msgstr "無法取得電臺資料。"
+
+#: src/discover/pages/discover.rs:57
+msgid "Show statistics"
+msgstr "顯示統計資訊"
+
+#: src/discover/pages/discover.rs:58
+msgid "Browse over 25,500 stations"
+msgstr "瀏覽超過 25,500 個電臺"
+
+#: src/discover/pages/discover.rs:60
+msgid "Add new station"
+msgstr "新增電臺"
+
+#: src/discover/pages/discover.rs:61
+msgid "Your favorite station is missing?"
+msgstr "没有找到您喜愛的電臺？"
+
+#: src/discover/pages/discover.rs:63
+msgid "Open website"
+msgstr "開啟網站"
+
+#: src/discover/pages/discover.rs:64
+msgid "Powered by radio-browser.info"
+msgstr "由 radio-browser.info 驅動"
+
+#: src/ui/about_dialog.rs:32
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:6
+msgid "Listen to internet radio"
+msgstr "收聽網路電臺"
+
+#: src/ui/about_dialog.rs:34
+msgid "translator-credits"
+msgstr "Zijian Liu <zilliu@disroot.org>, 2020"
+
+#: src/utils.rs:110
+msgid "{} Vote"
+msgid_plural "{} Votes"
+msgstr[0] "{} 次投票"
+
+#: src/utils.rs:112
+msgid "{} · {} Vote"
+msgid_plural "{} · {} Votes"
+msgstr[0] "{} · {} 次投票"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:8
+msgid "Felix Häcker"
+msgstr "Felix Häcker"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:16
+msgid ""
+"Shortwave is an internet radio player that provides access to a station "
+"database with over 25,000 stations."
+msgstr ""
+"Shortwave 是一款網路收音機，其使用的電臺資料庫包含超過 25,000 個電臺。"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:19
+msgid "Features:"
+msgstr "特色："
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:21
+msgid "Create your own library where you can add your favorite stations"
+msgstr "將您喜愛的電臺加入您的專屬電臺庫"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:22
+msgid "Easily search and discover new radio stations"
+msgstr "輕而易舉便能搜尋與探索新電臺"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:23
+msgid ""
+"Automatic recognition of songs, with the possibility to save them "
+"individually"
+msgstr "自動錄下歌曲以便您在需要時能夠儲存"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:24
+msgid "Responsive application layout, compatible for small and large screens"
+msgstr "響應式程式佈局，不論熒幕尺寸大小皆可相容"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:25
+msgid "Play audio on supported network devices (e.g. Google Chromecasts)"
+msgstr "在支援的網路裝置上播放音訊（譬如 Google Chromecasts）"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:26
+msgid "Seamless integration into the GNOME desktop environment"
+msgstr "與 GNOME 桌面環境無縫結合"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:12
+msgid "Gradio;Radio;Stream;Wave;"
+msgstr "Gradio;Radio;Stream;Wave;電臺;收音機;廣播;"

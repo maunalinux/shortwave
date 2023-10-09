@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schemalist>
+  <schema path="@PATH_ID@/" id="@APP_ID@" gettext-domain="@PKGNAME@">
+    <key name="api-lookup-domain" type="s">
+      <default>"all.api.radio-browser.info"</default>
+    </key>
+    <key name="notifications" type="b">
+      <default>true</default>
+    </key>
+    <key name="window-width" type="i">
+      <default>950</default>
+    </key>
+    <key name="window-height" type="i">
+      <default>650</default>
+    </key>
+    <key name="window-previous-width" type="i">
+      <default>950</default>
+    </key>
+    <key name="window-previous-height" type="i">
+      <default>650</default>
+    </key>
+    <key name="view-sorting" type="s">
+      <default>"Name"</default>
+    </key>
+    <key name="view-order" type="s">
+      <default>"Ascending"</default>
+    </key>
+    <key name="recorder-save-count" type="i">
+      <default>7</default>
+    </key>
+    <key name="recorder-song-duration-threshold" type="i">
+      <default>30</default>
+    </key>
+    <key name="recorder-song-save-path" type="s">
+      <default>""</default>
+    </key>
+    <key name="playback-volume" type="d">
+      <default>1.0</default>
+    </key>
+  </schema>
+</schemalist>
+

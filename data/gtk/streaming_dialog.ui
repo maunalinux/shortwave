@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="SwStreamingDialog" parent="GtkDialog">
+    <property name="width_request">325</property>
+    <property name="height_request">400</property>
+    <property name="default_width">500</property>
+    <property name="default_height">400</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="hide_on_close">True</property>
+    <property name="title" translatable="yes">Stream to a Device</property>
+    <child>
+      <object class="GtkScrolledWindow">
+        <child>
+          <object class="GtkViewport">
+            <property name="vexpand">True</property>
+            <property name="scroll-to-focus">True</property>
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="margin_end">12</property>
+                <property name="margin_start">12</property>
+                <property name="margin_bottom">12</property>
+                <property name="margin_top">12</property>
+                <child>
+                  <object class="AdwPreferencesGroup">
+                    <property name="description" translatable="yes">Audio playback can be streamed to a network device (requires Google Cast support).</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkStack" id="row_stack">
+                    <property name="hhomogeneous">False</property>
+                    <property name="vhomogeneous">False</property>
+                    <property name="transition_type">crossfade</property>
+                    <child>
+                      <object class="GtkStackPage">
+                        <property name="name">no-devices</property>
+                        <property name="child">
+                          <object class="AdwPreferencesGroup">
+                            <child>
+                              <object class="AdwActionRow">
+                                <property name="title" translatable="yes">No Devices Found</property>
+                                <property name="icon_name">network-wireless-offline-symbolic</property>
+                                <child>
+                                  <object class="GtkButton">
+                                    <property name="icon_name">view-refresh-symbolic</property>
+                                    <property name="valign">center</property>
+                                    <property name="tooltip_text" translatable="yes">Search again</property>
+                                    <signal name="clicked" handler="search_again" swapped="true"/>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkStackPage">
+                        <property name="name">ready</property>
+                        <property name="child">
+                          <object class="AdwPreferencesGroup">
+                            <child>
+                              <object class="AdwActionRow">
+                                <property name="title" translatable="yes">Search Completed</property>
+                                <property name="icon_name">emblem-ok-symbolic</property>
+                                <child>
+                                  <object class="GtkButton">
+                                    <property name="icon_name">view-refresh-symbolic</property>
+                                    <property name="valign">center</property>
+                                    <property name="tooltip_text" translatable="yes">Search again</property>
+                                    <signal name="clicked" handler="search_again" swapped="true"/>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkStackPage">
+                        <property name="name">loading</property>
+                        <property name="child">
+                          <object class="AdwPreferencesGroup">
+                            <child>
+                              <object class="AdwActionRow">
+                                <property name="title" translatable="yes">Searching for Devices…</property>
+                                <child type="prefix">
+                                  <object class="GtkSpinner" id="spinner"/>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkListBox" id="devices_listbox">
+                    <property name="valign">start</property>
+                    <property name="margin_top">18</property>
+                    <style>
+                      <class name="content"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>
+

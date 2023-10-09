@@ -1,0 +1,488 @@
+# Romanian translation for shortwave.
+# Copyright (C) 2020 shortwave's COPYRIGHT HOLDER
+# This file is distributed under the same license as the shortwave package.
+# Daniel Șerbănescu <daniel@serbanescu.dk>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shortwave master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
+"POT-Creation-Date: 2021-04-10 09:03+0000\n"
+"PO-Revision-Date: 2021-05-05 14:07+0200\n"
+"Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
+"Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: data/gtk/discover_page.ui:28
+msgid "Most voted stations"
+msgstr "Cele mai votate stații"
+
+#: data/gtk/discover_page.ui:43
+msgid "Trending"
+msgstr "La modă"
+
+#: data/gtk/discover_page.ui:58
+msgid "Other users are listening to…"
+msgstr "Alți utilizatori ascultă la…"
+
+#: data/gtk/library_page.ui:63
+msgid "Receiving station data…"
+msgstr "Se primesc date despre stație…"
+
+#: data/gtk/library_page.ui:90
+msgid "_Discover new stations"
+msgstr "_Descoperă noi stații"
+
+#: data/gtk/mini_controller.ui:87
+msgid "SHORTWAVE INTERNET RADIO"
+msgstr "RADIO PE INTERNET SHORTWAVE"
+
+#: data/gtk/mini_controller.ui:109 data/gtk/sidebar_controller.ui:63
+#: data/gtk/toolbar_controller.ui:38
+msgid "No playback"
+msgstr "Fără redare"
+
+#: data/gtk/notification.ui:58
+msgid "Error details"
+msgstr "Detalii eroare"
+
+#: data/gtk/player.ui:44
+msgid "Connected with"
+msgstr "Conectat cu"
+
+#: data/gtk/settings_window.ui:8 data/gtk/help_overlay.ui:11
+msgid "General"
+msgstr "Generale"
+
+#: data/gtk/settings_window.ui:11
+msgid "Appearance"
+msgstr "Aparență"
+
+#: data/gtk/settings_window.ui:14
+msgid "_Dark Mode"
+msgstr "Mo_d întunecat"
+
+#: data/gtk/settings_window.ui:16
+msgid "Whether the application should use a dark theme"
+msgstr "Dacă aplicația ar trebui să utilizeze o temă întunecată"
+
+#: data/gtk/settings_window.ui:29
+msgid "Features"
+msgstr "Funcționalități"
+
+#: data/gtk/settings_window.ui:32
+msgid "_Notifications"
+msgstr "_Notificări"
+
+#: data/gtk/settings_window.ui:34
+msgid "Show desktop notifications when a new song gets played"
+msgstr "Arată înștiințările de pe desktop când se redă o melodie nouă"
+
+#: data/gtk/help_overlay.ui:15
+msgctxt "shortcut window"
+msgid "Open shortcut window"
+msgstr "Deschide fereastra cu scurtături"
+
+#: data/gtk/help_overlay.ui:21
+msgctxt "shortcut window"
+msgid "Open application menu"
+msgstr "Deschide meniul aplicației"
+
+#: data/gtk/help_overlay.ui:27
+msgctxt "shortcut window"
+msgid "Open preferences"
+msgstr "Deschide preferințele"
+
+#: data/gtk/help_overlay.ui:33
+msgctxt "shortcut window"
+msgid "Quit the application"
+msgstr "Ieși din aplicație"
+
+#: data/gtk/help_overlay.ui:40
+msgid "Window"
+msgstr "Fereastră"
+
+#: data/gtk/help_overlay.ui:44
+msgctxt "shortcut window"
+msgid "Open library view"
+msgstr "Deschide vizualizarea bibliotecă"
+
+#: data/gtk/help_overlay.ui:50
+msgctxt "shortcut window"
+msgid "Open discover view"
+msgstr "Deschide vizualizarea descoperire"
+
+#: data/gtk/help_overlay.ui:56
+msgctxt "shortcut window"
+msgid "Open search view"
+msgstr "Deschide vizualizarea căutare"
+
+#: data/gtk/help_overlay.ui:62
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "Înapoi"
+
+#: data/gtk/help_overlay.ui:69
+msgid "Playback"
+msgstr "Redare"
+
+#: data/gtk/help_overlay.ui:73
+msgctxt "shortcut window"
+msgid "Toggle playback"
+msgstr "Comută redarea"
+
+#: data/gtk/sidebar_controller.ui:22
+msgid "An error occurred"
+msgstr "A apărut o eroare"
+
+#: data/gtk/sidebar_controller.ui:178
+msgid "_Show station details"
+msgstr "_Arată detaliile stației"
+
+#: data/gtk/sidebar_controller.ui:182
+msgid "Stream to a _device"
+msgstr "Transmite către un _dispozitiv"
+
+#: data/gtk/sidebar_controller.ui:188
+msgid "_Enable mini player"
+msgstr "Activ_ează playerul mini"
+
+#: data/gtk/song_listbox.ui:23
+msgid ""
+"Songs are automatically recognized using the stream metadata.\n"
+"\n"
+"If the station does not send any metadata, no songs can be recognized."
+msgstr ""
+"Piesele sunt recunoscute automat folosind metadatele fluxului.\n"
+"\n"
+"Dacă stația nu trimite metadate, nicio piesă nu poate fi recunoscută."
+
+#: data/gtk/song_listbox.ui:63
+msgid "No songs detected"
+msgstr "Nicio piesă detectată"
+
+#: data/gtk/song_listbox.ui:73
+msgid "Detected songs will appear here."
+msgstr "Piesele detectate vor apărea aici."
+
+#: data/gtk/song_listbox.ui:82
+msgid "_How does this work?"
+msgstr "_Cum funcționează?"
+
+#: data/gtk/song_listbox.ui:124
+msgid "Saved songs are located in your Music folder."
+msgstr "Piesele salvate sunt localizate în dosarul Muzică."
+
+#: data/gtk/song_listbox.ui:137
+msgid "_Open"
+msgstr "_Deschide"
+
+#: data/gtk/song_row.ui:13
+msgid "Save recorded song"
+msgstr "Salvați melodia înregistrată"
+
+#: data/gtk/station_dialog.ui:8
+msgid "Station details"
+msgstr "Detaliile stației"
+
+#: data/gtk/station_dialog.ui:71
+msgid "Actions"
+msgstr "Acțiuni"
+
+#: data/gtk/station_dialog.ui:74
+msgid "_Play this station"
+msgstr "_Redă această stație"
+
+#: data/gtk/station_dialog.ui:82
+msgid "_Add to library"
+msgstr "_Adaugă la bibliotecă"
+
+#: data/gtk/station_dialog.ui:91
+msgid "_Remove from Library"
+msgstr "_Elimină din Bibliotecă"
+
+#: data/gtk/station_dialog.ui:102
+msgid "Information"
+msgstr "Informații"
+
+#: data/gtk/station_dialog.ui:105
+msgid "Language"
+msgstr "Limbă"
+
+#: data/gtk/station_dialog.ui:119
+msgid "Tags"
+msgstr "Etichete"
+
+#: data/gtk/station_dialog.ui:133
+msgid "Codec"
+msgstr "Codec"
+
+#: data/gtk/station_dialog.ui:147
+msgid "Homepage"
+msgstr "Pagină principală"
+
+#. This is a noun/label for the station stream url
+#: data/gtk/station_dialog.ui:172
+msgid "Stream"
+msgstr "Transmite"
+
+#: data/gtk/streaming_dialog.ui:47
+msgid "Stream to a device"
+msgstr "Transmiteți către un dispozitiv"
+
+#: data/gtk/streaming_dialog.ui:52
+msgid "_Cancel"
+msgstr "_Anulează"
+
+#: data/gtk/streaming_dialog.ui:58
+msgid "_Connect"
+msgstr "_Conectează"
+
+#: data/gtk/streaming_dialog.ui:90
+msgid "Devices which implement the Google Cast protocol are supported."
+msgstr "Dispozitive care implementează protocolul Google Cast sunt suportate."
+
+#: data/gtk/streaming_dialog.ui:122
+msgid "No devices found"
+msgstr "Niciun dispozitiv găsit"
+
+#: data/gtk/streaming_dialog.ui:132
+msgid "_Retry search"
+msgstr "_Reîncercă căutarea"
+
+#: data/gtk/streaming_dialog.ui:180 data/gtk/streaming_dialog.ui:211
+msgid "Searching for devices…"
+msgstr "Se caută după dispozitive…"
+
+#: data/gtk/window.ui:103 data/gtk/window.ui:173
+msgid "_Sorting"
+msgstr "_Sortare"
+
+#: data/gtk/window.ui:106
+msgid "_Name"
+msgstr "_Nume"
+
+#: data/gtk/window.ui:111
+msgid "_Language"
+msgstr "_Limbă"
+
+#: data/gtk/window.ui:116
+msgid "_Country"
+msgstr "Ța_ră"
+
+#: data/gtk/window.ui:121
+msgid "S_tate"
+msgstr "S_tat"
+
+#: data/gtk/window.ui:126
+msgid "_Votes"
+msgstr "_Voturi"
+
+#: data/gtk/window.ui:133
+msgid "_Ascending"
+msgstr "_Ascendent"
+
+#: data/gtk/window.ui:138
+msgid "_Descending"
+msgstr "_Descendent"
+
+#: data/gtk/window.ui:147 data/gtk/window.ui:179
+msgid "_Open radio-browser.info <sup>↗</sup>"
+msgstr "_Deschide radio-browser.info <sup>↗</sup>"
+
+#: data/gtk/window.ui:151 data/gtk/window.ui:183
+msgid "_Create new station <sup>↗</sup>"
+msgstr "_Creează o nouă stație <sup>↗</sup>"
+
+#: data/gtk/window.ui:157 data/gtk/window.ui:189
+msgid "_Preferences"
+msgstr "_Preferințe"
+
+#: data/gtk/window.ui:161 data/gtk/window.ui:193
+msgid "_Keyboard Shortcuts"
+msgstr "Scurtături de _tastatură"
+
+#: data/gtk/window.ui:165 data/gtk/window.ui:197
+msgid "_About Shortwave"
+msgstr "_Despre Shortwave"
+
+#: src/audio/player.rs:167
+msgid "This station cannot be played because the stream is offline."
+msgstr "Această stație nu poate fi redată pentru că fluxul este offline."
+
+#: src/audio/player.rs:185
+msgid "Station cannot be streamed."
+msgstr "Stația nu poate fi redată."
+
+#: src/audio/player.rs:185
+msgid "URL is not valid."
+msgstr "URL-ul nu este valid."
+
+#: src/database/library.rs:211
+msgid "No longer existing station removed from library."
+msgstr "Stație care nu mai există a fost eliminată din bibliotecă."
+
+#: src/database/library.rs:215 src/ui/pages/discover_page.rs:140
+#: src/ui/pages/search_page.rs:145
+msgid "Station data could not be received."
+msgstr "Datele stației nu pot fi primite."
+
+#: src/ui/about_dialog.rs:32
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:6
+msgid "Listen to internet radio"
+msgstr "Ascultați la stația de radio prin internet"
+
+#: src/ui/about_dialog.rs:35
+msgid "translator-credits"
+msgstr ""
+"Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, "
+"2020-2021"
+
+#: src/ui/pages/discover_page.rs:94
+msgid "Show statistics"
+msgstr "Arată statistici"
+
+#: src/ui/pages/discover_page.rs:95
+msgid "Browse over 25,500 stations"
+msgstr "Navighează peste 25,500 stații"
+
+#: src/ui/pages/discover_page.rs:97
+msgid "Add new station"
+msgstr "Adaugă o nouă stație"
+
+#: src/ui/pages/discover_page.rs:98
+msgid "Your favorite station is missing?"
+msgstr "Lipsește stația dvs. favorită?"
+
+#: src/ui/pages/discover_page.rs:100
+msgid "Open website"
+msgstr "Deschide sit web"
+
+#: src/ui/pages/discover_page.rs:101
+msgid "Powered by radio-browser.info"
+msgstr "Propulsat de radio-browser.info"
+
+#. Welcome text which gets displayed when the library is empty. "{}" is the application name.
+#: src/ui/pages/library_page.rs:117
+msgid "Welcome to {}"
+msgstr "Bine ați venit la {}"
+
+#: src/utils.rs:28
+msgid "{} Vote"
+msgid_plural "{} Votes"
+msgstr[0] "{} vot"
+msgstr[1] "{} voturi"
+msgstr[2] "{} de voturi"
+
+#: src/utils.rs:30
+msgid "{} · {} Vote"
+msgid_plural "{} · {} Votes"
+msgstr[0] "{} · {} vot"
+msgstr[1] "{} · {} voturi"
+msgstr[2] "{} · {} de voturi"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:5
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:3
+msgid "Shortwave"
+msgstr "Shortwave"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:8
+msgid "Felix Häcker"
+msgstr "Felix Häcker"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:16
+msgid ""
+"Shortwave is an internet radio player that provides access to a station "
+"database with over 25,000 stations."
+msgstr ""
+"Shortwave este un player de radio prin internet ce oferă acces la o bază de "
+"date cu peste 25.000 de stații radio."
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:19
+msgid "Features:"
+msgstr "Funcționalități:"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:21
+msgid "Create your own library where you can add your favorite stations"
+msgstr "Creați-vă propria bibliotecă unde puteți adăuga stațiile favorite"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:22
+msgid "Easily search and discover new radio stations"
+msgstr "Căutați și descoperiți stații noi radio cu ușurință"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:23
+msgid ""
+"Automatic recognition of songs, with the possibility to save them "
+"individually"
+msgstr ""
+"Recunoașterea automată a pieselor, cu posibilitatea de a le salva individual"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:24
+msgid "Responsive application layout, compatible for small and large screens"
+msgstr "Aspect de aplicație responsiv, compatibil cu ecrane mici și mari"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:25
+msgid "Play audio on supported network devices (e.g. Google Chromecasts)"
+msgstr ""
+"Redă audio pe dispozitive de rețea suportate (de ex. Google Chromecasturi)"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:26
+msgid "Seamless integration into the GNOME desktop environment"
+msgstr "Integrare unitară în mediul desktop GNOME"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:12
+msgid "Gradio;Radio;Stream;Wave;"
+msgstr "Gradio;Radio;Stream;Wave;"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Search for stations"
+#~ msgstr "Caută după stații"
+
+#~ msgid "Discover"
+#~ msgstr "Descoperă"
+
+#~ msgid "Search"
+#~ msgstr "Caută"
+
+#~ msgid "Languages"
+#~ msgstr "Limbi"
+
+#~ msgid "Enable dark mode"
+#~ msgstr "Activează modul întunecat"
+
+#~ msgid "Library"
+#~ msgstr "Bibliotecă"
+
+#~ msgid "Import from Gradio"
+#~ msgstr "Importă din Gradio"
+
+#~ msgid "Import stations from Gradio"
+#~ msgstr "Importă stații de la Gradio"
+
+#~ msgid "Select database to import"
+#~ msgstr "Alegeți o bază de date de importat"
+
+#~ msgid "Import"
+#~ msgstr "Importă"
+
+#~ msgid "Converting data…"
+#~ msgstr "Se convertesc datele…"
+
+#~ msgid "Importing {} station…"
+#~ msgid_plural "Importing {} stations…"
+#~ msgstr[0] "Se importă {} stație…"
+#~ msgstr[1] "Se importă {} stații…"
+#~ msgstr[2] "Se importă {} de stații…"
+
+#~ msgid "Imported {} station!"
+#~ msgid_plural "Imported {} stations!"
+#~ msgstr[0] "S-a importat {} post!"
+#~ msgstr[1] "S-a importat {} posturi!"
+#~ msgstr[2] "S-a importat {} de posturi!"

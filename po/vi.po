@@ -1,0 +1,613 @@
+# Bản dịch tiếng Việt dành cho gói phần mềm shortwave.
+# This file is distributed under the same license as the shortwave package.
+# Trần Ngọc Quân <vnwildman@gmail.com>, 2021-2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shortwave main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
+"POT-Creation-Date: 2023-01-25 21:57+0000\n"
+"PO-Revision-Date: 2023-02-03 13:23+0700\n"
+"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
+"Language-Team: Vietnamese <gnome-vi-list@gnome.org>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Gtranslator 42.0\n"
+
+#: data/gtk/create_station_dialog.ui:8
+msgid "Create new station"
+msgstr "Tạo đài mới"
+
+#: data/gtk/create_station_dialog.ui:32
+msgid "Create New Station"
+msgstr "Tạo đài mới"
+
+#: data/gtk/create_station_dialog.ui:33
+msgid ""
+"You can decide if you want the new station to be visible for all users "
+"worldwide or if you want to create a local station."
+msgstr ""
+"Bạn có thể quyết định xem bạn muốn đài mới được hiển thị cho tất cả người "
+"dùng trên toàn thế giới hay bạn chỉ muốn tạo một đài cục bộ."
+
+#: data/gtk/create_station_dialog.ui:43
+msgid "Create _Public Station"
+msgstr "Tạo đài _công cộng mới"
+
+#: data/gtk/create_station_dialog.ui:54
+msgid "Create _Local Station"
+msgstr "Tạo đài Địa _phương"
+
+#: data/gtk/create_station_dialog.ui:80
+msgid "Create Local Station"
+msgstr "Tạo đài Địa phương"
+
+#: data/gtk/create_station_dialog.ui:113
+msgid "Change station image"
+msgstr "Đổi ảnh đài"
+
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
+msgid "Name"
+msgstr "Tên"
+
+#: data/gtk/create_station_dialog.ui:145
+msgid "Stream URL"
+msgstr "URL luồng dữ liệu"
+
+#: data/gtk/create_station_dialog.ui:153
+msgid "Create Station"
+msgstr "Tạo đài"
+
+#: data/gtk/discover_page.ui:28
+msgid "Most Voted Stations"
+msgstr "Đài được bầu chọn nhiều nhất"
+
+#: data/gtk/discover_page.ui:43
+msgid "Trending"
+msgstr "Xu hướng"
+
+#: data/gtk/discover_page.ui:58
+msgid "Other Users Are Listening To…"
+msgstr "Người dùng khác đang đăng nghe…"
+
+#: data/gtk/library_page.ui:60
+msgid "Receiving Station Data…"
+msgstr "Đang nhận dữ liệu đài…"
+
+#: data/gtk/library_page.ui:87
+msgid "_Discover New Stations"
+msgstr "_Khám phá Đài mới"
+
+#: data/gtk/mini_controller.ui:87
+msgid "SHORTWAVE INTERNET RADIO"
+msgstr "ĐÀI THU THANH INTERNET SÓNG NGẮN"
+
+#: data/gtk/mini_controller.ui:109 data/gtk/sidebar_controller.ui:63
+#: data/gtk/toolbar_controller.ui:38
+msgid "No Playback"
+msgstr "Không có bộ Phát"
+
+#: data/gtk/settings_window.ui:7 data/gtk/help_overlay.ui:11
+msgid "General"
+msgstr "Chung"
+
+#: data/gtk/settings_window.ui:10
+msgid "Appearance"
+msgstr "Diện mạo"
+
+#: data/gtk/settings_window.ui:14
+msgid "_Dark Mode"
+msgstr "Chế độ _tối"
+
+#: data/gtk/settings_window.ui:16
+msgid "Whether the application should use a dark theme"
+msgstr "Liệu ứng dụng có nên sử dụng giao diện tối hay không"
+
+#: data/gtk/settings_window.ui:29
+msgid "Features"
+msgstr "Các tính năng"
+
+#: data/gtk/settings_window.ui:32
+msgid "_Notifications"
+msgstr "Thông _báo"
+
+#: data/gtk/settings_window.ui:34
+msgid "Show desktop notifications when a new song gets played"
+msgstr "Hiển thị thông báo trên máy tính khi phát bài hát mới"
+
+#: data/gtk/help_overlay.ui:14
+msgctxt "shortcut window"
+msgid "Open shortcut window"
+msgstr "Mở cửa sổ phím tắt"
+
+#: data/gtk/help_overlay.ui:21
+msgctxt "shortcut window"
+msgid "Open application menu"
+msgstr "Mở trình đơn ứng dụng"
+
+#: data/gtk/help_overlay.ui:26
+msgctxt "shortcut window"
+msgid "Open preferences"
+msgstr "Mở tùy thích"
+
+#: data/gtk/help_overlay.ui:32
+msgctxt "shortcut window"
+msgid "Close the window"
+msgstr "Đóng cửa sổ"
+
+#: data/gtk/help_overlay.ui:38
+msgctxt "shortcut window"
+msgid "Quit the application"
+msgstr "Thoát khỏi ứng dụng"
+
+#: data/gtk/help_overlay.ui:46
+msgid "Window"
+msgstr "Cửa sổ"
+
+#: data/gtk/help_overlay.ui:49
+msgctxt "shortcut window"
+msgid "Open library view"
+msgstr "Mở phần xem thư viện"
+
+#: data/gtk/help_overlay.ui:55
+msgctxt "shortcut window"
+msgid "Open discover view"
+msgstr "Mở phần xem khám phá"
+
+#: data/gtk/help_overlay.ui:61
+msgctxt "shortcut window"
+msgid "Open search view"
+msgstr "Mở phần xem tìm kiếm"
+
+#: data/gtk/help_overlay.ui:67
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "Trở lại"
+
+#: data/gtk/help_overlay.ui:73
+msgctxt "shortcut window"
+msgid "Refresh station data"
+msgstr "Làm mới dữ liệu đài"
+
+#: data/gtk/help_overlay.ui:81
+msgid "Playback"
+msgstr "Phát lại"
+
+#: data/gtk/help_overlay.ui:84
+msgctxt "shortcut window"
+msgid "Toggle playback"
+msgstr "Bật/tắt phát lại"
+
+#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
+#: src/ui/pages/search_page.rs:196
+msgid "Votes"
+msgstr "Bầu chọn"
+
+#: data/gtk/search_page.ui:36
+msgid "Change the sorting of the search results"
+msgstr "Thay đổi thứ tự kết quả tìm kiếm"
+
+#: data/gtk/search_page.ui:63
+msgid "No Results"
+msgstr "Không tìm thấy kết quả nào"
+
+#: data/gtk/search_page.ui:64
+msgid "Try using a different search term"
+msgstr "Thử tìm lại với mô tả khác"
+
+#: data/gtk/search_page.ui:148 data/gtk/window.ui:170
+msgid "_Name"
+msgstr "Tê_n"
+
+#: data/gtk/search_page.ui:153 data/gtk/window.ui:175
+msgid "_Language"
+msgstr "_Ngôn ngữ"
+
+#: data/gtk/search_page.ui:158 data/gtk/window.ui:180
+msgid "_Country"
+msgstr "Nướ_c"
+
+#: data/gtk/search_page.ui:163 data/gtk/window.ui:185
+msgid "S_tate"
+msgstr "_Bang"
+
+#: data/gtk/search_page.ui:168 data/gtk/window.ui:190
+msgid "_Votes"
+msgstr "_Bầu"
+
+#: data/gtk/search_page.ui:173 data/gtk/window.ui:195
+msgid "_Bitrate"
+msgstr "Tốc độ _bít"
+
+#: data/gtk/search_page.ui:180 data/gtk/window.ui:202
+msgid "_Ascending"
+msgstr "_Tăng dần"
+
+#: data/gtk/search_page.ui:185 data/gtk/window.ui:207
+msgid "_Descending"
+msgstr "_Giảm dần"
+
+#: data/gtk/sidebar_controller.ui:22
+msgid "An error occurred"
+msgstr "Xảy ra lỗi"
+
+#: data/gtk/sidebar_controller.ui:187
+msgid "_Show Station Details"
+msgstr "_Hiển thị chi tiết đài"
+
+#: data/gtk/sidebar_controller.ui:191
+msgid "Stream to a _Device"
+msgstr "Phát luồng dữ liệu đến thiết _bị"
+
+#: data/gtk/song_listbox.ui:28
+msgid "No Songs Detected"
+msgstr "Không dò thấy bài hát nào"
+
+#: data/gtk/song_listbox.ui:39
+msgid ""
+"Songs are automatically recognized using the stream metadata.\n"
+"\n"
+"If the station does not send any metadata, no songs can be recognized."
+msgstr ""
+"Bài hát được tự động nhận dạng bằng siêu dữ liệu luồng dữ liệu.\n"
+"\n"
+"Nếu đài không gửi bất kỳ siêu dữ liệu nào, thì không thể nhận dạng bài hát."
+
+#: data/gtk/song_listbox.ui:75
+msgid "Saved songs are located in your Music folder."
+msgstr "Mở các bài hát đã lưu trong thư mục Nhạc của bạn."
+
+#: data/gtk/song_listbox.ui:85
+msgid "_Open"
+msgstr "_Mở"
+
+#: data/gtk/song_row.ui:16
+msgid "Save recorded song"
+msgstr "Lưu bài hát đã ghi"
+
+#: data/gtk/station_dialog.ui:8
+msgid "Station details"
+msgstr "Chi tiết về đài"
+
+#: data/gtk/station_dialog.ui:87
+msgid "_Play Station"
+msgstr "_Phát đài"
+
+#: data/gtk/station_dialog.ui:101
+msgid "_Add to Library"
+msgstr "Thê_m vào thư viện"
+
+#: data/gtk/station_dialog.ui:116
+msgid "_Remove From Library"
+msgstr "_Loại khỏi thư viện"
+
+#: data/gtk/station_dialog.ui:133
+msgid "Local Station"
+msgstr "Đài Địa phương"
+
+#: data/gtk/station_dialog.ui:134
+msgid ""
+"This station exists only in your library, and is not part of the public "
+"online station database."
+msgstr ""
+"Đài này chỉ tồn tại trong thư viện của bạn và không phải là một phần của cơ "
+"sở dữ liệu đài trực tuyến công khai."
+
+#: data/gtk/station_dialog.ui:149
+msgid "Orphaned Station"
+msgstr "Đài mồ côi"
+
+#: data/gtk/station_dialog.ui:150
+msgid ""
+"The information could not be updated, probably this station was removed from "
+"the public online station database."
+msgstr ""
+"Thông tin không thể cập nhật, có lẽ đài này đã bị xóa khỏi cơ sở dữ liệu đài "
+"trực tuyến công cộng."
+
+#: data/gtk/station_dialog.ui:162
+msgid "Information"
+msgstr "Thông tin"
+
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#: data/gtk/station_dialog.ui:180
+msgid "Tags"
+msgstr "Thẻ"
+
+#: data/gtk/station_dialog.ui:216
+msgid "Location"
+msgstr "Vị trí"
+
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
+msgid "Country"
+msgstr "Quốc gia"
+
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
+msgid "State"
+msgstr "Tỉnh"
+
+#: data/gtk/station_dialog.ui:285
+msgid "Audio"
+msgstr "Âm thanh"
+
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
+msgid "Bitrate"
+msgstr "Tốc độ bít"
+
+#: data/gtk/station_dialog.ui:304
+msgid "Codec"
+msgstr "Mã hóa"
+
+#. This is a noun/label for the station stream url
+#: data/gtk/station_dialog.ui:319
+msgid "Stream"
+msgstr "Luồng dữ liệu"
+
+#: data/gtk/streaming_dialog.ui:10
+msgid "Stream to a Device"
+msgstr "Phát luồng dữ liệu đến thiết bị"
+
+#: data/gtk/streaming_dialog.ui:26
+msgid ""
+"Audio playback can be streamed to a network device (requires Google Cast "
+"support)."
+msgstr ""
+"Bộ phát lại âm thanh có thể được phát luồng dữ liệu đến thiết bị mạng (yêu "
+"cầu hỗ trợ Google Cast)."
+
+#: data/gtk/streaming_dialog.ui:41
+msgid "No Devices Found"
+msgstr "Không tìm thấy thiết bị nào"
+
+#: data/gtk/streaming_dialog.ui:47 data/gtk/streaming_dialog.ui:70
+msgid "Search again"
+msgstr "Tìm lại lần nữa"
+
+#: data/gtk/streaming_dialog.ui:64
+msgid "Search Completed"
+msgstr "Đã tìm kiếm xong"
+
+#: data/gtk/streaming_dialog.ui:87
+msgid "Searching for Devices…"
+msgstr "Đang tìm thiết bị…"
+
+#: data/gtk/window.ui:27
+msgid "Add Stations"
+msgstr "Thêm đài mới"
+
+#: data/gtk/window.ui:34
+msgid "Go Back"
+msgstr "Quay lại"
+
+#: data/gtk/window.ui:41
+msgid "Open Application Menu"
+msgstr "Mở trình đơn ứng dụng"
+
+#: data/gtk/window.ui:50
+msgid "Open Search"
+msgstr "Mở phần tìm kiếm"
+
+#: data/gtk/window.ui:74
+msgid "Unable to connect to radio-browser.info"
+msgstr "Không thể kết nối tới radio-browser.info"
+
+#: data/gtk/window.ui:84
+msgid ""
+"Access to the public online station database is not available. Ensure that "
+"you are connected to the internet."
+msgstr ""
+"Không có quyền truy cập vào cơ sở dữ liệu đài trực tuyến công cộng. Hãy đảm "
+"bảo rằng bạn được kết nối với internet."
+
+#: data/gtk/window.ui:93
+msgid "Try again"
+msgstr "Thử lại"
+
+#: data/gtk/window.ui:159 data/gtk/window.ui:248
+msgid "_Enable Mini Player"
+msgstr "_Bật bộ phát nhỏ"
+
+#: data/gtk/window.ui:163 data/gtk/window.ui:244
+msgid "_Refresh Station Data"
+msgstr "_Làm mới dữ liệu đài"
+
+#: data/gtk/window.ui:167
+msgid "_Sorting"
+msgstr "_Sắp xếp"
+
+#: data/gtk/window.ui:216 data/gtk/window.ui:254
+msgid "_Open radio-browser.info <sup>↗</sup>"
+msgstr "_Mở radio-browser.info <sup>↗</sup>"
+
+#: data/gtk/window.ui:221 data/gtk/window.ui:259
+msgid "_Create New Station"
+msgstr "_Tạo đài mới"
+
+#: data/gtk/window.ui:228 data/gtk/window.ui:266
+msgid "_Preferences"
+msgstr "Tù_y thích"
+
+#: data/gtk/window.ui:232 data/gtk/window.ui:270
+msgid "_Keyboard Shortcuts"
+msgstr "_Phím tắt bàn phím"
+
+#: data/gtk/window.ui:236 data/gtk/window.ui:274
+msgid "_About Shortwave"
+msgstr "_Giới thiệu về Sóng ngắn"
+
+#. Fallback to xdg-home when xdg-music is not available
+#: src/audio/backend/song_backend.rs:96
+msgid "Unable to access music directory. Saving song in home directory."
+msgstr "Không thể truy cập thư mục nhạc. Các bài hát đã lưu trong thư mục nhà."
+
+#: src/audio/player.rs:198
+msgid "Station cannot be streamed. URL is not valid."
+msgstr "Đài không thể phát dạng luồng dữ liệu. URL không hợp lệ."
+
+#: src/audio/player.rs:253
+msgid "Cannot save song."
+msgstr "Không thể lưu bài hát."
+
+#: src/ui/about_window.rs:35
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:6
+msgid "Listen to internet radio"
+msgstr "Nghe đài phát qua mạng internet"
+
+#: src/ui/about_window.rs:46
+msgid "translator-credits"
+msgstr "Nhóm dịch GNOME <gnome-vi-list@gnome.org>"
+
+#. TODO: Implement show-server-stats action
+#: src/ui/pages/discover_page.rs:117
+msgid "Show statistics"
+msgstr "Hiển thị thống kê"
+
+#: src/ui/pages/discover_page.rs:119
+msgid "Browse over 30,000 stations"
+msgstr "Duyệt qua hơn 30.000 đài phát thanh"
+
+#: src/ui/pages/discover_page.rs:121
+msgid "Add new station"
+msgstr "Thêm đài mới"
+
+#: src/ui/pages/discover_page.rs:123
+msgid "Your favorite station is missing?"
+msgstr "Đài yêu thích của bạn còn thiếu?"
+
+#: src/ui/pages/discover_page.rs:128
+msgid "Open website"
+msgstr "Mở trang thông tin điện tử"
+
+#: src/ui/pages/discover_page.rs:130
+msgid "Powered by radio-browser.info"
+msgstr "Chạy được là nhờ vào radio-browser.info"
+
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
+msgid "Station data could not be received."
+msgstr "Không thể lấy về dữ liệu của đài."
+
+#: src/ui/pages/library_page.rs:117
+msgid "Welcome to {}"
+msgstr "Chào mừng bạn dùng {}"
+
+#: src/ui/pages/search_page.rs:102
+msgid ""
+"The number of results is limited to {} item. Try using a more specific "
+"search term."
+msgid_plural ""
+"The number of results is limited to {} items. Try using a more specific "
+"search term."
+msgstr[0] ""
+"Số lượng kết quả được giới hạn {} mục. Hãy thử sử dụng một cụm từ tìm kiếm "
+"cụ thể hơn."
+
+#: src/ui/station_dialog.rs:286
+msgid "{} kbit/s"
+msgstr "{} kbit/s"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:5
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:3
+msgid "@NAME@"
+msgstr "@NAME@"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:8
+msgid "Felix Häcker"
+msgstr "Felix Häcker"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:16
+msgid ""
+"Shortwave is an internet radio player that provides access to a station "
+"database with over 30,000 stations."
+msgstr ""
+"Sóng ngắn là một phần mềm nghe radio phát qua mạng internet cái mà có khả "
+"năng truy cập vào cơ sở dữ liệu đài phát thanh với hơn 30.000 đài."
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:19
+msgid "Features:"
+msgstr "Các tính năng:"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:21
+msgid "Create your own library where you can add your favorite stations"
+msgstr ""
+"Tạo thư viện của riêng bạn, nơi bạn có thể thêm các đài yêu thích của mình"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:22
+msgid "Easily search and discover new radio stations"
+msgstr "Dễ dàng tìm kiếm và khám phá các đài phát thanh mới"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:23
+msgid ""
+"Automatic recognition of songs, with the possibility to save them "
+"individually"
+msgstr "Tự động nhận dạng các bài hát, với khả năng lưu chúng riêng lẻ"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:24
+msgid "Responsive application layout, compatible for small and large screens"
+msgstr "Bố cục ứng dụng thích ứng, tương thích với cả màn hình nhỏ và lớn"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:25
+msgid "Play audio on supported network devices (e.g. Google Chromecasts)"
+msgstr ""
+"Phát âm thanh trên các thiết bị mạng được hỗ trợ (ví dụ: Google Chromecasts)"
+
+#: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:26
+msgid "Seamless integration into the GNOME desktop environment"
+msgstr "Tích hợp liên thông vào môi trường máy tính để bàn GNOME"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/de.haeckerfelix.Shortwave.desktop.in.in:12
+msgid "Gradio;Radio;Stream;Wave;"
+msgstr "Gradio;Radio;Stream;Wave;đài;dai;sóng ngắn;song ngan;"
+
+#~ msgid "Detected songs will appear here."
+#~ msgstr "Các bài hát được dò tìm thấy sẽ xuất hiện ở đây."
+
+#~ msgid "_How does this work?"
+#~ msgstr "_Cái này hoạt động thế nào?"
+
+#~ msgid "Shortwave"
+#~ msgstr "Sóng ngắn"
+
+#~ msgid "Error details"
+#~ msgstr "Chi tiết lỗi"
+
+#~ msgid "Connected with"
+#~ msgstr "Đã kết nối với"
+
+#~ msgid "Homepage"
+#~ msgstr "Trang chủ"
+
+#~ msgid "_Cancel"
+#~ msgstr "_Thôi"
+
+#~ msgid "_Connect"
+#~ msgstr "_Kết nối"
+
+#~ msgid "Devices which implement the Google Cast protocol are supported."
+#~ msgstr "Các thiết bị triển khai giao thức Google Cast được hỗ trợ."
+
+#~ msgid "_Retry search"
+#~ msgstr "_Thử tìm kiếm lại"
+
+#~ msgid "This station cannot be played because the stream is offline."
+#~ msgstr "Không thể phát đài này vì luồng dữ liệu đang ngoại tuyến."
+
+#~ msgid "URL is not valid."
+#~ msgstr "URL không hợp lệ."
+
+#~ msgid "No longer existing station removed from library."
+#~ msgstr "Không còn đài nào hiện có bị loại bỏ khỏi thư viện."
+
+#~ msgid "{} Vote"
+#~ msgid_plural "{} Votes"
+#~ msgstr[0] "{} Phiếu bầu"
+
+#~ msgid "{} · {} Vote"
+#~ msgid_plural "{} · {} Votes"
+#~ msgstr[0] "{} · {} Phiếu bầu"
