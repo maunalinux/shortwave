@@ -1,5 +1,5 @@
 // Shortwave - app.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -20,25 +20,26 @@ use std::str::FromStr;
 
 use adw::subclass::prelude::*;
 use gio::subclass::prelude::ApplicationImpl;
-use glib::{clone, ObjectExt, Properties, Receiver, Sender};
+use glib::{clone, ObjectExt, ParamSpec, ParamSpecObject, Receiver, Sender, ToValue};
 use gtk::glib::WeakRef;
 use gtk::prelude::*;
 use gtk::{gio, glib};
-use once_cell::sync::OnceCell;
+use once_cell::sync::{Lazy, OnceCell};
 
-use crate::api::SwClient;
+use crate::api::{Client, SwStation};
 use crate::audio::{GCastDevice, PlaybackState, Player, Song};
 use crate::config;
 use crate::database::SwLibrary;
 use crate::model::SwSorting;
 use crate::settings::{settings_manager, Key, SettingsWindow};
-use crate::ui::{about_window, SwApplicationWindow};
+use crate::ui::{about_window, SwApplicationWindow, SwView};
 
 #[derive(Debug, Clone)]
 pub enum Action {
     // Audio Playback
     PlaybackConnectGCastDevice(GCastDevice),
     PlaybackDisconnectGCastDevice,
+    PlaybackSetStation(Box<SwStation>),
     PlaybackSet(bool),
     PlaybackToggle,
     PlaybackSetVolume(f64),
@@ -50,19 +51,13 @@ pub enum Action {
 mod imp {
     use super::*;
 
-    #[derive(Properties)]
-    #[properties(wrapper_type = super::SwApplication)]
     pub struct SwApplication {
-        #[property(get)]
-        pub library: SwLibrary,
-        #[property(get)]
-        pub rb_server: RefCell<Option<String>>,
-
         pub sender: Sender<Action>,
         pub receiver: RefCell<Option<Receiver<Action>>>,
 
         pub window: OnceCell<WeakRef<SwApplicationWindow>>,
         pub player: Rc<Player>,
+        pub library: SwLibrary,
 
         pub settings: gio::Settings,
     }
@@ -74,36 +69,55 @@ mod imp {
         type Type = super::SwApplication;
 
         fn new() -> Self {
-            let (sender, r) = glib::MainContext::channel(glib::Priority::DEFAULT);
+            let (sender, r) = glib::MainContext::channel(glib::PRIORITY_DEFAULT);
             let receiver = RefCell::new(Some(r));
-
-            let library = SwLibrary::new(sender.clone());
-            let rb_server = RefCell::default();
 
             let window = OnceCell::new();
             let player = Player::new(sender.clone());
+            let library = SwLibrary::new(sender.clone());
 
             let settings = settings_manager::settings();
 
             Self {
-                library,
-                rb_server,
                 sender,
                 receiver,
                 window,
                 player,
+                library,
                 settings,
             }
         }
     }
 
-    #[glib::derived_properties]
-    impl ObjectImpl for SwApplication {}
+    // Implement GLib.Object for SwApplication
+    impl ObjectImpl for SwApplication {
+        fn properties() -> &'static [ParamSpec] {
+            static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
+                vec![ParamSpecObject::new(
+                    "library",
+                    "",
+                    "",
+                    SwLibrary::static_type(),
+                    glib::ParamFlags::READABLE,
+                )]
+            });
 
+            PROPERTIES.as_ref()
+        }
+
+        fn property(&self, obj: &Self::Type, _id: usize, pspec: &ParamSpec) -> glib::Value {
+            match pspec.name() {
+                "library" => obj.library().to_value(),
+                _ => unimplemented!(),
+            }
+        }
+    }
+
+    // Implement Gio.Application for SwApplication
     impl ApplicationImpl for SwApplication {
-        fn activate(&self) {
+        fn activate(&self, app: &Self::Type) {
             debug!("gio::Application -> activate()");
-            let app = self.obj();
+            let app = app.downcast_ref::<super::SwApplication>().unwrap();
 
             // If the window already exists,
             // present it instead creating a new one again.
@@ -128,11 +142,8 @@ mod imp {
                 clone!(@strong app => move |action| app.process_action(action)),
             );
 
-            // Connect with radiobrowser server and update library data
-            let fut = clone!(@weak app => async move {
-                app.lookup_rb_server().await;
-            });
-            spawn!(fut);
+            // Retrieve station data
+            app.refresh_data();
 
             // Setup settings signal (we get notified when a key gets changed)
             self.settings.connect_changed(
@@ -143,24 +154,31 @@ mod imp {
                 }),
             );
 
+            // Needs to be called after settings.connect_changed for it to trigger.
+            app.update_color_scheme();
+
             // Small workaround to update every view to the correct sorting/order.
             send!(self.sender, Action::SettingsKeyChanged(Key::ViewSorting));
         }
     }
 
+    // Implement Gtk.Application for SwApplication
     impl GtkApplicationImpl for SwApplication {}
 
+    // Implement Adw.Application for SwApplication
     impl AdwApplicationImpl for SwApplication {}
 }
 
+// Wrap SwApplication into a usable gtk-rs object
 glib::wrapper! {
     pub struct SwApplication(ObjectSubclass<imp::SwApplication>)
         @extends gio::Application, gtk::Application, adw::Application,
         @implements gio::ActionMap, gio::ActionGroup;
 }
 
+// SwApplication implementation itself
 impl SwApplication {
-    pub fn run() -> glib::ExitCode {
+    pub fn run() {
         debug!(
             "{} ({}) ({}) - Version {} ({})",
             config::NAME,
@@ -172,19 +190,23 @@ impl SwApplication {
         info!("Isahc version: {}", isahc::version());
 
         // Create new GObject and downcast it into SwApplication
-        let app = glib::Object::builder::<SwApplication>()
-            .property("application-id", Some(config::APP_ID))
-            .property("flags", gio::ApplicationFlags::empty())
-            .property("resource-base-path", Some(config::PATH_ID))
-            .build();
+        let app = glib::Object::new::<SwApplication>(&[
+            ("application-id", &Some(config::APP_ID)),
+            ("flags", &gio::ApplicationFlags::empty()),
+            ("resource-base-path", &Some(config::PATH_ID)),
+        ])
+        .unwrap();
 
         // Start running gtk::Application
-        app.run()
+        app.run();
     }
 
     fn create_window(&self) -> SwApplicationWindow {
-        let window = SwApplicationWindow::new();
-        self.add_window(&window);
+        let imp = self.imp();
+        let window = SwApplicationWindow::new(imp.sender.clone(), self.clone(), imp.player.clone());
+
+        // Set initial view
+        window.set_view(SwView::Library);
 
         window.present();
         window
@@ -193,43 +215,60 @@ impl SwApplication {
     fn setup_gactions(&self) {
         let window = SwApplicationWindow::default();
 
-        self.add_action_entries([
-            // app.show-preferences
-            gio::ActionEntry::builder("show-preferences")
-                .activate(clone!(@weak window => move |_, _, _| {
-                    let settings_window = SettingsWindow::new(&window.upcast());
-                    settings_window.show();
-                }))
-                .build(),
-            // app.quit
-            gio::ActionEntry::builder("quit")
-                .activate(clone!(@weak window => move |_, _, _| {
-                    window.close();
-                }))
-                .build(),
-            // app.about
-            gio::ActionEntry::builder("about")
-                .activate(clone!(@weak window => move |_, _, _| {
-                    about_window::show(&window);
-                }))
-                .build(),
-        ]);
+        // app.show-preferences
+        action!(
+            self,
+            "show-preferences",
+            clone!(@weak window => move |_, _| {
+                let settings_window = SettingsWindow::new(&window.upcast());
+                settings_window.show();
+            })
+        );
         self.set_accels_for_action("app.show-preferences", &["<primary>comma"]);
+
+        // app.quit
+        action!(
+            self,
+            "quit",
+            clone!(@weak window => move |_, _| {
+                window.close();
+            })
+        );
         self.set_accels_for_action("app.quit", &["<primary>q"]);
+
+        // app.about
+        action!(
+            self,
+            "about",
+            clone!(@weak window => move |_, _| {
+                about_window::show(&window);
+            })
+        );
+
         self.set_accels_for_action("window.close", &["<primary>w"]);
     }
 
-    fn process_action(&self, action: Action) -> glib::ControlFlow {
+    pub fn library(&self) -> SwLibrary {
+        self.imp().library.clone()
+    }
+
+    fn process_action(&self, action: Action) -> glib::Continue {
         let imp = self.imp();
         if self.active_window().is_none() {
-            return glib::ControlFlow::Continue;
+            return glib::Continue(true);
         }
+
+        let window = SwApplicationWindow::default();
 
         match action {
             Action::PlaybackConnectGCastDevice(device) => {
                 imp.player.connect_to_gcast_device(device)
             }
             Action::PlaybackDisconnectGCastDevice => imp.player.disconnect_from_gcast_device(),
+            Action::PlaybackSetStation(station) => {
+                imp.player.set_station(*station);
+                window.show_player_widget();
+            }
             Action::PlaybackSet(true) => imp.player.set_playback(PlaybackState::Playing),
             Action::PlaybackSet(false) => imp.player.set_playback(PlaybackState::Stopped),
             Action::PlaybackToggle => imp.player.toggle_playback(),
@@ -237,7 +276,7 @@ impl SwApplication {
             Action::PlaybackSaveSong(song) => imp.player.save_song(song),
             Action::SettingsKeyChanged(key) => self.apply_settings_changes(key),
         }
-        glib::ControlFlow::Continue
+        glib::Continue(true)
     }
 
     fn apply_settings_changes(&self, key: Key) {
@@ -257,27 +296,38 @@ impl SwApplication {
                     .unwrap()
                     .set_sorting(sorting, descending);
             }
+            Key::DarkMode => self.update_color_scheme(),
             _ => (),
         }
     }
 
-    async fn lookup_rb_server(&self) {
-        let imp = self.imp();
-
-        // Try to find a working radiobrowser server
-        let rb_server = SwClient::lookup_rb_server().await;
-        if let Some(rb_server) = &rb_server {
-            info!("Using radio-browser.info REST api: {rb_server}");
-        } else {
-            warn!("Unable to find radio-browser.info server.");
+    fn update_color_scheme(&self) {
+        let manager = adw::StyleManager::default();
+        if !manager.system_supports_color_schemes() {
+            let color_scheme = if settings_manager::boolean(Key::DarkMode) {
+                adw::ColorScheme::PreferDark
+            } else {
+                adw::ColorScheme::PreferLight
+            };
+            manager.set_color_scheme(color_scheme);
         }
+    }
 
-        *imp.rb_server.borrow_mut() = rb_server;
-        self.notify("rb-server");
+    pub fn refresh_data(&self) {
+        let fut = clone!(@weak self as this => async move {
+            let imp = this.imp();
+            let window = SwApplicationWindow::default();
 
-        // Refresh library data either way, it'll fallback to
-        // local cached data if there's no radiobrowser server available.
-        imp.library.update_data();
+            if let Some(server) = Client::api_server().await{
+                imp.library.refresh_data(Some(&server));
+                window.refresh_data(&server);
+                window.enable_offline_mode(false);
+            }else{
+                imp.library.refresh_data(None);
+                window.enable_offline_mode(true);
+            }
+        });
+        spawn!(fut);
     }
 }
 

@@ -1,5 +1,5 @@
 // Shortwave - sidebar_controller.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -43,7 +43,6 @@ pub struct SidebarController {
     loading_button: gtk::Button,
     error_label: gtk::Label,
     volume_button: gtk::VolumeButton,
-    spinner: gtk::Spinner,
     volume_signal_id: glib::signal::SignalHandlerId,
 
     action_group: gio::SimpleActionGroup,
@@ -65,7 +64,6 @@ impl SidebarController {
         get_widget!(builder, gtk::Button, loading_button);
         get_widget!(builder, gtk::Label, error_label);
         get_widget!(builder, gtk::VolumeButton, volume_button);
-        get_widget!(builder, gtk::Spinner, spinner);
 
         let station = Rc::new(RefCell::new(None));
 
@@ -104,7 +102,6 @@ impl SidebarController {
             volume_signal_id,
             action_group,
             streaming_dialog,
-            spinner,
         };
 
         controller.setup_signals();
@@ -133,19 +130,24 @@ impl SidebarController {
             }));
 
         // details button
-        self.action_group.add_action_entries([
-            gio::ActionEntry::builder("show-details")
-                .activate(clone!(@strong self.sender as sender, @strong self.station as station => move |_, _, _| {
-                    let station = station.borrow().clone().unwrap();
-                    let station_dialog = SwStationDialog::new(&station);
-                    station_dialog.show();
-                })).build(),
-            // stream button
-            gio::ActionEntry::builder("stream-audio")
-                .activate(clone!(@weak self.streaming_dialog as streaming_dialog => move |_, _, _| {
-                    streaming_dialog.show();
-                })).build(),
-        ]);
+        action!(
+            self.action_group,
+            "show-details",
+            clone!(@strong self.sender as sender, @strong self.station as station => move |_, _| {
+                let s = station.borrow().clone().unwrap();
+                let station_dialog = SwStationDialog::new(sender.clone(), s);
+                station_dialog.show();
+            })
+        );
+
+        // stream button
+        action!(
+            self.action_group,
+            "stream-audio",
+            clone!(@weak self.streaming_dialog as streaming_dialog => move |_, _| {
+                streaming_dialog.show();
+            })
+        );
     }
 }
 
@@ -194,8 +196,6 @@ impl Controller for SidebarController {
         };
         self.playback_button_stack
             .set_visible_child_name(child_name);
-        self.spinner
-            .set_spinning(matches!(playback_state, PlaybackState::Loading));
     }
 
     fn set_volume(&self, volume: f64) {

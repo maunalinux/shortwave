@@ -1,5 +1,5 @@
 // Shortwave - station_row.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -25,7 +25,6 @@ use once_cell::unsync::OnceCell;
 use crate::api::{FaviconDownloader, SwStation};
 use crate::app::Action;
 use crate::ui::{FaviconSize, StationFavicon};
-use crate::SwApplication;
 
 mod imp {
     use glib::subclass;
@@ -81,7 +80,7 @@ glib::wrapper! {
 
 impl SwStationRow {
     pub fn new(sender: Sender<Action>, station: SwStation) -> Self {
-        let row = glib::Object::new::<Self>();
+        let row = glib::Object::new::<Self>(&[]).unwrap();
 
         let imp = row.imp();
         imp.sender.set(sender).unwrap();
@@ -97,11 +96,9 @@ impl SwStationRow {
         let imp = self.imp();
 
         // play_button
-        imp.play_button.connect_clicked(
-            clone!(@strong imp.sender as sender, @strong imp.station as station => move |_| {
-                SwApplication::default().imp().player.set_station(station.get().unwrap().clone());
-            }),
-        );
+        imp.play_button.connect_clicked(clone!(@strong imp.sender as sender, @strong imp.station as station => move |_| {
+            send!(sender.get().unwrap(), Action::PlaybackSetStation(Box::new(station.get().unwrap().clone())));
+        }));
     }
 
     fn setup_widgets(&self) {

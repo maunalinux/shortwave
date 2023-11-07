@@ -38,6 +38,7 @@ impl SettingsWindow {
             builder,
         };
 
+        window.setup_widgets();
         window.setup_signals();
         window
     }
@@ -46,7 +47,16 @@ impl SettingsWindow {
         self.widget.set_visible(true);
     }
 
+    fn setup_widgets(&self) {
+        let manager = adw::StyleManager::default();
+        get_widget!(self.builder, gtk::Widget, appearance_group);
+        appearance_group.set_visible(!manager.system_supports_color_schemes())
+    }
+
     fn setup_signals(&self) {
+        get_widget!(self.builder, gtk::Switch, dark_mode_button);
+        settings_manager::bind_property(Key::DarkMode, &dark_mode_button, "active");
+
         get_widget!(self.builder, gtk::Switch, show_notifications_button);
         settings_manager::bind_property(Key::Notifications, &show_notifications_button, "active");
     }

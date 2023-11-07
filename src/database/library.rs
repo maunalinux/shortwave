@@ -1,5 +1,5 @@
 // Shortwave - library.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -17,42 +17,47 @@
 use std::cell::RefCell;
 
 use futures::future::join_all;
-use glib::{clone, Enum, ObjectExt, Properties, Sender};
+use glib::{
+    clone, Enum, ObjectExt, ParamFlags, ParamSpec, ParamSpecEnum, ParamSpecObject, Sender, ToValue,
+};
 use gtk::prelude::*;
 use gtk::subclass::prelude::*;
 use gtk::{gdk_pixbuf, glib};
+use once_cell::sync::Lazy;
 use once_cell::unsync::OnceCell;
+use url::Url;
 
 use super::models::StationEntry;
-use crate::api::{Error, SwClient, SwStation};
-use crate::app::{Action, SwApplication};
+use crate::api::{Client, Error, SwStation};
+use crate::app::Action;
 use crate::database::{connection, queries};
 use crate::model::SwStationModel;
 
 #[derive(Display, Copy, Debug, Clone, EnumString, Eq, PartialEq, Enum)]
 #[repr(u32)]
 #[enum_type(name = "SwLibraryStatus")]
-#[derive(Default)]
 pub enum SwLibraryStatus {
-    #[default]
     Loading,
     Content,
     Empty,
     Offline,
 }
 
+impl Default for SwLibraryStatus {
+    fn default() -> Self {
+        SwLibraryStatus::Loading
+    }
+}
+
 mod imp {
     use super::*;
 
-    #[derive(Debug, Default, Properties)]
-    #[properties(wrapper_type = super::SwLibrary)]
+    #[derive(Debug, Default)]
     pub struct SwLibrary {
-        #[property(get)]
         pub model: SwStationModel,
-        #[property(get, builder(SwLibraryStatus::default()))]
         pub status: RefCell<SwLibraryStatus>,
 
-        pub client: SwClient,
+        pub client: OnceCell<Client>,
         pub sender: OnceCell<Sender<Action>>,
     }
 
@@ -62,8 +67,39 @@ mod imp {
         type Type = super::SwLibrary;
     }
 
-    #[glib::derived_properties]
-    impl ObjectImpl for SwLibrary {}
+    impl ObjectImpl for SwLibrary {
+        fn properties() -> &'static [ParamSpec] {
+            static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
+                vec![
+                    ParamSpecObject::new(
+                        "model",
+                        "",
+                        "",
+                        SwStationModel::static_type(),
+                        glib::ParamFlags::READABLE,
+                    ),
+                    ParamSpecEnum::new(
+                        "status",
+                        "",
+                        "",
+                        SwLibraryStatus::static_type(),
+                        SwLibraryStatus::default() as i32,
+                        ParamFlags::READABLE,
+                    ),
+                ]
+            });
+
+            PROPERTIES.as_ref()
+        }
+
+        fn property(&self, obj: &Self::Type, _id: usize, pspec: &ParamSpec) -> glib::Value {
+            match pspec.name() {
+                "model" => obj.model().to_value(),
+                "status" => obj.status().to_value(),
+                _ => unimplemented!(),
+            }
+        }
+    }
 }
 
 glib::wrapper! {
@@ -72,36 +108,33 @@ glib::wrapper! {
 
 impl SwLibrary {
     pub fn new(sender: Sender<Action>) -> Self {
-        let library = glib::Object::new::<Self>();
+        let library = glib::Object::new::<Self>(&[]).unwrap();
         library.imp().sender.set(sender).unwrap();
 
         library
     }
 
-    pub fn update_data(&self) {
-        // Load stations asynchronously from the sqlite database
-        let future = clone!(@strong self as this => async move {
-            // Clear previously loaded stations first
-            this.imp().model.clear();
+    pub fn model(&self) -> SwStationModel {
+        self.imp().model.clone()
+    }
 
-            let entries = queries::stations().unwrap();
+    pub fn status(&self) -> SwLibraryStatus {
+        *self.imp().status.borrow()
+    }
 
-            // Print database info
-            info!("Database Path: {}", connection::DB_PATH.to_str().unwrap());
-            info!("Stations: {}", entries.len());
+    pub fn refresh_data(&self, server: Option<&Url>) {
+        let imp = self.imp();
 
-            // Set library status to loading
-            let imp = this.imp();
-            *imp.status.borrow_mut() = SwLibraryStatus::Loading;
-            this.notify("status");
+        if let Some(server) = server {
+            if let Some(client) = imp.client.get() {
+                client.set_server(server.clone())
+            } else {
+                let client = Client::new(server.clone());
+                imp.client.set(client).unwrap();
+            }
+        }
 
-            let offline_mode = SwApplication::default().rb_server().is_none();
-            let futures = entries.into_iter().map(|entry| this.load_station(entry, offline_mode));
-            join_all(futures).await;
-
-            this.update_library_status();
-        });
-        spawn!(future);
+        self.load_stations();
     }
 
     pub fn add_stations(&self, stations: Vec<SwStation>) {
@@ -142,9 +175,35 @@ impl SwLibrary {
         self.notify("status");
     }
 
+    fn load_stations(&self) {
+        // Load database async
+        let future = clone!(@strong self as this => async move {
+            // Clear previously loaded stations first
+            this.imp().model.clear();
+
+            let entries = queries::stations().unwrap();
+
+            // Print database info
+            info!("Database Path: {}", connection::DB_PATH.to_str().unwrap());
+            info!("Stations: {}", entries.len());
+
+            // Set library status to loading
+            let imp = this.imp();
+            *imp.status.borrow_mut() = SwLibraryStatus::Loading;
+            this.notify("status");
+
+            let futures = entries.into_iter().map(|entry| this.load_station(entry));
+            join_all(futures).await;
+
+            this.update_library_status();
+        });
+        spawn!(future);
+    }
+
     /// Try to add a station to the database.
-    async fn load_station(&self, entry: StationEntry, skip_online_update: bool) {
+    async fn load_station(&self, entry: StationEntry) {
         let imp = self.imp();
+        let client = imp.client.clone();
         let uuid = entry.uuid.clone();
 
         // Load custom favicon from database entry if available
@@ -162,7 +221,7 @@ impl SwLibrary {
             if let Some(data) = &entry.data {
                 match serde_json::from_str(data) {
                     Ok(metadata) => {
-                        let station = SwStation::new(&uuid, true, false, metadata, favicon.clone());
+                        let station = SwStation::new(uuid, true, false, metadata, favicon.clone());
                         imp.model.add_station(&station);
                     }
                     Err(err) => {
@@ -186,10 +245,10 @@ impl SwLibrary {
 
         // Try to update station metadata from radio-browser.info
         let mut is_orphaned = false;
-        if !skip_online_update {
-            match imp.client.clone().station_metadata_by_uuid(&uuid).await {
+        if let Some(client) = client.get() {
+            match client.clone().station_metadata_by_uuid(&uuid).await {
                 Ok(metadata) => {
-                    let station = SwStation::new(&uuid, false, false, metadata, favicon);
+                    let station = SwStation::new(uuid, false, false, metadata, favicon);
 
                     // Cache data for future use
                     let entry = StationEntry::for_station(&station);
@@ -215,7 +274,7 @@ impl SwLibrary {
         if let Some(data) = &entry.data {
             match serde_json::from_str(data) {
                 Ok(metadata) => {
-                    let s = SwStation::new(&uuid, false, is_orphaned, metadata, favicon);
+                    let s = SwStation::new(uuid, false, is_orphaned, metadata, favicon);
                     imp.model.add_station(&s);
                 }
                 Err(err) => {

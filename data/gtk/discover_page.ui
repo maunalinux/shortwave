@@ -1,89 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <template class="SwDiscoverPage" parent="AdwNavigationPage">
-    <property name="title" translatable="yes">Discover</property>
-    <property name="tag">discover</property>
-    <property name="child">
-      <object class="AdwToolbarView">
-        <child type="top">
-          <object class="AdwHeaderBar">
-            <child type="end">
-              <object class="GtkButton">
-                <property name="action-name">navigation.push</property>
-                <property name="action-target">'search'</property>
-                <property name="icon_name">system-search-symbolic</property>
-                <property name="tooltip_text" translatable="yes">Search</property>
-              </object>
-            </child>
-          </object>
-        </child>
+  <template class="SwDiscoverPage" parent="AdwBin">
+    <child>
+      <object class="GtkScrolledWindow" id="scrolledwindow">
+        <property name="hscrollbar_policy">never</property>
         <child>
-          <object class="GtkScrolledWindow" id="scrolledwindow">
-            <property name="hscrollbar_policy">never</property>
+          <object class="GtkViewport">
+            <property name="vexpand">True</property>
+            <property name="scroll-to-focus">True</property>
             <child>
-              <object class="GtkViewport">
-                <property name="vexpand">True</property>
-                <property name="scroll-to-focus">True</property>
+              <object class="AdwClamp">
+                <property name="maximum_size">1600</property>
+                <property name="margin_top">12</property>
+                <property name="margin_bottom">12</property>
+                <property name="margin_start">12</property>
+                <property name="margin_end">12</property>
                 <child>
-                  <object class="AdwClamp">
-                    <property name="maximum_size">1600</property>
-                    <property name="margin_top">12</property>
-                    <property name="margin_bottom">12</property>
-                    <property name="margin_start">12</property>
-                    <property name="margin_end">12</property>
+                  <object class="GtkBox">
+                    <property name="valign">start</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">12</property>
                     <child>
-                      <object class="GtkBox">
-                        <property name="valign">start</property>
-                        <property name="orientation">vertical</property>
-                        <property name="spacing">12</property>
-                        <child>
-                          <object class="SwFeaturedCarousel" id="carousel"/>
-                        </child>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="label" translatable="yes">Most Voted Stations</property>
-                            <property name="wrap">True</property>
-                            <property name="xalign">0</property>
-                            <property name="yalign">0</property>
-                            <style>
-                              <class name="title-2"/>
-                            </style>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="SwStationFlowBox" id="votes_flowbox"/>
-                        </child>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="margin_top">12</property>
-                            <property name="label" translatable="yes">Trending</property>
-                            <property name="wrap">True</property>
-                            <property name="xalign">0</property>
-                            <property name="yalign">0</property>
-                            <style>
-                              <class name="title-2"/>
-                            </style>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="SwStationFlowBox" id="trending_flowbox"/>
-                        </child>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="margin_top">12</property>
-                            <property name="label" translatable="yes">Other Users Are Listening To…</property>
-                            <property name="wrap">True</property>
-                            <property name="xalign">0</property>
-                            <property name="yalign">0</property>
-                            <style>
-                              <class name="title-2"/>
-                            </style>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="SwStationFlowBox" id="clicked_flowbox"/>
-                        </child>
+                      <object class="SwFeaturedCarousel" id="carousel"/>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label" translatable="yes">Most Voted Stations</property>
+                        <property name="wrap">True</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <style>
+                          <class name="title-2"/>
+                        </style>
                       </object>
+                    </child>
+                    <child>
+                      <object class="SwStationFlowBox" id="votes_flowbox"/>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="margin_top">12</property>
+                        <property name="label" translatable="yes">Trending</property>
+                        <property name="wrap">True</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <style>
+                          <class name="title-2"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="SwStationFlowBox" id="trending_flowbox"/>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="margin_top">12</property>
+                        <property name="label" translatable="yes">Other Users Are Listening To…</property>
+                        <property name="wrap">True</property>
+                        <property name="xalign">0</property>
+                        <property name="yalign">0</property>
+                        <style>
+                          <class name="title-2"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="SwStationFlowBox" id="clicked_flowbox"/>
                     </child>
                   </object>
                 </child>
@@ -92,6 +74,6 @@
           </object>
         </child>
       </object>
-    </property>
+    </child>
   </template>
 </interface>

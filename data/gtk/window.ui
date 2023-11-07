@@ -2,45 +2,120 @@
 <interface>
   <template class="SwApplicationWindow" parent="AdwApplicationWindow">
     <property name="width_request">350</property>
-    <property name="height_request">100</property>
+    <style>
+      <class name="transparent"/>
+    </style>
     <child>
-      <object class="AdwBreakpoint">
-        <condition>max-width: 625px</condition>
-        <setter object="split_view" property="max-sidebar-width">99999</setter>
-        <setter object="split_view" property="collapsed">True</setter>
-        <setter object="toolbar_controller_revealer" property="reveal-child">True</setter>
-      </object>
-    </child>
-    <child>
-      <object class="AdwBreakpoint">
-        <condition>min-width: 625px</condition>
-        <setter object="split_view" property="show_sidebar">True</setter>
-      </object>
-    </child>
-    <child>
-      <object class="AdwBreakpoint">
-        <condition>max-height: 150px</condition>
-        <setter object="stack" property="visible-child">mini_controller_handle</setter>
-      </object>
-    </child>
-    <child>
-      <object class="GtkStack" id="stack">
-        <property name="hhomogeneous">False</property>
-        <property name="vhomogeneous">False</property>
+      <object class="AdwSqueezer" id="window_squeezer">
+        <property name="orientation">vertical</property>
+        <property name="transition_type">crossfade</property>
+        <property name="interpolate_size">True</property>
         <child>
-          <object class="AdwToastOverlay" id="toast_overlay">
+          <object class="GtkBox">
+            <property name="width_request">350</property>
+            <property name="height_request">175</property>
+            <property name="orientation">vertical</property>
+            <style>
+              <class name="background"/>
+            </style>
             <child>
-              <object class="AdwOverlaySplitView" id="split_view">
-                <property name="sidebar-position">end</property>
-                <property name="pin-sidebar">True</property>
-                <property name="min-sidebar-width">300</property>
-                <property name="content">
-                  <object class="AdwNavigationPage">
+              <object class="GtkHeaderBar">
+                <child>
+                  <object class="GtkButton" id="add_button">
+                    <property name="action_name">win.show-discover</property>
+                    <property name="icon_name">list-add-symbolic</property>
+                    <property name="tooltip_text" translatable="true">Add Stations</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="back_button">
+                    <property name="action_name">win.go-back</property>
+                    <property name="icon_name">go-previous-symbolic</property>
+                    <property name="tooltip_text" translatable="true">Go Back</property>
+                  </object>
+                </child>
+                <child type="end">
+                  <object class="GtkMenuButton" id="appmenu_button">
+                    <property name="icon_name">open-menu-symbolic</property>
+                    <property name="menu_model">library_menu</property>
+                    <property name="tooltip_text" translatable="true">Open Application Menu</property>
+                  </object>
+                </child>
+                <child type="end">
+                  <object class="GtkRevealer" id="search_revealer">
+                    <property name="transition_type">crossfade</property>
                     <child>
-                      <object class="GtkBox">
-                        <property name="orientation">vertical</property>
+                      <object class="GtkToggleButton" id="search_button">
+                        <property name="icon_name">system-search-symbolic</property>
+                        <property name="tooltip_text" translatable="true">Open Search</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwToastOverlay" id="toast_overlay">
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkInfoBar" id="connection_infobar">
+                        <property name="message_type">warning</property>
+                        <property name="revealed">False</property>
                         <child>
-                          <object class="AdwNavigationView" id="navigation_view">
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="hexpand">True</property>
+                            <property name="spacing">6</property>
+                            <property name="margin_end">12</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label" translatable="yes">Unable to connect to radio-browser.info</property>
+                                <property name="xalign">0</property>
+                                <property name="wrap">True</property>
+                                <style>
+                                  <class name="heading"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label" translatable="yes">Access to the public online station database is not available. Ensure that you are connected to the internet.</property>
+                                <property name="xalign">0</property>
+                                <property name="wrap">True</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="refresh_data_button">
+                            <property name="tooltip-text" translatable="yes">Try again</property>
+                            <property name="icon_name">view-refresh-symbolic</property>
+                            <property name="action_name">win.refresh-data</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                        <action-widgets>
+                          <action-widget response="0">refresh_data_button</action-widget>
+                        </action-widgets>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwFlap" id="window_flap">
+                        <property name="reveal-flap">False</property>
+                        <property name="locked">True</property>
+                        <property name="flap-position">end</property>
+                        <property name="swipe-to-open">False</property>
+                        <property name="swipe-to-close">False</property>
+                        <property name="vexpand">True</property>
+                        <property name="separator">
+                          <object class="GtkSeparator"/>
+                        </property>
+                        <child>
+                          <object class="AdwLeaflet" id="window_leaflet">
+                            <property name="can_unfold">False</property>
+                            <property name="hexpand">True</property>
                             <child>
                               <object class="SwLibraryPage" id="library_page"/>
                             </child>
@@ -52,18 +127,18 @@
                             </child>
                           </object>
                         </child>
-                        <child>
-                          <object class="GtkRevealer" id="toolbar_controller_revealer">
-                            <property name="transition_type">slide-up</property>
-                            <child>
-                              <object class="GtkBox" id="toolbar_controller_box"/>
-                            </child>
-                          </object>
-                        </child>
                       </object>
                     </child>
                   </object>
-                </property>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkRevealer" id="toolbar_controller_revealer">
+                <property name="transition_type">slide-up</property>
+                <child>
+                  <object class="GtkBox" id="toolbar_controller_box"/>
+                </child>
               </object>
             </child>
           </object>
@@ -78,5 +153,128 @@
       </object>
     </child>
   </template>
+  <menu id="library_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Enable Mini Player</attribute>
+        <attribute name="action">win.enable-mini-player</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Refresh Station Data</attribute>
+        <attribute name="action">win.refresh-data</attribute>
+      </item>
+      <submenu>
+        <attribute name="label" translatable="yes">_Sorting</attribute>
+        <section>
+          <item>
+            <attribute name="label" translatable="yes">_Name</attribute>
+            <attribute name="action">win.view-sorting</attribute>
+            <attribute name="target">Name</attribute>
+          </item>
+          <item>
+            <attribute name="label" translatable="yes">_Language</attribute>
+            <attribute name="action">win.view-sorting</attribute>
+            <attribute name="target">Language</attribute>
+          </item>
+          <item>
+            <attribute name="label" translatable="yes">_Country</attribute>
+            <attribute name="action">win.view-sorting</attribute>
+            <attribute name="target">Country</attribute>
+          </item>
+          <item>
+            <attribute name="label" translatable="yes">S_tate</attribute>
+            <attribute name="action">win.view-sorting</attribute>
+            <attribute name="target">State</attribute>
+          </item>
+          <item>
+            <attribute name="label" translatable="yes">_Votes</attribute>
+            <attribute name="action">win.view-sorting</attribute>
+            <attribute name="target">Votes</attribute>
+          </item>
+          <item>
+            <attribute name="label" translatable="yes">_Bitrate</attribute>
+            <attribute name="action">win.view-sorting</attribute>
+            <attribute name="target">Bitrate</attribute>
+          </item>
+        </section>
+        <section>
+          <item>
+            <attribute name="label" translatable="yes">_Ascending</attribute>
+            <attribute name="action">win.view-order</attribute>
+            <attribute name="target">Ascending</attribute>
+          </item>
+          <item>
+            <attribute name="label" translatable="yes">_Descending</attribute>
+            <attribute name="action">win.view-order</attribute>
+            <attribute name="target">Descending</attribute>
+          </item>
+        </section>
+      </submenu>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Open radio-browser.info &lt;sup&gt;↗&lt;/sup&gt;</attribute>
+        <attribute name="action">win.open-radio-browser-info</attribute>
+        <attribute name="use-markup">True</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Create New Station</attribute>
+        <attribute name="action">win.create-new-station</attribute>
+        <attribute name="use-markup">True</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">app.show-preferences</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About Shortwave</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+  <menu id="default_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Refresh Station Data</attribute>
+        <attribute name="action">win.refresh-data</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Enable Mini Player</attribute>
+        <attribute name="action">win.enable-mini-player</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Open radio-browser.info &lt;sup&gt;↗&lt;/sup&gt;</attribute>
+        <attribute name="action">win.open-radio-browser-info</attribute>
+        <attribute name="use-markup">True</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Create New Station</attribute>
+        <attribute name="action">win.create-new-station</attribute>
+        <attribute name="use-markup">True</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">app.show-preferences</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About Shortwave</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
 </interface>
 

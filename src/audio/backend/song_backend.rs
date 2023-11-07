@@ -1,5 +1,5 @@
 // Shortwave - song_backend.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,7 +15,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 use std::fs;
-use std::rc::Rc;
 
 use glib::Sender;
 use gtk::glib;
@@ -108,7 +107,7 @@ impl SongBackend {
             dest_path.push(song.path.file_name().unwrap());
         }
 
-        fs::copy(song.path, dest_path).map_err(Rc::new)?;
+        fs::copy(song.path, dest_path)?;
         Ok(())
     }
 

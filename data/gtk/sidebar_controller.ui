@@ -139,7 +139,9 @@
                     <property name="child">
                       <object class="GtkButton" id="loading_button">
                         <child>
-                          <object class="GtkSpinner" id="spinner"/>
+                          <object class="GtkSpinner">
+                            <property name="spinning">True</property>
+                          </object>
                         </child>
                         <style>
                           <class name="pill"/>

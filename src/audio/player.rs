@@ -1,5 +1,5 @@
 // Shortwave - player.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -19,6 +19,7 @@ use std::convert::TryInto;
 use std::fs;
 use std::path::PathBuf;
 use std::rc::Rc;
+use std::sync::{Arc, Mutex};
 use std::time::Duration;
 
 use adw::prelude::*;
@@ -76,13 +77,13 @@ pub enum PlaybackState {
 }
 
 pub struct Player {
-    pub widget: adw::NavigationPage,
+    pub widget: gtk::Box,
     pub toolbar_controller_widget: gtk::Box,
     pub mini_controller_widget: gtk::Box,
     controller: Vec<Box<dyn Controller>>,
     gcast_controller: Rc<GCastController>,
 
-    backend: Rc<RefCell<Backend>>,
+    backend: Arc<Mutex<Backend>>,
     current_station: RefCell<Option<SwStation>>,
     song_title: RefCell<SongTitle>,
 
@@ -93,7 +94,7 @@ pub struct Player {
 impl Player {
     pub fn new(sender: Sender<Action>) -> Rc<Self> {
         let builder = gtk::Builder::from_resource("/de/haeckerfelix/Shortwave/gtk/player.ui");
-        get_widget!(builder, adw::NavigationPage, player);
+        get_widget!(builder, gtk::Box, player);
         let mut controller: Vec<Box<dyn Controller>> = Vec::new();
 
         // Sidebar Controller
@@ -131,7 +132,7 @@ impl Player {
         // Backend
         let backend = Backend::new(sender.clone());
         player_box.append(&backend.song.listbox.widget);
-        let backend = Rc::new(RefCell::new(backend));
+        let backend = Arc::new(Mutex::new(backend));
 
         // Current station (needed for notifications)
         let current_station = RefCell::new(None);
@@ -179,13 +180,20 @@ impl Player {
         // can also be a potential fallback in case the API misses the resolved
         // URL for some reason.
 
-        let mut backend = self.backend.borrow_mut();
         if let Some(url) = metadata.url_resolved {
             debug!("Start playing new URI: {}", url.to_string());
-            backend.gstreamer.new_source_uri(url.as_ref());
+            self.backend
+                .lock()
+                .unwrap()
+                .gstreamer
+                .new_source_uri(url.as_ref());
         } else if let Some(url) = metadata.url {
             debug!("Start playing new URI: {}", url.to_string());
-            backend.gstreamer.new_source_uri(url.as_ref());
+            self.backend
+                .lock()
+                .unwrap()
+                .gstreamer
+                .new_source_uri(url.as_ref());
         } else {
             let text = i18n("Station cannot be streamed. URL is not valid.");
             SwApplicationWindow::default().show_notification(&text);
@@ -194,13 +202,17 @@ impl Player {
 
     pub fn set_playback(&self, playback: PlaybackState) {
         debug!("Set playback: {:?}", playback);
-        let mut backend = self.backend.borrow_mut();
-
         match playback {
             PlaybackState::Playing => {
-                backend.gstreamer.set_state(gstreamer::State::Playing);
+                self.backend
+                    .lock()
+                    .unwrap()
+                    .gstreamer
+                    .set_state(gstreamer::State::Playing);
             }
             PlaybackState::Stopped => {
+                let mut backend = self.backend.lock().unwrap();
+
                 // Discard recorded data when the stream stops
                 if backend.gstreamer.is_recording() {
                     backend.gstreamer.stop_recording(true);
@@ -216,16 +228,16 @@ impl Player {
     }
 
     pub fn toggle_playback(&self) {
-        if self.backend.borrow().gstreamer.state() == PlaybackState::Playing {
+        if self.backend.lock().unwrap().gstreamer.state() == PlaybackState::Playing {
             self.set_playback(PlaybackState::Stopped);
-        } else if self.backend.borrow().gstreamer.state() == PlaybackState::Stopped {
+        } else if self.backend.lock().unwrap().gstreamer.state() == PlaybackState::Stopped {
             self.set_playback(PlaybackState::Playing);
         }
     }
 
     pub fn set_volume(&self, volume: f64) {
         debug!("Set volume: {}", &volume);
-        self.backend.borrow().gstreamer.set_volume(volume);
+        self.backend.lock().unwrap().gstreamer.set_volume(volume);
 
         for con in &*self.controller {
             con.set_volume(volume);
@@ -235,7 +247,7 @@ impl Player {
     }
 
     pub fn save_song(&self, song: Song) {
-        if let Err(err) = self.backend.borrow().song.save_song(song) {
+        if let Err(err) = self.backend.lock().unwrap().song.save_song(song) {
             warn!("Cannot save song: {}", err.to_string());
 
             let text = i18n("Cannot save song.");
@@ -268,7 +280,8 @@ impl Player {
         let receiver = self
             .backend
             .clone()
-            .borrow_mut()
+            .lock()
+            .unwrap()
             .gstreamer_receiver
             .take()
             .unwrap();
@@ -281,10 +294,10 @@ impl Player {
         }));
     }
 
-    fn process_gst_message(&self, message: GstreamerMessage) -> glib::ControlFlow {
+    fn process_gst_message(&self, message: GstreamerMessage) -> glib::Continue {
         match message {
             GstreamerMessage::SongTitleChanged(title) => {
-                let backend = &mut self.backend.borrow_mut();
+                let backend = &mut self.backend.lock().unwrap();
                 debug!("Song title has changed to: \"{}\"", title);
 
                 // If we're already recording something, we need to stop it first.
@@ -345,14 +358,14 @@ impl Player {
 
                 // Discard recorded data when a failure occurs,
                 // since the song has not been recorded completely.
-                if self.backend.borrow().gstreamer.is_recording()
+                if self.backend.lock().unwrap().gstreamer.is_recording()
                     && matches!(state, PlaybackState::Failure(_))
                 {
-                    self.backend.borrow_mut().gstreamer.stop_recording(true);
+                    self.backend.lock().unwrap().gstreamer.stop_recording(true);
                 }
             }
         }
-        glib::ControlFlow::Continue
+        glib::Continue(true)
     }
 
     fn show_song_notification(&self) {

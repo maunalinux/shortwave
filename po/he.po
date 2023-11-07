@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shortwave master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-09-03 19:24+0000\n"
-"PO-Revision-Date: 2023-09-04 15:45+0300\n"
+"POT-Creation-Date: 2022-12-19 15:41+0000\n"
+"PO-Revision-Date: 2023-01-20 11:56+0200\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
-"Language-Team: Hebrew <yoseforb@gmail.com>\n"
+"Language-Team: Hebrew <>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
-"2 : 3);\n"
-"X-Generator: Poedit 3.3.2\n"
+"2 : 3)\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/gtk/create_station_dialog.ui:8
 msgid "Create new station"
@@ -51,7 +51,7 @@ msgstr "יצירת תחנה מקומית"
 msgid "Change station image"
 msgstr "שינוי תמונת תחנה"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:211
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "שם"
 
@@ -63,112 +63,31 @@ msgstr "כתובת URL להזרמה"
 msgid "Create Station"
 msgstr "יצירת תחנה"
 
-#: data/gtk/discover_page.ui:4
-msgid "Discover"
-msgstr "עיון"
-
-# "shortcut window"
-#: data/gtk/discover_page.ui:15 data/gtk/search_page.ui:4
-msgid "Search"
-msgstr "חיפוש"
-
-#: data/gtk/discover_page.ui:44
+#: data/gtk/discover_page.ui:28
 msgid "Most Voted Stations"
 msgstr "התחנות עם ההצבעות הרבות ביותר"
 
-#: data/gtk/discover_page.ui:59
+#: data/gtk/discover_page.ui:43
 msgid "Trending"
 msgstr "אהוב"
 
-#: data/gtk/discover_page.ui:74
+#: data/gtk/discover_page.ui:58
 msgid "Other Users Are Listening To…"
 msgstr "משתמשים אחרים מאזינים ל…"
 
-#: data/gtk/library_page.ui:4
-msgid "Shortwave"
-msgstr "Shortwave"
-
-#: data/gtk/library_page.ui:15
-msgid "Add Stations"
-msgstr "הוספת תחנה"
-
-#: data/gtk/library_page.ui:22
-msgid "Main Menu"
-msgstr "תפריט ראשי"
-
-#: data/gtk/library_page.ui:83
+#: data/gtk/library_page.ui:60
 msgid "Receiving Station Data…"
 msgstr "מתקבל מידע על התחנה…"
 
-#: data/gtk/library_page.ui:110
+#: data/gtk/library_page.ui:87
 msgid "_Discover New Stations"
 msgstr "_גילוי תחנות חדשות"
 
-#: data/gtk/library_page.ui:132
-msgid "_Enable Mini Player"
-msgstr "_אפשור נגן מוקטן"
-
-#: data/gtk/library_page.ui:136
-msgid "_Sorting"
-msgstr "_מיון"
-
-#: data/gtk/library_page.ui:139 data/gtk/search_page.ui:151
-msgid "_Name"
-msgstr "_שם"
-
-#: data/gtk/library_page.ui:144 data/gtk/search_page.ui:156
-msgid "_Language"
-msgstr "_שפה"
-
-#: data/gtk/library_page.ui:149 data/gtk/search_page.ui:161
-msgid "_Country"
-msgstr "_ארץ"
-
-#: data/gtk/library_page.ui:154 data/gtk/search_page.ui:166
-msgid "S_tate"
-msgstr "_מדינה"
-
-#: data/gtk/library_page.ui:159 data/gtk/search_page.ui:171
-msgid "_Votes"
-msgstr "ה_צבעות"
-
-#: data/gtk/library_page.ui:164 data/gtk/search_page.ui:176
-msgid "_Bitrate"
-msgstr "קצב _סיביות"
-
-#: data/gtk/library_page.ui:171 data/gtk/search_page.ui:183
-msgid "_Ascending"
-msgstr "סדר _עולה"
-
-#: data/gtk/library_page.ui:176 data/gtk/search_page.ui:188
-msgid "_Descending"
-msgstr "סדר _יורד"
-
-#: data/gtk/library_page.ui:185
-msgid "_Open radio-browser.info <sup>↗</sup>"
-msgstr "_פתיחת radio-browser.info ‏<sup>↖</sup>"
-
-#: data/gtk/library_page.ui:190
-msgid "_Create New Station"
-msgstr "_יצירת תחנה חדשה"
-
-#: data/gtk/library_page.ui:197
-msgid "_Preferences"
-msgstr "_העדפות"
-
-#: data/gtk/library_page.ui:201
-msgid "_Keyboard Shortcuts"
-msgstr "_צירופי מקשים"
-
-#: data/gtk/library_page.ui:205
-msgid "_About Shortwave"
-msgstr "_על אודות Shortwave"
-
-#: data/gtk/mini_controller.ui:85
+#: data/gtk/mini_controller.ui:87
 msgid "SHORTWAVE INTERNET RADIO"
 msgstr "אינטרנט רדיו SHORTWAVE"
 
-#: data/gtk/mini_controller.ui:107 data/gtk/sidebar_controller.ui:63
+#: data/gtk/mini_controller.ui:109 data/gtk/sidebar_controller.ui:63
 #: data/gtk/toolbar_controller.ui:38
 msgid "No Playback"
 msgstr "אין השמעה"
@@ -178,14 +97,26 @@ msgid "General"
 msgstr "כללי"
 
 #: data/gtk/settings_window.ui:10
+msgid "Appearance"
+msgstr "מראה"
+
+#: data/gtk/settings_window.ui:14
+msgid "_Dark Mode"
+msgstr "מצב _כהה"
+
+#: data/gtk/settings_window.ui:16
+msgid "Whether the application should use a dark theme"
+msgstr "האם על היישום להשתמש בערכת נושא כהה"
+
+#: data/gtk/settings_window.ui:29
 msgid "Features"
 msgstr "תכונות"
 
-#: data/gtk/settings_window.ui:13
+#: data/gtk/settings_window.ui:32
 msgid "_Notifications"
 msgstr "ה_תרעות"
 
-#: data/gtk/settings_window.ui:15
+#: data/gtk/settings_window.ui:34
 msgid "Show desktop notifications when a new song gets played"
 msgstr "הצגת התרעות בשולחן העבודה ברגע ששיר חדש מתנגן"
 
@@ -214,41 +145,102 @@ msgctxt "shortcut window"
 msgid "Quit the application"
 msgstr "יציאה מהיישום"
 
-#: data/gtk/help_overlay.ui:46 data/gtk/player.ui:5
+#: data/gtk/help_overlay.ui:46
+msgid "Window"
+msgstr "חלון"
+
+#: data/gtk/help_overlay.ui:49
+msgctxt "shortcut window"
+msgid "Open library view"
+msgstr "פתיחת תצוגה ספרייה"
+
+#: data/gtk/help_overlay.ui:55
+msgctxt "shortcut window"
+msgid "Open discover view"
+msgstr "פתיחת תצוגת גילוי"
+
+#: data/gtk/help_overlay.ui:61
+msgctxt "shortcut window"
+msgid "Open search view"
+msgstr "פתיחת תצוגת חיפוש"
+
+#: data/gtk/help_overlay.ui:67
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "חזרה"
+
+#: data/gtk/help_overlay.ui:73
+msgctxt "shortcut window"
+msgid "Refresh station data"
+msgstr "רענון מידע על התחנה"
+
+#: data/gtk/help_overlay.ui:81
 msgid "Playback"
 msgstr "ניגון"
 
-#: data/gtk/help_overlay.ui:49
+#: data/gtk/help_overlay.ui:84
 msgctxt "shortcut window"
 msgid "Toggle playback"
 msgstr "שינוי מצב הניגון"
 
-#: data/gtk/search_page.ui:35 data/gtk/station_dialog.ui:172
-#: src/ui/pages/search_page.rs:215
+#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "הצבעות"
 
-#: data/gtk/search_page.ui:40
+#: data/gtk/search_page.ui:36
 msgid "Change the sorting of the search results"
 msgstr "שינוי המיון של תוצאות החיפוש"
 
-#: data/gtk/search_page.ui:67
+#: data/gtk/search_page.ui:63
 msgid "No Results"
 msgstr "אין תוצאות"
 
-#: data/gtk/search_page.ui:68
+#: data/gtk/search_page.ui:64
 msgid "Try using a different search term"
 msgstr "יש לנסות מילים שונות לחיפוש"
+
+#: data/gtk/search_page.ui:148 data/gtk/window.ui:170
+msgid "_Name"
+msgstr "_שם"
+
+#: data/gtk/search_page.ui:153 data/gtk/window.ui:175
+msgid "_Language"
+msgstr "_שפה"
+
+#: data/gtk/search_page.ui:158 data/gtk/window.ui:180
+msgid "_Country"
+msgstr "_ארץ"
+
+#: data/gtk/search_page.ui:163 data/gtk/window.ui:185
+msgid "S_tate"
+msgstr "_מדינה"
+
+#: data/gtk/search_page.ui:168 data/gtk/window.ui:190
+msgid "_Votes"
+msgstr "ה_צבעות"
+
+#: data/gtk/search_page.ui:173 data/gtk/window.ui:195
+msgid "_Bitrate"
+msgstr "קצב _סיביות"
+
+#: data/gtk/search_page.ui:180 data/gtk/window.ui:202
+msgid "_Ascending"
+msgstr "סדר _עולה"
+
+#: data/gtk/search_page.ui:185 data/gtk/window.ui:207
+msgid "_Descending"
+msgstr "סדר _יורד"
 
 #: data/gtk/sidebar_controller.ui:22
 msgid "An error occurred"
 msgstr "אירעה שגיאה"
 
-#: data/gtk/sidebar_controller.ui:185
+#: data/gtk/sidebar_controller.ui:187
 msgid "_Show Station Details"
 msgstr "ה_צגת פרטי תחנה"
 
-#: data/gtk/sidebar_controller.ui:189
+#: data/gtk/sidebar_controller.ui:191
 msgid "Stream to a _Device"
 msgstr "הזרמה לה_תקן"
 
@@ -278,33 +270,37 @@ msgstr "_פתיחה"
 msgid "Save recorded song"
 msgstr "שמירת שיר מוקלט"
 
-#: data/gtk/station_dialog.ui:71
+#: data/gtk/station_dialog.ui:8
+msgid "Station details"
+msgstr "פרטי תחנה"
+
+#: data/gtk/station_dialog.ui:87
 msgid "_Play Station"
 msgstr "_ניגון תחנה"
 
-#: data/gtk/station_dialog.ui:86
+#: data/gtk/station_dialog.ui:101
 msgid "_Add to Library"
 msgstr "הו_ספה לספרייה"
 
-#: data/gtk/station_dialog.ui:102
+#: data/gtk/station_dialog.ui:116
 msgid "_Remove From Library"
 msgstr "ה_סרה מהספרייה"
 
-#: data/gtk/station_dialog.ui:120
+#: data/gtk/station_dialog.ui:133
 msgid "Local Station"
 msgstr "תחנה מקומית"
 
-#: data/gtk/station_dialog.ui:121
+#: data/gtk/station_dialog.ui:134
 msgid ""
 "This station exists only in your library, and is not part of the public "
 "online station database."
 msgstr "תחנה זו קיימת רק בספרייה שלך, ואינה חלק ממסד הנתונים הציבורי של תחנות."
 
-#: data/gtk/station_dialog.ui:136
+#: data/gtk/station_dialog.ui:149
 msgid "Orphaned Station"
 msgstr "תחנה יתומה"
 
-#: data/gtk/station_dialog.ui:137
+#: data/gtk/station_dialog.ui:150
 msgid ""
 "The information could not be updated, probably this station was removed from "
 "the public online station database."
@@ -312,44 +308,44 @@ msgstr ""
 "אי אפשר לעדכן את המידע, כנראה כיוון שהתחנה הזאת הוסרה ממסד הנתונים הציבורי "
 "המקוון על תחנות."
 
-#: data/gtk/station_dialog.ui:149
+#: data/gtk/station_dialog.ui:162
 msgid "Information"
 msgstr "מידע"
 
-#: data/gtk/station_dialog.ui:152 src/ui/pages/search_page.rs:212
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "שפה"
 
-#: data/gtk/station_dialog.ui:162
+#: data/gtk/station_dialog.ui:180
 msgid "Tags"
 msgstr "תגיות"
 
-#: data/gtk/station_dialog.ui:183
+#: data/gtk/station_dialog.ui:216
 msgid "Location"
 msgstr "מיקום"
 
-#: data/gtk/station_dialog.ui:188 src/ui/pages/search_page.rs:213
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "ארץ"
 
-#: data/gtk/station_dialog.ui:198 src/ui/pages/search_page.rs:214
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "מדינה"
 
-#: data/gtk/station_dialog.ui:232
+#: data/gtk/station_dialog.ui:285
 msgid "Audio"
 msgstr "שמע"
 
-#: data/gtk/station_dialog.ui:236 src/ui/pages/search_page.rs:216
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "קצב סיביות"
 
-#: data/gtk/station_dialog.ui:246
+#: data/gtk/station_dialog.ui:304
 msgid "Codec"
 msgstr "מקודד"
 
 #. This is a noun/label for the station stream url
-#: data/gtk/station_dialog.ui:256
+#: data/gtk/station_dialog.ui:319
 msgid "Stream"
 msgstr "הזרמה"
 
@@ -379,16 +375,80 @@ msgstr "החיפוש הושלם"
 msgid "Searching for Devices…"
 msgstr "מחפש אחר התקנים…"
 
+#: data/gtk/window.ui:27
+msgid "Add Stations"
+msgstr "הוספת תחנה"
+
+#: data/gtk/window.ui:34
+msgid "Go Back"
+msgstr "חזרה"
+
+# "shortcut window"
+#: data/gtk/window.ui:41
+msgid "Open Application Menu"
+msgstr "פתיחת תפריט היישום"
+
+# "shortcut window"
+#: data/gtk/window.ui:50
+msgid "Open Search"
+msgstr "פתיחת חיפוש"
+
+#: data/gtk/window.ui:74
+msgid "Unable to connect to radio-browser.info"
+msgstr "לא נִתן להתחבר ל־radio-browser.info"
+
+#: data/gtk/window.ui:84
+msgid ""
+"Access to the public online station database is not available. Ensure that "
+"you are connected to the internet."
+msgstr "אין גישה למסד הנתונים הציבורי המקוון. יש לוודא שישנו חיבור לרשת."
+
+#: data/gtk/window.ui:93
+msgid "Try again"
+msgstr "לנסות שוב"
+
+#: data/gtk/window.ui:159 data/gtk/window.ui:248
+msgid "_Enable Mini Player"
+msgstr "_אפשור נגן מוקטן"
+
+#: data/gtk/window.ui:163 data/gtk/window.ui:244
+msgid "_Refresh Station Data"
+msgstr "_רענון מידע על התחנה"
+
+#: data/gtk/window.ui:167
+msgid "_Sorting"
+msgstr "_מיון"
+
+#: data/gtk/window.ui:216 data/gtk/window.ui:254
+msgid "_Open radio-browser.info <sup>↗</sup>"
+msgstr "_פתיחת radio-browser.info ‏<sup>↖</sup>"
+
+#: data/gtk/window.ui:221 data/gtk/window.ui:259
+msgid "_Create New Station"
+msgstr "_יצירת תחנה חדשה"
+
+#: data/gtk/window.ui:228 data/gtk/window.ui:266
+msgid "_Preferences"
+msgstr "_העדפות"
+
+#: data/gtk/window.ui:232 data/gtk/window.ui:270
+msgid "_Keyboard Shortcuts"
+msgstr "_צירופי מקשים"
+
+#: data/gtk/window.ui:236 data/gtk/window.ui:274
+msgid "_About Shortwave"
+msgstr "_על אודות Shortwave"
+
 #. Fallback to xdg-home when xdg-music is not available
-#: src/audio/backend/song_backend.rs:97
+#: src/audio/backend/song_backend.rs:96
 msgid "Unable to access music directory. Saving song in home directory."
 msgstr "לא ניתן לגשת לתיקיית המוזיקה. שומר שירים בתיקיית הבית."
 
-#: src/audio/player.rs:190
+#: src/audio/player.rs:198
 msgid "Station cannot be streamed. URL is not valid."
 msgstr "תחנה לא ניתנת לניגון. כתובת URL לא תקפה."
 
-#: src/audio/player.rs:241
+#: src/audio/player.rs:253
 msgid "Cannot save song."
 msgstr "לא נִתן לשמור את השיר."
 
@@ -404,39 +464,39 @@ msgstr ""
 "מיזם תרגום GNOME לעברית https://l10n.gnome.org/teams/he/"
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:134
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "הצגת סטטיסטיקות"
 
-#: src/ui/pages/discover_page.rs:136
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "האזנה ללמעלה מ־30,000 תחנות"
 
-#: src/ui/pages/discover_page.rs:138
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "הוספת תחנה חדשה"
 
-#: src/ui/pages/discover_page.rs:140
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "התחנה המועדפת עליך חסרה?"
 
-#: src/ui/pages/discover_page.rs:145
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "פתיחת אתר האינטרנט"
 
-#: src/ui/pages/discover_page.rs:147
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "מופעל על ידי radio-browser.info"
 
-#: src/ui/pages/discover_page.rs:158 src/ui/pages/search_page.rs:191
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "לא ניתן לקבל מידע על התחנה."
 
-#: src/ui/pages/library_page.rs:121
+#: src/ui/pages/library_page.rs:117
 msgid "Welcome to {}"
 msgstr "ברוך בואך אל ‏{}‏"
 
-#: src/ui/pages/search_page.rs:104
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."
@@ -448,7 +508,7 @@ msgstr[1] "מספר התוצאות מוגבל ל־{} פריטים. יש לנסו
 msgstr[2] "מספר התוצאות מוגבל לשני פריטים. יש לנסות מינוח מסוים יותר."
 msgstr[3] "מספר התוצאות מוגבל ל־{} פריטים. יש לנסות מינוח מסוים יותר."
 
-#: src/ui/station_dialog.rs:221
+#: src/ui/station_dialog.rs:286
 msgid "{} kbit/s"
 msgstr "{} ק״ב/שנייה"
 
@@ -504,62 +564,6 @@ msgstr "שילוב חלק בסביבת שולחן העבודה GNOME"
 msgid "Gradio;Radio;Stream;Wave;"
 msgstr "רדיו;תחנות;תחנה;מוזיקה;הזרמה;גל;תדר;חדשות;"
 
-#~ msgid "Appearance"
-#~ msgstr "מראה"
-
-#~ msgid "_Dark Mode"
-#~ msgstr "מצב _כהה"
-
-#~ msgid "Whether the application should use a dark theme"
-#~ msgstr "האם על היישום להשתמש בערכת נושא כהה"
-
-#~ msgid "Window"
-#~ msgstr "חלון"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Open library view"
-#~ msgstr "פתיחת תצוגה ספרייה"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Open discover view"
-#~ msgstr "פתיחת תצוגת גילוי"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Open search view"
-#~ msgstr "פתיחת תצוגת חיפוש"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Go back"
-#~ msgstr "חזרה"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Refresh station data"
-#~ msgstr "רענון מידע על התחנה"
-
-#~ msgid "Station details"
-#~ msgstr "פרטי תחנה"
-
-#~ msgid "Back"
-#~ msgstr "אחורה"
-
-#~ msgid "Unable to connect to radio-browser.info"
-#~ msgstr "לא נִתן להתחבר ל־radio-browser.info"
-
-#~ msgid ""
-#~ "Access to the public online station database is not available. Ensure "
-#~ "that you are connected to the internet."
-#~ msgstr "אין גישה למסד הנתונים הציבורי המקוון. יש לוודא שישנו חיבור לרשת."
-
-#~ msgid "Try again"
-#~ msgstr "לנסות שוב"
-
-#~ msgid "_Refresh Station Data"
-#~ msgstr "_רענון מידע על התחנה"
-
-# "shortcut window"
-#~ msgid "Open Application Menu"
-#~ msgstr "פתיחת תפריט היישום"
-
 #~ msgid "Detected songs will appear here."
 #~ msgstr "שירים מזוהים יופיעו כאן."
 
@@ -568,6 +572,9 @@ msgstr "רדיו;תחנות;תחנה;מוזיקה;הזרמה;גל;תדר;חדש�
 
 #~ msgid "Select station image"
 #~ msgstr "בחירת תמונת תחנה"
+
+#~ msgid "Shortwave"
+#~ msgstr "Shortwave"
 
 #~ msgid "Error details"
 #~ msgstr "פרטי שגיאה"

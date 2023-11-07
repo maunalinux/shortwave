@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shortwave main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-05-29 12:20+0000\n"
-"PO-Revision-Date: 2023-06-13 16:04+0300\n"
+"POT-Creation-Date: 2022-12-19 15:41+0000\n"
+"PO-Revision-Date: 2022-12-19 18:49+0300\n"
 "Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
@@ -51,7 +51,7 @@ msgstr "Стварыць лакальную станцыю"
 msgid "Change station image"
 msgstr "Змяніць выяву станцыі"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "Назва"
 
@@ -185,8 +185,8 @@ msgctxt "shortcut window"
 msgid "Toggle playback"
 msgstr "Пачаць або спыніць прайграванне"
 
-#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:185
-#: src/ui/pages/search_page.rs:197
+#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Галасы"
 
@@ -202,35 +202,35 @@ msgstr "Нама вынікаў"
 msgid "Try using a different search term"
 msgstr "Паспрабуйце змяніць пошукавы запыт"
 
-#: data/gtk/search_page.ui:148 data/gtk/window.ui:171
+#: data/gtk/search_page.ui:148 data/gtk/window.ui:170
 msgid "_Name"
 msgstr "_Назва"
 
-#: data/gtk/search_page.ui:153 data/gtk/window.ui:176
+#: data/gtk/search_page.ui:153 data/gtk/window.ui:175
 msgid "_Language"
 msgstr "_Мова"
 
-#: data/gtk/search_page.ui:158 data/gtk/window.ui:181
+#: data/gtk/search_page.ui:158 data/gtk/window.ui:180
 msgid "_Country"
 msgstr "_Краіна"
 
-#: data/gtk/search_page.ui:163 data/gtk/window.ui:186
+#: data/gtk/search_page.ui:163 data/gtk/window.ui:185
 msgid "S_tate"
 msgstr "_Рэгіён"
 
-#: data/gtk/search_page.ui:168 data/gtk/window.ui:191
+#: data/gtk/search_page.ui:168 data/gtk/window.ui:190
 msgid "_Votes"
 msgstr "_Галасы"
 
-#: data/gtk/search_page.ui:173 data/gtk/window.ui:196
+#: data/gtk/search_page.ui:173 data/gtk/window.ui:195
 msgid "_Bitrate"
 msgstr "_Бітрэйт"
 
-#: data/gtk/search_page.ui:180 data/gtk/window.ui:203
+#: data/gtk/search_page.ui:180 data/gtk/window.ui:202
 msgid "_Ascending"
 msgstr "Па ўз_растанню"
 
-#: data/gtk/search_page.ui:185 data/gtk/window.ui:208
+#: data/gtk/search_page.ui:185 data/gtk/window.ui:207
 msgid "_Descending"
 msgstr "Па з_мяншэнню"
 
@@ -316,40 +316,40 @@ msgstr ""
 msgid "Information"
 msgstr "Звесткі"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Мова"
 
-#: data/gtk/station_dialog.ui:175
+#: data/gtk/station_dialog.ui:180
 msgid "Tags"
 msgstr "Тэгі"
 
-#: data/gtk/station_dialog.ui:196
+#: data/gtk/station_dialog.ui:216
 msgid "Location"
 msgstr "Месцазнаходжанне"
 
-#: data/gtk/station_dialog.ui:201 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "Краіна"
 
-#: data/gtk/station_dialog.ui:211 src/ui/pages/search_page.rs:196
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Рэгіён"
 
-#: data/gtk/station_dialog.ui:245
+#: data/gtk/station_dialog.ui:285
 msgid "Audio"
 msgstr "Гук"
 
-#: data/gtk/station_dialog.ui:249 src/ui/pages/search_page.rs:198
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Бітрэйт"
 
-#: data/gtk/station_dialog.ui:259
+#: data/gtk/station_dialog.ui:304
 msgid "Codec"
 msgstr "Кодэк"
 
 #. This is a noun/label for the station stream url
-#: data/gtk/station_dialog.ui:269
+#: data/gtk/station_dialog.ui:319
 msgid "Stream"
 msgstr "Трансляцыя"
 
@@ -386,22 +386,22 @@ msgid "Add Stations"
 msgstr "Дадаць станцыі"
 
 #: data/gtk/window.ui:34
-msgid "Back"
+msgid "Go Back"
 msgstr "Назад"
 
 #: data/gtk/window.ui:41
-msgid "Main Menu"
-msgstr "Галоўнае меню"
+msgid "Open Application Menu"
+msgstr "Адкрыць меню праграм"
 
-#: data/gtk/window.ui:51
-msgid "Search"
-msgstr "Пошук"
+#: data/gtk/window.ui:50
+msgid "Open Search"
+msgstr "Адкрыць пошук"
 
-#: data/gtk/window.ui:75
+#: data/gtk/window.ui:74
 msgid "Unable to connect to radio-browser.info"
 msgstr "Немагчыма злучыцца з radio-browser.info"
 
-#: data/gtk/window.ui:85
+#: data/gtk/window.ui:84
 msgid ""
 "Access to the public online station database is not available. Ensure that "
 "you are connected to the internet."
@@ -409,39 +409,39 @@ msgstr ""
 "Сеціўная база радыёстанцый недаступна. Пераканайцеся, што вы падлучаны да "
 "інтэрнэту."
 
-#: data/gtk/window.ui:94
+#: data/gtk/window.ui:93
 msgid "Try again"
 msgstr "Паспрабаваць зноў"
 
-#: data/gtk/window.ui:160 data/gtk/window.ui:249
+#: data/gtk/window.ui:159 data/gtk/window.ui:248
 msgid "_Enable Mini Player"
 msgstr "_Уключыць міні-прайгравальнік"
 
-#: data/gtk/window.ui:164 data/gtk/window.ui:245
+#: data/gtk/window.ui:163 data/gtk/window.ui:244
 msgid "_Refresh Station Data"
 msgstr "_Абнавіць даныя станцыі"
 
-#: data/gtk/window.ui:168
+#: data/gtk/window.ui:167
 msgid "_Sorting"
 msgstr "_Сартаванне"
 
-#: data/gtk/window.ui:217 data/gtk/window.ui:255
+#: data/gtk/window.ui:216 data/gtk/window.ui:254
 msgid "_Open radio-browser.info <sup>↗</sup>"
 msgstr "_Адкрыць radio-browser.info <sup>↗</sup>"
 
-#: data/gtk/window.ui:222 data/gtk/window.ui:260
+#: data/gtk/window.ui:221 data/gtk/window.ui:259
 msgid "_Create New Station"
 msgstr "Стварыць _новую станцыю"
 
-#: data/gtk/window.ui:229 data/gtk/window.ui:267
+#: data/gtk/window.ui:228 data/gtk/window.ui:266
 msgid "_Preferences"
 msgstr "_Параметры"
 
-#: data/gtk/window.ui:233 data/gtk/window.ui:271
+#: data/gtk/window.ui:232 data/gtk/window.ui:270
 msgid "_Keyboard Shortcuts"
 msgstr "_Спалучэнні клавіш"
 
-#: data/gtk/window.ui:237 data/gtk/window.ui:275
+#: data/gtk/window.ui:236 data/gtk/window.ui:274
 msgid "_About Shortwave"
 msgstr "Пр_а Shortwave"
 
@@ -470,31 +470,31 @@ msgid "translator-credits"
 msgstr "Юрась Шумовіч <shumovichy@gmail.com>"
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:116
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "Паказаць статыстыку"
 
-#: src/ui/pages/discover_page.rs:118
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "Больш за 30 000 станцый"
 
-#: src/ui/pages/discover_page.rs:120
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "Дадаць новую станцыю"
 
-#: src/ui/pages/discover_page.rs:122
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "Няма вашай улюбёнай станцыі?"
 
-#: src/ui/pages/discover_page.rs:127
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "Адкрыць сайт"
 
-#: src/ui/pages/discover_page.rs:129
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "Заснавана на платформе radio-browser.info"
 
-#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "Не ўдалося атрымаць даныя станцыі."
 
@@ -502,7 +502,7 @@ msgstr "Не ўдалося атрымаць даныя станцыі."
 msgid "Welcome to {}"
 msgstr "Вітаем у {}"
 
-#: src/ui/pages/search_page.rs:103
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."
@@ -519,7 +519,7 @@ msgstr[2] ""
 "Колькасць вынікаў абмежавана да {}. Паспрабуйце больш дакладны пошукавы "
 "запыт."
 
-#: src/ui/station_dialog.rs:273
+#: src/ui/station_dialog.rs:286
 msgid "{} kbit/s"
 msgstr "{} кбіт/с"
 
@@ -577,6 +577,3 @@ msgstr "Поўная інтэграцыя ў працоўнае асяроддз
 #: data/de.haeckerfelix.Shortwave.desktop.in.in:12
 msgid "Gradio;Radio;Stream;Wave;"
 msgstr "Gradio;Radio;Радыё;Хваля;"
-
-#~ msgid "Open Application Menu"
-#~ msgstr "Адкрыць меню праграм"

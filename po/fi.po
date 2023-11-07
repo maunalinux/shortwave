@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shortwave master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-05-16 12:59+0000\n"
-"PO-Revision-Date: 2023-05-18 12:53+0300\n"
+"POT-Creation-Date: 2022-10-09 11:25+0000\n"
+"PO-Revision-Date: 2022-10-09 19:01+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: Finnish <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/gtk/create_station_dialog.ui:8
 msgid "Create new station"
@@ -50,7 +50,7 @@ msgstr "Luo paikallinen asema"
 msgid "Change station image"
 msgstr "Vaihda aseman kuva"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "Nimi"
 
@@ -136,54 +136,49 @@ msgstr "Avaa asetukset"
 
 #: data/gtk/help_overlay.ui:32
 msgctxt "shortcut window"
-msgid "Close the window"
-msgstr "Sulje ikkuna"
-
-#: data/gtk/help_overlay.ui:38
-msgctxt "shortcut window"
 msgid "Quit the application"
 msgstr "Lopeta sovellus"
 
-#: data/gtk/help_overlay.ui:46
+#: data/gtk/help_overlay.ui:40
 msgid "Window"
 msgstr "Ikkuna"
 
-#: data/gtk/help_overlay.ui:49
+#: data/gtk/help_overlay.ui:43
 msgctxt "shortcut window"
 msgid "Open library view"
 msgstr "Avaa kirjastonäkymä"
 
-#: data/gtk/help_overlay.ui:55
+#: data/gtk/help_overlay.ui:49
 msgctxt "shortcut window"
 msgid "Open discover view"
 msgstr "Avaa löytämisnäkymä"
 
-#: data/gtk/help_overlay.ui:61
+#: data/gtk/help_overlay.ui:55
 msgctxt "shortcut window"
 msgid "Open search view"
 msgstr "Avaa hakunäkymä"
 
-#: data/gtk/help_overlay.ui:67
+#: data/gtk/help_overlay.ui:61
 msgctxt "shortcut window"
 msgid "Go back"
 msgstr "Siirry takaisin"
 
-#: data/gtk/help_overlay.ui:73
+#: data/gtk/help_overlay.ui:67
 msgctxt "shortcut window"
 msgid "Refresh station data"
 msgstr "Päivitä aseman tiedot"
 
-#: data/gtk/help_overlay.ui:81
+#: data/gtk/help_overlay.ui:75
 msgid "Playback"
 msgstr "Toisto"
 
-#: data/gtk/help_overlay.ui:84
+#: data/gtk/help_overlay.ui:78
 msgctxt "shortcut window"
 msgid "Toggle playback"
 msgstr "Toisto päällä/pois"
 
-#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
-#: src/ui/pages/search_page.rs:197
+#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:201
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Äänet"
 
@@ -235,11 +230,11 @@ msgstr "_Laskeva"
 msgid "An error occurred"
 msgstr "Tapahtui virhe"
 
-#: data/gtk/sidebar_controller.ui:187
+#: data/gtk/sidebar_controller.ui:188
 msgid "_Show Station Details"
 msgstr "Näytä _aseman tiedot"
 
-#: data/gtk/sidebar_controller.ui:191
+#: data/gtk/sidebar_controller.ui:192
 msgid "Stream to a _Device"
 msgstr "_Suoratoista laitteelle"
 
@@ -265,7 +260,7 @@ msgstr "Tallennetut kappaleet sijaitsevat Musiikki-kansiossa."
 msgid "_Open"
 msgstr "_Avaa"
 
-#: data/gtk/song_row.ui:16
+#: data/gtk/song_row.ui:15
 msgid "Save recorded song"
 msgstr "Tallenna nauhoitettu kappale"
 
@@ -273,23 +268,23 @@ msgstr "Tallenna nauhoitettu kappale"
 msgid "Station details"
 msgstr "Aseman tiedot"
 
-#: data/gtk/station_dialog.ui:87
+#: data/gtk/station_dialog.ui:88
 msgid "_Play Station"
 msgstr "_Toista asema"
 
-#: data/gtk/station_dialog.ui:101
+#: data/gtk/station_dialog.ui:102
 msgid "_Add to Library"
 msgstr "_Lisää kirjastoon"
 
-#: data/gtk/station_dialog.ui:116
+#: data/gtk/station_dialog.ui:117
 msgid "_Remove From Library"
 msgstr "_Poista kirjastosta"
 
-#: data/gtk/station_dialog.ui:133
+#: data/gtk/station_dialog.ui:134
 msgid "Local Station"
 msgstr "Paikallinen asema"
 
-#: data/gtk/station_dialog.ui:134
+#: data/gtk/station_dialog.ui:135
 msgid ""
 "This station exists only in your library, and is not part of the public "
 "online station database."
@@ -297,11 +292,11 @@ msgstr ""
 "Tämä asema on olemassa vain kirjastossasi, eikä se näy osana verkon julkisia "
 "asematietokantoja."
 
-#: data/gtk/station_dialog.ui:149
+#: data/gtk/station_dialog.ui:150
 msgid "Orphaned Station"
 msgstr "Hylätty asema"
 
-#: data/gtk/station_dialog.ui:150
+#: data/gtk/station_dialog.ui:151
 msgid ""
 "The information could not be updated, probably this station was removed from "
 "the public online station database."
@@ -309,44 +304,44 @@ msgstr ""
 "Tietoja ei voitu päivittää. Tämä asema todennäköisesti poistettiin verkon "
 "julkisesta asematietokannasta."
 
-#: data/gtk/station_dialog.ui:162
+#: data/gtk/station_dialog.ui:163
 msgid "Information"
 msgstr "Tiedot"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:166 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Kieli"
 
-#: data/gtk/station_dialog.ui:180
+#: data/gtk/station_dialog.ui:181
 msgid "Tags"
 msgstr "Tunnisteet"
 
-#: data/gtk/station_dialog.ui:216
+#: data/gtk/station_dialog.ui:217
 msgid "Location"
 msgstr "Sijainti"
 
-#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:222 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "Maa"
 
-#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:196
+#: data/gtk/station_dialog.ui:242 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Tila"
 
-#: data/gtk/station_dialog.ui:285
+#: data/gtk/station_dialog.ui:286
 msgid "Audio"
 msgstr "Ääni"
 
-#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:198
+#: data/gtk/station_dialog.ui:290 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Bittinopeus"
 
-#: data/gtk/station_dialog.ui:304
+#: data/gtk/station_dialog.ui:305
 msgid "Codec"
 msgstr "Koodekki"
 
 #. This is a noun/label for the station stream url
-#: data/gtk/station_dialog.ui:319
+#: data/gtk/station_dialog.ui:320
 msgid "Stream"
 msgstr "Suoratoisto"
 
@@ -383,16 +378,16 @@ msgid "Add Stations"
 msgstr "Lisää asemia"
 
 #: data/gtk/window.ui:34
-msgid "Back"
-msgstr "Takaisin"
+msgid "Go Back"
+msgstr "Siirry takaisin"
 
 #: data/gtk/window.ui:41
-msgid "Main Menu"
-msgstr "Päävalikko"
+msgid "Open Application Menu"
+msgstr "Avaa sovellusvalikko"
 
 #: data/gtk/window.ui:50
-msgid "Search"
-msgstr "Etsi"
+msgid "Open Search"
+msgstr "Avaa haku"
 
 #: data/gtk/window.ui:74
 msgid "Unable to connect to radio-browser.info"
@@ -465,31 +460,31 @@ msgid "translator-credits"
 msgstr "Jiri Grönroos"
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:116
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "Näytä tilastot"
 
-#: src/ui/pages/discover_page.rs:118
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "Selaa yli 30 000 asemaa"
 
-#: src/ui/pages/discover_page.rs:120
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "Lisää uusi asema"
 
-#: src/ui/pages/discover_page.rs:122
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "Puuttuuko suosikkiasemasi?"
 
-#: src/ui/pages/discover_page.rs:127
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "Avaa verkkosivu"
 
-#: src/ui/pages/discover_page.rs:129
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "Taustavoimana radio-browser.info"
 
-#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "Aseman tietoja ei voitu vastaanottaa."
 
@@ -497,7 +492,7 @@ msgstr "Aseman tietoja ei voitu vastaanottaa."
 msgid "Welcome to {}"
 msgstr "Tervetuloa, käytössäsi on {}"
 
-#: src/ui/pages/search_page.rs:103
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."
@@ -525,10 +520,10 @@ msgstr "Felix Häcker"
 #: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:16
 msgid ""
 "Shortwave is an internet radio player that provides access to a station "
-"database with over 30,000 stations."
+"database with over 25,000 stations."
 msgstr ""
 "Shortwave on internetradioasemien toistamiseen tarkoitettu sovellus, joka "
-"tarjoaa yli 30 000 aseman tietokannan."
+"tarjoaa yli 25000 aseman tietokannan."
 
 #: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:19
 msgid "Features:"
@@ -568,9 +563,6 @@ msgstr "Saumaton integraatio Gnome-työpöytäympäristöön"
 #: data/de.haeckerfelix.Shortwave.desktop.in.in:12
 msgid "Gradio;Radio;Stream;Wave;"
 msgstr "Gradio;Radio;Stream;Wave;suoratoisto;nettiradio;"
-
-#~ msgid "Open Application Menu"
-#~ msgstr "Avaa sovellusvalikko"
 
 #~ msgid "Detected songs will appear here."
 #~ msgstr "Havaitut kappaleet näkyvät tässä."

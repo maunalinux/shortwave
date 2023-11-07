@@ -1,5 +1,5 @@
 // Shortwave - station_dialog.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -93,14 +93,14 @@ glib::wrapper! {
 #[gtk::template_callbacks]
 impl SwCreateStationDialog {
     pub fn new(sender: Sender<Action>) -> Self {
-        let dialog: Self = glib::Object::new();
+        let dialog: Self = glib::Object::new(&[]).unwrap();
 
         let imp = dialog.imp();
         let favicon_widget = StationFavicon::new(FaviconSize::Big);
         let file_chooser = gtk::FileChooserNative::builder()
             .transient_for(&dialog)
             .modal(true)
-            .title(gettext("Select station image"))
+            .title(&gettext("Select station image"))
             .build();
 
         imp.favicon_widget.set(favicon_widget).unwrap();
@@ -163,7 +163,7 @@ impl SwCreateStationDialog {
         let url = Url::parse(&imp.url_row.text()).unwrap();
         let favicon = imp.favicon.borrow().clone();
 
-        let station = SwStation::new(&uuid, true, false, StationMetadata::new(name, url), favicon);
+        let station = SwStation::new(uuid, true, false, StationMetadata::new(name, url), favicon);
         SwApplication::default()
             .library()
             .add_stations(vec![station]);

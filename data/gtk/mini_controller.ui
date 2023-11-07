@@ -52,7 +52,9 @@
                     <property name="child">
                       <object class="GtkButton" id="loading_button">
                         <child>
-                          <object class="GtkSpinner" id="spinner"/>
+                          <object class="GtkSpinner">
+                            <property name="spinning">True</property>
+                          </object>
                         </child>
                         <style>
                           <class name="mini-controller-button"/>
@@ -77,7 +79,7 @@
         </child>
         <child>
           <object class="GtkBox">
-            <property name="height_request">80</property>
+            <property name="height_request">90</property>
             <property name="orientation">vertical</property>
             <property name="hexpand">True</property>
             <child>

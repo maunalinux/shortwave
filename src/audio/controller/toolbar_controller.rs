@@ -1,5 +1,5 @@
 // Shortwave - toolbar_controller.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ use gtk::prelude::*;
 use crate::api::{FaviconDownloader, SwStation};
 use crate::app::Action;
 use crate::audio::{Controller, PlaybackState};
-use crate::ui::{FaviconSize, StationFavicon};
+use crate::ui::{FaviconSize, StationFavicon, SwApplicationWindow, SwView};
 
 pub struct ToolbarController {
     pub widget: gtk::Box,
@@ -40,7 +40,6 @@ pub struct ToolbarController {
     playback_button_stack: gtk::Stack,
     start_playback_button: gtk::Button,
     stop_playback_button: gtk::Button,
-    loading_spinner: gtk::Spinner,
     loading_button: gtk::Button,
     toolbox_gesture: gtk::GestureClick,
 }
@@ -59,7 +58,6 @@ impl ToolbarController {
         get_widget!(builder, gtk::Button, stop_playback_button);
         get_widget!(builder, gtk::Button, loading_button);
         get_widget!(builder, gtk::GestureClick, toolbox_gesture);
-        get_widget!(builder, gtk::Spinner, loading_spinner);
 
         let station = Rc::new(RefCell::new(None));
 
@@ -81,7 +79,6 @@ impl ToolbarController {
             stop_playback_button,
             loading_button,
             toolbox_gesture,
-            loading_spinner,
         };
 
         controller.setup_signals();
@@ -111,8 +108,8 @@ impl ToolbarController {
 
         // show_player_button
         self.toolbox_gesture.connect_pressed(
-            clone!(@weak self.widget as widget => move |_, _, _, _| {
-                widget.activate_action("win.show-player", None).unwrap();
+            clone!(@strong self.sender as sender => move |_, _, _, _| {
+                SwApplicationWindow::default().set_view(SwView::Player);
             }),
         );
     }
@@ -155,10 +152,7 @@ impl Controller for ToolbarController {
             PlaybackState::Failure(_) => "start_playback",
         };
         self.playback_button_stack
-            .set_visible_child_name(child_name);
-
-        self.loading_spinner
-            .set_spinning(matches!(playback_state, PlaybackState::Loading));
+            .set_visible_child_name(child_name)
     }
 
     fn set_volume(&self, _volume: f64) {

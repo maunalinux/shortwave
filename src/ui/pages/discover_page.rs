@@ -1,5 +1,5 @@
 // Shortwave - discover_page.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,12 +15,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 use adw::subclass::prelude::*;
-use glib::{closure, subclass, Sender};
+use futures_util::FutureExt;
+use glib::{subclass, Sender};
 use gtk::prelude::*;
 use gtk::{glib, CompositeTemplate};
 use once_cell::unsync::OnceCell;
+use url::Url;
 
-use crate::api::{Error, StationRequest, SwClient};
+use crate::api::{Client, StationRequest};
 use crate::app;
 use crate::i18n::*;
 use crate::ui::featured_carousel::Action;
@@ -41,16 +43,13 @@ mod imp {
         #[template_child]
         pub clicked_flowbox: TemplateChild<SwStationFlowBox>,
 
-        pub client1: SwClient,
-        pub client2: SwClient,
-        pub client3: SwClient,
         pub sender: OnceCell<Sender<app::Action>>,
     }
 
     #[glib::object_subclass]
     impl ObjectSubclass for SwDiscoverPage {
         const NAME: &'static str = "SwDiscoverPage";
-        type ParentType = adw::NavigationPage;
+        type ParentType = adw::Bin;
         type Type = super::SwDiscoverPage;
 
         fn class_init(klass: &mut Self::Class) {
@@ -62,61 +61,16 @@ mod imp {
         }
     }
 
-    impl ObjectImpl for SwDiscoverPage {
-        fn constructed(&self) {}
-    }
+    impl ObjectImpl for SwDiscoverPage {}
 
     impl WidgetImpl for SwDiscoverPage {}
 
-    impl NavigationPageImpl for SwDiscoverPage {
-        fn shown(&self) {
-            // TODO: THIS IS HORRIBLE
-            // burn it with fire, and rewrite it from scratch
-
-            // Most voted stations (stations with the most votes)
-            let votes_request = StationRequest {
-                order: Some("votes".to_string()),
-                limit: Some(12),
-                reverse: Some(true),
-                ..Default::default()
-            };
-            self.fill_flowbox(&self.client1, &self.votes_flowbox, votes_request);
-
-            // Trending (stations with the highest clicktrend)
-            let trending_request = StationRequest {
-                order: Some("clicktrend".to_string()),
-                limit: Some(12),
-                ..Default::default()
-            };
-            self.fill_flowbox(&self.client2, &self.trending_flowbox, trending_request);
-
-            // Other users are listening to... (stations which got recently clicked)
-            let clicked_request = StationRequest {
-                order: Some("clicktimestamp".to_string()),
-                limit: Some(12),
-                ..Default::default()
-            };
-            self.fill_flowbox(&self.client3, &self.clicked_flowbox, clicked_request);
-        }
-    }
-
-    impl SwDiscoverPage {
-        fn fill_flowbox(
-            &self,
-            client: &SwClient,
-            flowbox: &SwStationFlowBox,
-            request: StationRequest,
-        ) {
-            let sender = self.sender.get().unwrap().clone();
-            flowbox.init(client.model(), sender);
-            client.send_station_request(request);
-        }
-    }
+    impl BinImpl for SwDiscoverPage {}
 }
 
 glib::wrapper! {
     pub struct SwDiscoverPage(ObjectSubclass<imp::SwDiscoverPage>)
-        @extends gtk::Widget, adw::NavigationPage;
+        @extends gtk::Widget, adw::Bin;
 }
 
 impl SwDiscoverPage {
@@ -125,6 +79,35 @@ impl SwDiscoverPage {
         imp.sender.set(sender).unwrap();
 
         self.setup_widgets();
+    }
+
+    pub fn refresh_data(&self, server: &Url) {
+        let imp = self.imp();
+
+        // Most voted stations (stations with the most votes)
+        let votes_request = StationRequest {
+            order: Some("votes".to_string()),
+            limit: Some(12),
+            reverse: Some(true),
+            ..Default::default()
+        };
+        self.fill_flowbox(server, &imp.votes_flowbox, votes_request);
+
+        // Trending (stations with the highest clicktrend)
+        let trending_request = StationRequest {
+            order: Some("clicktrend".to_string()),
+            limit: Some(12),
+            ..Default::default()
+        };
+        self.fill_flowbox(server, &imp.trending_flowbox, trending_request);
+
+        // Other users are listening to... (stations which got recently clicked)
+        let clicked_request = StationRequest {
+            order: Some("clicktimestamp".to_string()),
+            limit: Some(12),
+            ..Default::default()
+        };
+        self.fill_flowbox(server, &imp.clicked_flowbox, clicked_request);
     }
 
     fn setup_widgets(&self) {
@@ -148,16 +131,26 @@ impl SwDiscoverPage {
             "#26a269",
             Some(action),
         );
+    }
 
-        imp.client1.connect_closure(
-            "error",
-            false,
-            closure!(|_: SwClient, err: Error| {
+    fn fill_flowbox(&self, server: &Url, flowbox: &SwStationFlowBox, request: StationRequest) {
+        let imp = self.imp();
+
+        let client = Client::new(server.clone());
+        let sender = imp.sender.get().unwrap().clone();
+
+        let model = &*client.model;
+        flowbox.init(model.clone(), sender);
+
+        let fut = client.send_station_request(request).map(move |result| {
+            if let Err(err) = result {
                 warn!("Station data could not be received: {}", err.to_string());
 
                 let text = i18n("Station data could not be received.");
                 SwApplicationWindow::default().show_notification(&text);
-            }),
-        );
+            }
+        });
+
+        spawn!(fut);
     }
 }

@@ -3,22 +3,23 @@
 # This file is distributed under the same license as the shortwave package.
 # Translators:
 # Марко М. Костић <marko.m.kostic@gmail.com>, 2020.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2021-2023.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2021–2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: shortwave master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2022-12-19 15:41+0000\n"
-"PO-Revision-Date: 2023-03-07 07:11+0100\n"
+"POT-Creation-Date: 2022-10-09 11:25+0000\n"
+"PO-Revision-Date: 2022-10-19 10:33+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: Serbian <gnome-sr@googlegroups.org>\n"
+"Language-Team: Serbian <српски <gnome-sr@googlegroups.org>>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
-"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
+"X-Generator: Gtranslator 3.36.0\n"
 
 #: data/gtk/create_station_dialog.ui:8
 msgid "Create new station"
@@ -138,53 +139,48 @@ msgstr "Отвори поставке"
 
 #: data/gtk/help_overlay.ui:32
 msgctxt "shortcut window"
-msgid "Close the window"
-msgstr "Затвара прозор"
-
-#: data/gtk/help_overlay.ui:38
-msgctxt "shortcut window"
 msgid "Quit the application"
 msgstr "Изађи из програма"
 
-#: data/gtk/help_overlay.ui:46
+#: data/gtk/help_overlay.ui:40
 msgid "Window"
 msgstr "Прозор"
 
-#: data/gtk/help_overlay.ui:49
+#: data/gtk/help_overlay.ui:43
 msgctxt "shortcut window"
 msgid "Open library view"
 msgstr "Отвори преглед библиотеке"
 
-#: data/gtk/help_overlay.ui:55
+#: data/gtk/help_overlay.ui:49
 msgctxt "shortcut window"
 msgid "Open discover view"
 msgstr "Отвори преглед откривања"
 
-#: data/gtk/help_overlay.ui:61
+#: data/gtk/help_overlay.ui:55
 msgctxt "shortcut window"
 msgid "Open search view"
 msgstr "Отвори прозор претраге"
 
-#: data/gtk/help_overlay.ui:67
+#: data/gtk/help_overlay.ui:61
 msgctxt "shortcut window"
 msgid "Go back"
 msgstr "Иди назад"
 
-#: data/gtk/help_overlay.ui:73
+#: data/gtk/help_overlay.ui:67
 msgctxt "shortcut window"
 msgid "Refresh station data"
 msgstr "Освежи податке станице"
 
-#: data/gtk/help_overlay.ui:81
+#: data/gtk/help_overlay.ui:75
 msgid "Playback"
 msgstr "Репродукција"
 
-#: data/gtk/help_overlay.ui:84
+#: data/gtk/help_overlay.ui:78
 msgctxt "shortcut window"
 msgid "Toggle playback"
 msgstr "Започиње/паузира пуштање"
 
-#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
+#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:201
 #: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Гласова"
@@ -237,11 +233,11 @@ msgstr "_Опадајуће"
 msgid "An error occurred"
 msgstr "Дошло је до грешке"
 
-#: data/gtk/sidebar_controller.ui:187
+#: data/gtk/sidebar_controller.ui:188
 msgid "_Show Station Details"
 msgstr "_Прикажи детаље о станици"
 
-#: data/gtk/sidebar_controller.ui:191
+#: data/gtk/sidebar_controller.ui:192
 msgid "Stream to a _Device"
 msgstr "Пу_сти на уређају"
 
@@ -267,7 +263,7 @@ msgstr "Сачуване песме се налазе у вашој фасцик
 msgid "_Open"
 msgstr "_Отвори"
 
-#: data/gtk/song_row.ui:16
+#: data/gtk/song_row.ui:15
 msgid "Save recorded song"
 msgstr "Сачувај снимљену песму"
 
@@ -275,23 +271,23 @@ msgstr "Сачувај снимљену песму"
 msgid "Station details"
 msgstr "Детаљи о станици"
 
-#: data/gtk/station_dialog.ui:87
+#: data/gtk/station_dialog.ui:88
 msgid "_Play Station"
 msgstr "_Пусти станицу"
 
-#: data/gtk/station_dialog.ui:101
+#: data/gtk/station_dialog.ui:102
 msgid "_Add to Library"
 msgstr "_Додај у библиотеку"
 
-#: data/gtk/station_dialog.ui:116
+#: data/gtk/station_dialog.ui:117
 msgid "_Remove From Library"
 msgstr "_Уклони из библиотеке"
 
-#: data/gtk/station_dialog.ui:133
+#: data/gtk/station_dialog.ui:134
 msgid "Local Station"
 msgstr "Локална станица"
 
-#: data/gtk/station_dialog.ui:134
+#: data/gtk/station_dialog.ui:135
 msgid ""
 "This station exists only in your library, and is not part of the public "
 "online station database."
@@ -299,11 +295,11 @@ msgstr ""
 "Ова станица постоји само у вашој библиотеци и није део јавне базе станица на "
 "интернету."
 
-#: data/gtk/station_dialog.ui:149
+#: data/gtk/station_dialog.ui:150
 msgid "Orphaned Station"
 msgstr "Напуштена станица"
 
-#: data/gtk/station_dialog.ui:150
+#: data/gtk/station_dialog.ui:151
 msgid ""
 "The information could not be updated, probably this station was removed from "
 "the public online station database."
@@ -311,44 +307,44 @@ msgstr ""
 "Подаци о станици не могу бити ажурирани, ова станица је вероватно уклоњена "
 "из јавне базе станица на интернету."
 
-#: data/gtk/station_dialog.ui:162
+#: data/gtk/station_dialog.ui:163
 msgid "Information"
 msgstr "Информације"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
+#: data/gtk/station_dialog.ui:166 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Језик"
 
-#: data/gtk/station_dialog.ui:180
+#: data/gtk/station_dialog.ui:181
 msgid "Tags"
 msgstr "Ознаке"
 
-#: data/gtk/station_dialog.ui:216
+#: data/gtk/station_dialog.ui:217
 msgid "Location"
 msgstr "Место"
 
-#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:222 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "Држава"
 
-#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:242 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Покрајина"
 
-#: data/gtk/station_dialog.ui:285
+#: data/gtk/station_dialog.ui:286
 msgid "Audio"
 msgstr "Звук"
 
-#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
+#: data/gtk/station_dialog.ui:290 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Битски проток"
 
-#: data/gtk/station_dialog.ui:304
+#: data/gtk/station_dialog.ui:305
 msgid "Codec"
 msgstr "Кодек"
 
 #. This is a noun/label for the station stream url
-#: data/gtk/station_dialog.ui:319
+#: data/gtk/station_dialog.ui:320
 msgid "Stream"
 msgstr "Ток"
 
@@ -380,6 +376,7 @@ msgid "Searching for Devices…"
 msgstr "Тражим уређаје…"
 
 #: data/gtk/window.ui:27
+#| msgid "Add new station"
 msgid "Add Stations"
 msgstr "Додај станице"
 
@@ -388,10 +385,14 @@ msgid "Go Back"
 msgstr "Врати се"
 
 #: data/gtk/window.ui:41
+#| msgctxt "shortcut window"
+#| msgid "Open application menu"
 msgid "Open Application Menu"
 msgstr "Отвори изборник програма"
 
 #: data/gtk/window.ui:50
+#| msgctxt "shortcut window"
+#| msgid "Open search view"
 msgid "Open Search"
 msgstr "Отвори претрагу"
 
@@ -537,15 +538,12 @@ msgid "Felix Häcker"
 msgstr "Felix Häcker"
 
 #: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:16
-#| msgid ""
-#| "Shortwave is an internet radio player that provides access to a station "
-#| "database with over 25,000 stations."
 msgid ""
 "Shortwave is an internet radio player that provides access to a station "
-"database with over 30,000 stations."
+"database with over 25,000 stations."
 msgstr ""
 "Кратки талас је пуштач интернет радиа који пружа приступ бази радио станица "
-"са више од 30.000 станица."
+"са више од 25.000 станица."
 
 #: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:19
 msgid "Features:"

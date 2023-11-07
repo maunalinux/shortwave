@@ -2,13 +2,13 @@
 # Copyright (C) 2020 shortwave's COPYRIGHT HOLDER
 # This file is distributed under the same license as the shortwave package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: shortwave master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-05-16 12:59+0000\n"
-"PO-Revision-Date: 2023-05-16 20:00+0300\n"
+"POT-Creation-Date: 2022-12-19 15:41+0000\n"
+"PO-Revision-Date: 2022-12-22 05:42+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -51,7 +51,7 @@ msgstr "Створити локальну станцію"
 msgid "Change station image"
 msgstr "Змінити зображення для станції"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "Назва"
 
@@ -185,7 +185,7 @@ msgid "Toggle playback"
 msgstr "Перемкнути відтворення"
 
 #: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
-#: src/ui/pages/search_page.rs:197
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Голоси"
 
@@ -315,7 +315,7 @@ msgstr ""
 msgid "Information"
 msgstr "Відомості"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Мова"
 
@@ -327,11 +327,11 @@ msgstr "Мітки"
 msgid "Location"
 msgstr "Місце"
 
-#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "Країна"
 
-#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:196
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Штат"
 
@@ -339,7 +339,7 @@ msgstr "Штат"
 msgid "Audio"
 msgstr "Звук"
 
-#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:198
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Бітова швидкість"
 
@@ -385,18 +385,16 @@ msgid "Add Stations"
 msgstr "Додати станції"
 
 #: data/gtk/window.ui:34
-#| msgid "Go Back"
-msgid "Back"
+msgid "Go Back"
 msgstr "Назад"
 
 #: data/gtk/window.ui:41
-msgid "Main Menu"
-msgstr "Головне меню"
+msgid "Open Application Menu"
+msgstr "Відкрити меню програми"
 
 #: data/gtk/window.ui:50
-#| msgid "Open Search"
-msgid "Search"
-msgstr "Пошук"
+msgid "Open Search"
+msgstr "Відкрити пошук"
 
 #: data/gtk/window.ui:74
 msgid "Unable to connect to radio-browser.info"
@@ -471,31 +469,31 @@ msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2020"
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:116
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "Показати статистику"
 
-#: src/ui/pages/discover_page.rs:118
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "Навігація списком із понад 30000 станцій"
 
-#: src/ui/pages/discover_page.rs:120
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "Додати нову станцію"
 
-#: src/ui/pages/discover_page.rs:122
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "Немає вашої улюбленої радіостанції?"
 
-#: src/ui/pages/discover_page.rs:127
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "Відкрити сайт"
 
-#: src/ui/pages/discover_page.rs:129
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "На основі radio-browser.info"
 
-#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "Не вдалося отримати дані станції."
 
@@ -503,7 +501,7 @@ msgstr "Не вдалося отримати дані станції."
 msgid "Welcome to {}"
 msgstr "Вітаємо у {}"
 
-#: src/ui/pages/search_page.rs:103
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."
@@ -582,9 +580,6 @@ msgstr "Безшовна інтеграція до стільничного се
 #: data/de.haeckerfelix.Shortwave.desktop.in.in:12
 msgid "Gradio;Radio;Stream;Wave;"
 msgstr "Gradio;Radio;Stream;Wave;градіо;жрадіо;радіо;потік;трансляція;хвиля;"
-
-#~ msgid "Open Application Menu"
-#~ msgstr "Відкрити меню програми"
 
 #~ msgid "Detected songs will appear here."
 #~ msgstr "Виявлені пісні буде показано тут."

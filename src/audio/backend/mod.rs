@@ -1,5 +1,5 @@
 // Shortwave - mod.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@ impl Backend {
 
         // Gstreamer backend
         let (gstreamer_sender, gstreamer_receiver) =
-            glib::MainContext::channel(glib::Priority::DEFAULT);
+            glib::MainContext::channel(glib::PRIORITY_DEFAULT);
         let gstreamer_receiver = Some(gstreamer_receiver);
         let gstreamer = GstreamerBackend::new(gstreamer_sender, sender);
 

@@ -7,14 +7,14 @@
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2020.
 # Christian Kirbach <christian.kirbach@gmail.com>, 2020-2021.
 # Philipp Kiemle <philipp.kiemle@gmail.com>, 2021-2022.
-# Jürgen Benvenuti <gastoris@posteo.org>, 2022, 2023.
+# Jürgen Benvenuti <gastoris@posteo.org>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: shortwave master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-05-16 12:59+0000\n"
-"PO-Revision-Date: 2023-05-16 18:47+0200\n"
+"POT-Creation-Date: 2022-12-19 15:41+0000\n"
+"PO-Revision-Date: 2022-12-19 22:38+0100\n"
 "Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -56,7 +56,7 @@ msgstr "Lokalen Sender erstellen"
 msgid "Change station image"
 msgstr "Senderbild ändern"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "Name"
 
@@ -189,7 +189,7 @@ msgid "Toggle playback"
 msgstr "Wiedergabe umschalten"
 
 #: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
-#: src/ui/pages/search_page.rs:197
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Stimmen"
 
@@ -319,7 +319,7 @@ msgstr ""
 msgid "Information"
 msgstr "Information"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Sprache"
 
@@ -331,11 +331,11 @@ msgstr "Stichworte"
 msgid "Location"
 msgstr "Ort"
 
-#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "Land"
 
-#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:196
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Bundesstaat"
 
@@ -343,7 +343,7 @@ msgstr "Bundesstaat"
 msgid "Audio"
 msgstr "Ton"
 
-#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:198
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Bitrate"
 
@@ -389,16 +389,16 @@ msgid "Add Stations"
 msgstr "Sender hinzufügen"
 
 #: data/gtk/window.ui:34
-msgid "Back"
-msgstr "Zurück"
+msgid "Go Back"
+msgstr "Zurück gehen"
 
 #: data/gtk/window.ui:41
-msgid "Main Menu"
-msgstr "Hauptmenü"
+msgid "Open Application Menu"
+msgstr "Anwendungsmenü öffnen"
 
 #: data/gtk/window.ui:50
-msgid "Search"
-msgstr "Suchen"
+msgid "Open Search"
+msgstr "Suche öffnen"
 
 #: data/gtk/window.ui:74
 msgid "Unable to connect to radio-browser.info"
@@ -478,31 +478,31 @@ msgstr ""
 "Jürgen Benvenuti <gastornis@posteo.org>"
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:116
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "Statistiken anzeigen"
 
-#: src/ui/pages/discover_page.rs:118
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "Über 30.000 Sender durchsuchen"
 
-#: src/ui/pages/discover_page.rs:120
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "Neuen Sender hinzufügen"
 
-#: src/ui/pages/discover_page.rs:122
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "Ihr Lieblingssender fehlt?"
 
-#: src/ui/pages/discover_page.rs:127
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "Internet-Seite"
 
-#: src/ui/pages/discover_page.rs:129
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "Unterstützt von radio-browser.info"
 
-#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "Senderdaten konnten nicht empfangen werden."
 
@@ -510,7 +510,7 @@ msgstr "Senderdaten konnten nicht empfangen werden."
 msgid "Welcome to {}"
 msgstr "Willkommen zu {}"
 
-#: src/ui/pages/search_page.rs:103
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."
@@ -585,9 +585,6 @@ msgstr "Nahtlose Integration in die GNOME-Arbeitsumgebung"
 #: data/de.haeckerfelix.Shortwave.desktop.in.in:12
 msgid "Gradio;Radio;Stream;Wave;"
 msgstr "Gradio;Radio;Stream;Welle;"
-
-#~ msgid "Open Application Menu"
-#~ msgstr "Anwendungsmenü öffnen"
 
 #~ msgid "Detected songs will appear here."
 #~ msgstr "Erkannte Titel erscheinen hier."

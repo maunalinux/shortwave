@@ -75,7 +75,7 @@ glib::wrapper! {
 
 impl SwSongRow {
     pub fn new(sender: Sender<Action>, song: Song) -> Self {
-        let row = glib::Object::new::<Self>();
+        let row = glib::Object::new::<Self>(&[]).unwrap();
 
         // Set information
         let duration = Self::format_duration(song.duration.as_secs());
@@ -125,7 +125,7 @@ impl SwSongRow {
     // https://gitlab.gnome.org/haecker-felix/podcasts/blob/2f8a6a91f87d7fa335a954bbaf2f70694f32f6dd/podcasts-gtk/src/widgets/player.rs#L168
     fn format_duration(seconds: u64) -> String {
         debug!("Format duration (seconds): {}", &seconds);
-        let time = NaiveTime::from_num_seconds_from_midnight_opt(seconds as u32, 0).unwrap();
+        let time = NaiveTime::from_num_seconds_from_midnight(seconds as u32, 0);
 
         if seconds >= 3600 {
             time.format("%T").to_string()

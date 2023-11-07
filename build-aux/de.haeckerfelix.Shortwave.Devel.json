@@ -4,8 +4,8 @@
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
-        "org.freedesktop.Sdk.Extension.rust-nightly",
-        "org.freedesktop.Sdk.Extension.llvm16"
+        "org.freedesktop.Sdk.Extension.rust-stable",
+        "org.freedesktop.Sdk.Extension.llvm14"
     ],
     "command" : "shortwave",
     "tags" : [
@@ -23,11 +23,10 @@
         "--env=RUST_BACKTRACE=1"
     ],
     "build-options" : {
-        "append-path" : "/usr/lib/sdk/rust-nightly/bin:/usr/lib/sdk/llvm16/bin",
+        "append-path" : "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm14/bin",
         "env": {
-            "RUSTFLAGS": "-C force-frame-pointers=yes -C symbol-mangling-version=v0",
             "CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER": "clang",
-            "CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUSTFLAGS": "-C link-arg=-fuse-ld=/usr/lib/sdk/rust-nightly/bin/mold"
+            "CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUSTFLAGS": "-C link-arg=-fuse-ld=/usr/lib/sdk/rust-stable/bin/mold"
         },
         "build-args" : [
             "--share=network"

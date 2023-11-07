@@ -3,7 +3,7 @@
 #
 # Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2020.
 # Erwin van Eijk <erwin@oakhill.nl>, 2020.
-# Nathan Follens <nfollens@gnome.org>, 2020-2023.
+# Nathan Follens <nfollens@gnome.org>, 2020-2022.
 #
 # Vertaalde termen:
 # - stream -- mediastroom
@@ -12,16 +12,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-06-26 08:10+0000\n"
-"PO-Revision-Date: 2023-08-27 17:52+0200\n"
+"POT-Creation-Date: 2022-10-20 19:07+0000\n"
+"PO-Revision-Date: 2022-11-02 19:38+0100\n"
 "Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
-"Language-Team: GNOME-NL https://matrix.to/#/#nl:gnome.org\n"
+"Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/gtk/create_station_dialog.ui:8
 msgid "Create new station"
@@ -56,7 +56,7 @@ msgstr "Lokaal radiostation aanmaken"
 msgid "Change station image"
 msgstr "Radiostationsafbeelding aanpassen"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "Naam"
 
@@ -108,14 +108,26 @@ msgid "General"
 msgstr "Algemeen"
 
 #: data/gtk/settings_window.ui:10
+msgid "Appearance"
+msgstr "Uiterlijk"
+
+#: data/gtk/settings_window.ui:14
+msgid "_Dark Mode"
+msgstr "_Donkere modus"
+
+#: data/gtk/settings_window.ui:16
+msgid "Whether the application should use a dark theme"
+msgstr "Of de toepassing een donker thema gebruikt"
+
+#: data/gtk/settings_window.ui:29
 msgid "Features"
 msgstr "Functies"
 
-#: data/gtk/settings_window.ui:13
+#: data/gtk/settings_window.ui:32
 msgid "_Notifications"
 msgstr "_Notificaties"
 
-#: data/gtk/settings_window.ui:15
+#: data/gtk/settings_window.ui:34
 msgid "Show desktop notifications when a new song gets played"
 msgstr "Bureaubladnotificaties tonen bij een nieuw nummer"
 
@@ -136,29 +148,24 @@ msgstr "Voorkeuren openen"
 
 #: data/gtk/help_overlay.ui:32
 msgctxt "shortcut window"
-msgid "Close the window"
-msgstr "Venster sluiten"
-
-#: data/gtk/help_overlay.ui:38
-msgctxt "shortcut window"
 msgid "Quit the application"
 msgstr "Toepassing afsluiten"
 
-#: data/gtk/help_overlay.ui:46
+#: data/gtk/help_overlay.ui:40
 msgid "Window"
 msgstr "Venster"
 
-#: data/gtk/help_overlay.ui:49
+#: data/gtk/help_overlay.ui:43
 msgctxt "shortcut window"
 msgid "Open library view"
 msgstr "Collectieweergave openen"
 
-#: data/gtk/help_overlay.ui:55
+#: data/gtk/help_overlay.ui:49
 msgctxt "shortcut window"
 msgid "Open discover view"
 msgstr "Ontdekkingsweergave openen"
 
-#: data/gtk/help_overlay.ui:61
+#: data/gtk/help_overlay.ui:55
 msgctxt "shortcut window"
 msgid "Open search view"
 msgstr "Zoekweergave openen"
@@ -168,12 +175,12 @@ msgstr "Zoekweergave openen"
 # Vervangen door 'geen geluid', wat toch het eindresultaat hoort te zijn - Erwin
 # 'Geen geluid' interpreteer ik alsof er wel iets wordt afgespeeld, maar het geluid van de computer uit staat, dus lijkt iets als 'inactief' me hier beter - Nathan
 # Source nagekeken - dit label wordt vervangen door station-name, dus is "geen radiostation" de beste invulling, denk ik - Erwin
-#: data/gtk/help_overlay.ui:67
+#: data/gtk/help_overlay.ui:61
 msgctxt "shortcut window"
 msgid "Go back"
 msgstr "Teruggaan"
 
-#: data/gtk/help_overlay.ui:73
+#: data/gtk/help_overlay.ui:67
 msgctxt "shortcut window"
 msgid "Refresh station data"
 msgstr "Gegevens van radiostation vernieuwen"
@@ -183,7 +190,7 @@ msgstr "Gegevens van radiostation vernieuwen"
 # Vervangen door 'geen geluid', wat toch het eindresultaat hoort te zijn - Erwin
 # 'Geen geluid' interpreteer ik alsof er wel iets wordt afgespeeld, maar het geluid van de computer uit staat, dus lijkt iets als 'inactief' me hier beter - Nathan
 # Source nagekeken - dit label wordt vervangen door station-name, dus is "geen radiostation" de beste invulling, denk ik - Erwin
-#: data/gtk/help_overlay.ui:81
+#: data/gtk/help_overlay.ui:75
 msgid "Playback"
 msgstr "Afspelen"
 
@@ -192,13 +199,13 @@ msgstr "Afspelen"
 # Vervangen door 'geen geluid', wat toch het eindresultaat hoort te zijn - Erwin
 # 'Geen geluid' interpreteer ik alsof er wel iets wordt afgespeeld, maar het geluid van de computer uit staat, dus lijkt iets als 'inactief' me hier beter - Nathan
 # Source nagekeken - dit label wordt vervangen door station-name, dus is "geen radiostation" de beste invulling, denk ik - Erwin
-#: data/gtk/help_overlay.ui:84
+#: data/gtk/help_overlay.ui:78
 msgctxt "shortcut window"
 msgid "Toggle playback"
 msgstr "Afspelen in-/uitschakelen"
 
-#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:185
-#: src/ui/pages/search_page.rs:197
+#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Stemmen"
 
@@ -214,35 +221,35 @@ msgstr "Geen resultaten"
 msgid "Try using a different search term"
 msgstr "Probeer een andere zoekterm"
 
-#: data/gtk/search_page.ui:148 data/gtk/window.ui:171
+#: data/gtk/search_page.ui:148 data/gtk/window.ui:170
 msgid "_Name"
 msgstr "_Naam"
 
-#: data/gtk/search_page.ui:153 data/gtk/window.ui:176
+#: data/gtk/search_page.ui:153 data/gtk/window.ui:175
 msgid "_Language"
 msgstr "Taa_l"
 
-#: data/gtk/search_page.ui:158 data/gtk/window.ui:181
+#: data/gtk/search_page.ui:158 data/gtk/window.ui:180
 msgid "_Country"
 msgstr "L_and"
 
-#: data/gtk/search_page.ui:163 data/gtk/window.ui:186
+#: data/gtk/search_page.ui:163 data/gtk/window.ui:185
 msgid "S_tate"
 msgstr "S_taat"
 
-#: data/gtk/search_page.ui:168 data/gtk/window.ui:191
+#: data/gtk/search_page.ui:168 data/gtk/window.ui:190
 msgid "_Votes"
 msgstr "Ste_mmen"
 
-#: data/gtk/search_page.ui:173 data/gtk/window.ui:196
+#: data/gtk/search_page.ui:173 data/gtk/window.ui:195
 msgid "_Bitrate"
 msgstr "_Bitsnelheid"
 
-#: data/gtk/search_page.ui:180 data/gtk/window.ui:203
+#: data/gtk/search_page.ui:180 data/gtk/window.ui:202
 msgid "_Ascending"
 msgstr "_Oplopend"
 
-#: data/gtk/search_page.ui:185 data/gtk/window.ui:208
+#: data/gtk/search_page.ui:185 data/gtk/window.ui:207
 msgid "_Descending"
 msgstr "_Aflopend"
 
@@ -331,40 +338,40 @@ msgstr ""
 msgid "Information"
 msgstr "Informatie"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Taal"
 
-#: data/gtk/station_dialog.ui:175
+#: data/gtk/station_dialog.ui:180
 msgid "Tags"
 msgstr "Labels"
 
-#: data/gtk/station_dialog.ui:196
+#: data/gtk/station_dialog.ui:216
 msgid "Location"
 msgstr "Locatie"
 
-#: data/gtk/station_dialog.ui:201 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "Land"
 
-#: data/gtk/station_dialog.ui:211 src/ui/pages/search_page.rs:196
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Staat"
 
-#: data/gtk/station_dialog.ui:245
+#: data/gtk/station_dialog.ui:285
 msgid "Audio"
 msgstr "Geluid"
 
-#: data/gtk/station_dialog.ui:249 src/ui/pages/search_page.rs:198
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Bitsnelheid"
 
-#: data/gtk/station_dialog.ui:259
+#: data/gtk/station_dialog.ui:304
 msgid "Codec"
 msgstr "Codec"
 
 #. This is a noun/label for the station stream url
-#: data/gtk/station_dialog.ui:269
+#: data/gtk/station_dialog.ui:319
 msgid "Stream"
 msgstr "Stream"
 
@@ -401,22 +408,22 @@ msgid "Add Stations"
 msgstr "Radiostations toevoegen"
 
 #: data/gtk/window.ui:34
-msgid "Back"
+msgid "Go Back"
 msgstr "Terug"
 
 #: data/gtk/window.ui:41
-msgid "Main Menu"
-msgstr "Hoofdmenu"
+msgid "Open Application Menu"
+msgstr "Toepassingsmenu openen"
 
-#: data/gtk/window.ui:51
-msgid "Search"
-msgstr "Zoeken"
+#: data/gtk/window.ui:50
+msgid "Open Search"
+msgstr "Zoeken openen"
 
-#: data/gtk/window.ui:75
+#: data/gtk/window.ui:74
 msgid "Unable to connect to radio-browser.info"
 msgstr "Kan niet verbinden met radio-browser.info"
 
-#: data/gtk/window.ui:85
+#: data/gtk/window.ui:84
 msgid ""
 "Access to the public online station database is not available. Ensure that "
 "you are connected to the internet."
@@ -424,39 +431,39 @@ msgstr ""
 "Toegang tot de publieke online radiostationsdatabase is niet beschikbaar. "
 "Controleer of u verbonden bent met het internet."
 
-#: data/gtk/window.ui:94
+#: data/gtk/window.ui:93
 msgid "Try again"
 msgstr "Opnieuw proberen"
 
-#: data/gtk/window.ui:160 data/gtk/window.ui:249
+#: data/gtk/window.ui:159 data/gtk/window.ui:248
 msgid "_Enable Mini Player"
 msgstr "Minisp_eler inschakelen"
 
-#: data/gtk/window.ui:164 data/gtk/window.ui:245
+#: data/gtk/window.ui:163 data/gtk/window.ui:244
 msgid "_Refresh Station Data"
 msgstr "Gegevens van radiostation vernieuwen"
 
-#: data/gtk/window.ui:168
+#: data/gtk/window.ui:167
 msgid "_Sorting"
 msgstr "_Sorteren"
 
-#: data/gtk/window.ui:217 data/gtk/window.ui:255
+#: data/gtk/window.ui:216 data/gtk/window.ui:254
 msgid "_Open radio-browser.info <sup>↗</sup>"
 msgstr "radio-browser.info <sup>↗</sup> _openen"
 
-#: data/gtk/window.ui:222 data/gtk/window.ui:260
+#: data/gtk/window.ui:221 data/gtk/window.ui:259
 msgid "_Create New Station"
 msgstr "Nieuw _radiostation aanmaken"
 
-#: data/gtk/window.ui:229 data/gtk/window.ui:267
+#: data/gtk/window.ui:228 data/gtk/window.ui:266
 msgid "_Preferences"
 msgstr "_Voorkeuren"
 
-#: data/gtk/window.ui:233 data/gtk/window.ui:271
+#: data/gtk/window.ui:232 data/gtk/window.ui:270
 msgid "_Keyboard Shortcuts"
 msgstr "Snel_toetsen"
 
-#: data/gtk/window.ui:237 data/gtk/window.ui:275
+#: data/gtk/window.ui:236 data/gtk/window.ui:274
 msgid "_About Shortwave"
 msgstr "_Over Shortwave"
 
@@ -489,36 +496,36 @@ msgstr ""
 "Hannie Dumoleyn <hannie@ubuntu-nl.org\n"
 "Nathan Follens <nfollens@gnome.org>\n"
 "Philip Goto\n"
-"Meer info over GNOME-NL https://nl.gnome.org"
+"Meer info over Gnome-NL https://nl.gnome.org"
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:116
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "Statistieken tonen"
 
 # Ik vind de string niet meteen terug in de toepassing zelf, misschien is een gebiedende wijs hier ook gepaster - Nathan
 # De tekst zit in een roterende carousel, met andere features van Shortwave en daar is idd gebiedende wijs beter - Erwin
-#: src/ui/pages/discover_page.rs:118
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "Blader door meer dan 30.000 radiostations"
 
-#: src/ui/pages/discover_page.rs:120
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "Een nieuw radiostation toevoegen"
 
-#: src/ui/pages/discover_page.rs:122
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "Ontbreekt uw favoriete radiostation?"
 
-#: src/ui/pages/discover_page.rs:127
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "Website openen"
 
-#: src/ui/pages/discover_page.rs:129
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "Mogelijk gemaakt door radio-browser.info"
 
-#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "De gegevens van het radiostation zijn niet ontvangen."
 
@@ -526,7 +533,7 @@ msgstr "De gegevens van het radiostation zijn niet ontvangen."
 msgid "Welcome to {}"
 msgstr "Welkom bij {}"
 
-#: src/ui/pages/search_page.rs:103
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."
@@ -540,7 +547,7 @@ msgstr[1] ""
 "Het aantal resultaten wordt beperkt tot {} items. Probeer een specifiekere "
 "zoekterm."
 
-#: src/ui/station_dialog.rs:273
+#: src/ui/station_dialog.rs:286
 msgid "{} kbit/s"
 msgstr "{} kbit/s"
 
@@ -597,24 +604,12 @@ msgstr ""
 
 #: data/de.haeckerfelix.Shortwave.metainfo.xml.in.in:26
 msgid "Seamless integration into the GNOME desktop environment"
-msgstr "Naadloze integratie in de GNOME-bureaubladomgeving"
+msgstr "Naadloze integratie in de Gnome-bureaubladomgeving"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/de.haeckerfelix.Shortwave.desktop.in.in:12
 msgid "Gradio;Radio;Stream;Wave;"
 msgstr "Gradio;Radio;Stream;Wave;Stroom;Golf;"
-
-#~ msgid "Appearance"
-#~ msgstr "Uiterlijk"
-
-#~ msgid "_Dark Mode"
-#~ msgstr "_Donkere modus"
-
-#~ msgid "Whether the application should use a dark theme"
-#~ msgstr "Of de toepassing een donker thema gebruikt"
-
-#~ msgid "Open Application Menu"
-#~ msgstr "Toepassingsmenu openen"
 
 #~ msgid "Detected songs will appear here."
 #~ msgstr "Gedetecteerde nummers zullen hier getoond worden."

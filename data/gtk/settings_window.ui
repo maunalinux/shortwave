@@ -6,6 +6,25 @@
         <property name="icon_name">preferences-system-symbolic</property>
         <property name="title" translatable="yes">General</property>
         <child>
+          <object class="AdwPreferencesGroup" id="appearance_group">
+            <property name="title" translatable="yes">Appearance</property>
+            <property name="visible">False</property>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">_Dark Mode</property>
+                <property name="use_underline">True</property>
+                <property name="subtitle" translatable="yes">Whether the application should use a dark theme</property>
+                <property name="activatable_widget">dark_mode_button</property>
+                <child>
+                  <object class="GtkSwitch" id="dark_mode_button">
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
           <object class="AdwPreferencesGroup">
             <property name="title" translatable="yes">Features</property>
             <child>

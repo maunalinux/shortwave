@@ -1,15 +1,15 @@
 # Swedish translation for shortwave.
-# Copyright © 2020-2023 shortwave's COPYRIGHT HOLDER
+# Copyright © 2020-2022 shortwave's COPYRIGHT HOLDER
 # This file is distributed under the same license as the shortwave package.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2020, 2021, 2022, 2023.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2020, 2021, 2022.
 # Luna Jernberg <droidbittin@gmail.com>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: shortwave master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-05-16 12:59+0000\n"
-"PO-Revision-Date: 2023-05-16 16:15+0200\n"
+"POT-Creation-Date: 2022-12-19 15:41+0000\n"
+"PO-Revision-Date: 2022-12-19 16:47+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -51,7 +51,7 @@ msgstr "Skapa lokal station"
 msgid "Change station image"
 msgstr "Ändra bild för station"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "Namn"
 
@@ -184,7 +184,7 @@ msgid "Toggle playback"
 msgstr "Starta/stoppa uppspelning"
 
 #: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
-#: src/ui/pages/search_page.rs:197
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Röster"
 
@@ -314,7 +314,7 @@ msgstr ""
 msgid "Information"
 msgstr "Information"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Språk"
 
@@ -326,11 +326,11 @@ msgstr "Taggar"
 msgid "Location"
 msgstr "Plats"
 
-#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "Land"
 
-#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:196
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Län"
 
@@ -338,7 +338,7 @@ msgstr "Län"
 msgid "Audio"
 msgstr "Ljud"
 
-#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:198
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Bithastighet"
 
@@ -384,16 +384,16 @@ msgid "Add Stations"
 msgstr "Lägg till stationer"
 
 #: data/gtk/window.ui:34
-msgid "Back"
-msgstr "Bakåt"
+msgid "Go Back"
+msgstr "Gå tillbaka"
 
 #: data/gtk/window.ui:41
-msgid "Main Menu"
-msgstr "Huvudmeny"
+msgid "Open Application Menu"
+msgstr "Öppna programmeny"
 
 #: data/gtk/window.ui:50
-msgid "Search"
-msgstr "Sök"
+msgid "Open Search"
+msgstr "Öppna sökning"
 
 #: data/gtk/window.ui:74
 msgid "Unable to connect to radio-browser.info"
@@ -471,31 +471,31 @@ msgstr ""
 "<tp-sv@listor.tp-sv.se>"
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:116
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "Visa statistik"
 
-#: src/ui/pages/discover_page.rs:118
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "Bläddra bland över 30 000 stationer"
 
-#: src/ui/pages/discover_page.rs:120
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "Lägg till ny station"
 
-#: src/ui/pages/discover_page.rs:122
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "Saknas din favoritstation?"
 
-#: src/ui/pages/discover_page.rs:127
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "Öppna webbplats"
 
-#: src/ui/pages/discover_page.rs:129
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "Driftas av radio-browser.info"
 
-#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "Kunde inte erhålla stationsdata."
 
@@ -503,7 +503,7 @@ msgstr "Kunde inte erhålla stationsdata."
 msgid "Welcome to {}"
 msgstr "Välkommen till {}"
 
-#: src/ui/pages/search_page.rs:103
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."
@@ -573,9 +573,6 @@ msgstr "Sömlös integration med skrivbordsmiljön GNOME"
 #: data/de.haeckerfelix.Shortwave.desktop.in.in:12
 msgid "Gradio;Radio;Stream;Wave;"
 msgstr "Gradio;Radio;Ström;Stream;Wave;"
-
-#~ msgid "Open Application Menu"
-#~ msgstr "Öppna programmeny"
 
 #~ msgid "Detected songs will appear here."
 #~ msgstr "Upptäckta låtar kommer dyka upp här."

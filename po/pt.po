@@ -2,14 +2,14 @@
 # Copyright (C) 2020 shortwave's COPYRIGHT HOLDER
 # This file is distributed under the same license as the shortwave package.
 # Juliano de Souza Camargo <julianosc@protonmail.com>, 2020, 2021.
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020, 2021, 2022, 2023.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2020, 2021, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: shortwave master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-05-16 12:59+0000\n"
-"PO-Revision-Date: 2023-06-06 12:20+0100\n"
+"POT-Creation-Date: 2022-12-19 15:41+0000\n"
+"PO-Revision-Date: 2022-12-22 17:08+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (https://l10n.gnome.org/teams/pt/)\n"
 "Language: pt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-DL-Team: pt\n"
 "X-DL-Module: shortwave\n"
 "X-DL-Branch: master\n"
@@ -56,7 +56,7 @@ msgstr "Criar estação local"
 msgid "Change station image"
 msgstr "Alterar imagem da estação"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "Nome"
 
@@ -190,7 +190,7 @@ msgid "Toggle playback"
 msgstr "Reproduzir/Pausa"
 
 #: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
-#: src/ui/pages/search_page.rs:197
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Votos"
 
@@ -320,7 +320,7 @@ msgstr ""
 msgid "Information"
 msgstr "Informação"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Idioma"
 
@@ -332,11 +332,11 @@ msgstr "Etiquetas"
 msgid "Location"
 msgstr "Localização"
 
-#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "País"
 
-#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:196
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Estado"
 
@@ -344,7 +344,7 @@ msgstr "Estado"
 msgid "Audio"
 msgstr "Áudio"
 
-#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:198
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Taxa de bits"
 
@@ -390,16 +390,16 @@ msgid "Add Stations"
 msgstr "Adicionar estações"
 
 #: data/gtk/window.ui:34
-msgid "Back"
+msgid "Go Back"
 msgstr "Voltar"
 
 #: data/gtk/window.ui:41
-msgid "Main Menu"
-msgstr "Menu principal"
+msgid "Open Application Menu"
+msgstr "Abrir menu de aplicações"
 
 #: data/gtk/window.ui:50
-msgid "Search"
-msgstr "Pesquisar"
+msgid "Open Search"
+msgstr "Abrir pesquisa"
 
 #: data/gtk/window.ui:74
 msgid "Unable to connect to radio-browser.info"
@@ -475,31 +475,31 @@ msgstr ""
 "Hugo Carvalho <hugokarvalho@hotmail.com>"
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:116
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "Mostrar estatísticas"
 
-#: src/ui/pages/discover_page.rs:118
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "Navegue por mais de 30.000 estações"
 
-#: src/ui/pages/discover_page.rs:120
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "Adicionar uma nova estação"
 
-#: src/ui/pages/discover_page.rs:122
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "A sua estação favorita está em falta?"
 
-#: src/ui/pages/discover_page.rs:127
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "Abrir sítio web"
 
-#: src/ui/pages/discover_page.rs:129
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "Baseado no radio-browser.info"
 
-#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "Os dados da estação não puderam ser recebidos."
 
@@ -507,7 +507,7 @@ msgstr "Os dados da estação não puderam ser recebidos."
 msgid "Welcome to {}"
 msgstr "Bem-vindo ao {}"
 
-#: src/ui/pages/search_page.rs:103
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."
@@ -580,9 +580,6 @@ msgstr "Integração transparente com o ambiente de trabalho GNOME"
 #: data/de.haeckerfelix.Shortwave.desktop.in.in:12
 msgid "Gradio;Radio;Stream;Wave;"
 msgstr "Gradio;Rádio;Emissão;Transmissão;"
-
-#~ msgid "Open Application Menu"
-#~ msgstr "Abrir menu de aplicações"
 
 #~ msgid "Detected songs will appear here."
 #~ msgstr "Faixas detetadas aparecerão aqui."

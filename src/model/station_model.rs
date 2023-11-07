@@ -42,15 +42,15 @@ mod imp {
     impl ObjectImpl for SwStationModel {}
 
     impl ListModelImpl for SwStationModel {
-        fn item_type(&self) -> glib::Type {
+        fn item_type(&self, _list_model: &Self::Type) -> glib::Type {
             SwStation::static_type()
         }
 
-        fn n_items(&self) -> u32 {
+        fn n_items(&self, _list_model: &Self::Type) -> u32 {
             self.map.borrow().len() as u32
         }
 
-        fn item(&self, position: u32) -> Option<glib::Object> {
+        fn item(&self, _list_model: &Self::Type, position: u32) -> Option<glib::Object> {
             self.map
                 .borrow()
                 .get_index(position.try_into().unwrap())
@@ -65,7 +65,7 @@ glib::wrapper! {
 
 impl SwStationModel {
     pub fn new() -> Self {
-        glib::Object::new()
+        glib::Object::new(&[]).unwrap()
     }
 
     pub fn add_station(&self, station: &SwStation) {

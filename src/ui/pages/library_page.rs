@@ -1,5 +1,5 @@
 // Shortwave - search_page.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -39,8 +39,6 @@ mod imp {
         pub stack: TemplateChild<gtk::Stack>,
         #[template_child]
         pub flowbox: TemplateChild<SwStationFlowBox>,
-        #[template_child]
-        pub spinner: TemplateChild<gtk::Spinner>,
 
         pub library: SwLibrary,
         pub sender: OnceCell<Sender<Action>>,
@@ -49,14 +47,13 @@ mod imp {
     #[glib::object_subclass]
     impl ObjectSubclass for SwLibraryPage {
         const NAME: &'static str = "SwLibraryPage";
-        type ParentType = adw::NavigationPage;
+        type ParentType = adw::Bin;
         type Type = super::SwLibraryPage;
 
         fn new() -> Self {
             let status_page = TemplateChild::default();
             let stack = TemplateChild::default();
             let flowbox = TemplateChild::default();
-            let spinner = TemplateChild::default();
 
             let app = gio::Application::default()
                 .unwrap()
@@ -69,7 +66,6 @@ mod imp {
             Self {
                 status_page,
                 stack,
-                spinner,
                 flowbox,
                 library,
                 sender,
@@ -89,12 +85,12 @@ mod imp {
 
     impl WidgetImpl for SwLibraryPage {}
 
-    impl NavigationPageImpl for SwLibraryPage {}
+    impl BinImpl for SwLibraryPage {}
 }
 
 glib::wrapper! {
     pub struct SwLibraryPage(ObjectSubclass<imp::SwLibraryPage>)
-        @extends gtk::Widget, adw::NavigationPage;
+        @extends gtk::Widget, adw::Bin;
 }
 
 impl SwLibraryPage {
@@ -137,16 +133,12 @@ impl SwLibraryPage {
 
     fn update_stack_page(&self) {
         let imp = self.imp();
-        let status = imp.library.status();
 
-        match status {
+        match imp.library.status() {
             SwLibraryStatus::Loading => imp.stack.set_visible_child_name("loading"),
             SwLibraryStatus::Empty => imp.stack.set_visible_child_name("empty"),
             SwLibraryStatus::Content => imp.stack.set_visible_child_name("content"),
             _ => (),
         }
-
-        imp.spinner
-            .set_spinning(matches!(status, SwLibraryStatus::Loading));
     }
 }

@@ -20,8 +20,8 @@ uuid = { version = "0.8", features = ["v4"] }
 indexmap = "1.8"
 strum = "0.20"
 strum_macros = "0.20"
-diesel_migrations = "2.0"
-diesel = { version = "2.0", features = ["sqlite", "r2d2"] }
+diesel_migrations = "1.4"
+diesel = { version = "1.4", features = ["sqlite", "r2d2"] }
 futures = "0.3"
 futures-io = "0.3"
 futures-util = "0.3"
@@ -35,12 +35,12 @@ rand = "0.8"
 sanitize-filename = "0.3"
 Inflector = "0.11"
 
-gstreamer-audio = { version = "0.21" }
-gstreamer = { version = "0.21"}
-shumate = { version = "0.4", package = "libshumate"}
+gstreamer-audio = { version = "0.18", features = ["v1_10"]}
+gstreamer = { version = "0.18"}
+shumate = { version = "0.1.0", package = "libshumate"}
 gettext-rs = { version = "0.7", features = ["gettext-system"] }
-adw = { version = "0.5", package = "libadwaita", features = ["v1_4"] }
-gtk = { version = "0.7", package = "gtk4" }
+adw = { version = "0.2.0-alpha.3", package = "libadwaita", features = ["v1_2"] }
+gtk = { version = "0.4", package = "gtk4" }
 gtk-macros = "0.3"
 
 [target.'cfg(unix)'.dependencies]

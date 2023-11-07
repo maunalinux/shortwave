@@ -1,5 +1,5 @@
 // Shortwave - mod.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ mod station_request;
 mod station_url;
 mod stats;
 
-pub use client::SwClient;
+pub use client::Client;
 pub use error::Error;
 pub use favicon_downloader::FaviconDownloader;
 pub use object::Object;

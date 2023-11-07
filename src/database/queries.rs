@@ -1,5 +1,5 @@
 // Shortwave - queries.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -26,37 +26,37 @@ macro_rules! connect_db {
 }
 
 pub fn stations() -> Result<Vec<StationEntry>, diesel::result::Error> {
-    let mut con = connect_db!();
-    let entries = library::table.load::<StationEntry>(&mut con)?;
+    let con = connect_db!();
+    let entries = library::table.load::<StationEntry>(&con)?;
     Ok(entries)
 }
 
 pub fn contains_station(uuid: &str) -> Result<bool, diesel::result::Error> {
-    let mut con = connect_db!();
+    let con = connect_db!();
     let entries = library::table
         .filter(library::uuid.eq(uuid))
-        .load::<StationEntry>(&mut con)?;
+        .load::<StationEntry>(&con)?;
     Ok(!entries.is_empty())
 }
 
 pub fn insert_station(entry: StationEntry) -> Result<(), diesel::result::Error> {
-    let mut con = connect_db!();
+    let con = connect_db!();
     diesel::insert_into(library::table)
         .values(entry)
-        .execute(&mut *con)?;
+        .execute(&*con)?;
     Ok(())
 }
 
 pub fn update_station(entry: StationEntry) -> Result<(), diesel::result::Error> {
-    let mut con = connect_db!();
+    let con = connect_db!();
     diesel::replace_into(library::table)
         .values(entry)
-        .execute(&mut *con)?;
+        .execute(&*con)?;
     Ok(())
 }
 
 pub fn delete_station(uuid: &str) -> Result<(), diesel::result::Error> {
-    let mut con = connect_db!();
-    diesel::delete(library::table.filter(library::uuid.eq(uuid))).execute(&mut *con)?;
+    let con = connect_db!();
+    diesel::delete(library::table.filter(library::uuid.eq(uuid))).execute(&*con)?;
     Ok(())
 }

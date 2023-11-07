@@ -2,14 +2,14 @@
 # Copyright (C) 2020 shortwave's COPYRIGHT HOLDER
 # This file is distributed under the same license as the shortwave package.
 # Andika Triwidada <atriwidada@gnome.org>, 2020-2021.
-# Kukuh Syafat <kukuhsyafaat@gnome.org>, 2020-2023.
+# Kukuh Syafat <kukuhsyafaat@gnome.org>, 2020-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: shortwave master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-05-16 12:59+0000\n"
-"PO-Revision-Date: 2023-05-17 11:31+0700\n"
+"POT-Creation-Date: 2022-12-19 15:41+0000\n"
+"PO-Revision-Date: 2022-12-26 10:12+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -51,7 +51,7 @@ msgstr "Buat Stasiun Lokal"
 msgid "Change station image"
 msgstr "Ubah gambar stasiun"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "Nama"
 
@@ -184,7 +184,7 @@ msgid "Toggle playback"
 msgstr "Pemutaran beralih"
 
 #: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
-#: src/ui/pages/search_page.rs:197
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Suara"
 
@@ -314,7 +314,7 @@ msgstr ""
 msgid "Information"
 msgstr "Informasi"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Bahasa"
 
@@ -326,11 +326,11 @@ msgstr "Tanda"
 msgid "Location"
 msgstr "Lokasi"
 
-#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "Negara"
 
-#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:196
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Negara Bagian"
 
@@ -338,7 +338,7 @@ msgstr "Negara Bagian"
 msgid "Audio"
 msgstr "Audio"
 
-#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:198
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Laju Bit"
 
@@ -384,16 +384,16 @@ msgid "Add Stations"
 msgstr "Tambah Stasiun"
 
 #: data/gtk/window.ui:34
-msgid "Back"
+msgid "Go Back"
 msgstr "Kembali"
 
 #: data/gtk/window.ui:41
-msgid "Main Menu"
-msgstr "Menu Utama"
+msgid "Open Application Menu"
+msgstr "Buka Menu Aplikasi"
 
 #: data/gtk/window.ui:50
-msgid "Search"
-msgstr "Cari"
+msgid "Open Search"
+msgstr "Buka Pencarian"
 
 #: data/gtk/window.ui:74
 msgid "Unable to connect to radio-browser.info"
@@ -466,34 +466,34 @@ msgstr "Dengarkan radio internet"
 msgid "translator-credits"
 msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2020, 2021.\n"
-"Kukuh Syafat <kukuhsyafaat@gnome.org>, 2020-2023."
+"Kukuh Syafat <kukuhsyafaat@gnome.org>, 2020-2022."
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:116
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "Tampilkan statistik"
 
-#: src/ui/pages/discover_page.rs:118
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "Jelajahi lebih dari 30.000 stasiun"
 
-#: src/ui/pages/discover_page.rs:120
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "Tambah stasiun baru"
 
-#: src/ui/pages/discover_page.rs:122
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "Stasiun favorit Anda hilang?"
 
-#: src/ui/pages/discover_page.rs:127
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "Buka situs web"
 
-#: src/ui/pages/discover_page.rs:129
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "Didukung oleh radio-browser.info"
 
-#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "Data stasiun tidak dapat diterima."
 
@@ -501,7 +501,7 @@ msgstr "Data stasiun tidak dapat diterima."
 msgid "Welcome to {}"
 msgstr "Selamat datang di {}"
 
-#: src/ui/pages/search_page.rs:103
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."
@@ -572,9 +572,6 @@ msgstr "Integrasi mulus ke dalam lingkungan destop GNOME"
 #: data/de.haeckerfelix.Shortwave.desktop.in.in:12
 msgid "Gradio;Radio;Stream;Wave;"
 msgstr "Gradio;Radio;Aliran;Gelombang;"
-
-#~ msgid "Open Application Menu"
-#~ msgstr "Buka Menu Aplikasi"
 
 #~ msgid "Detected songs will appear here."
 #~ msgstr "Lagu yang terdeteksi akan muncul di sini."

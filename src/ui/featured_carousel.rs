@@ -77,10 +77,10 @@ mod imp {
     }
 
     impl ObjectImpl for SwFeaturedCarousel {
-        fn constructed(&self) {
-            self.parent_constructed();
+        fn constructed(&self, obj: &Self::Type) {
+            self.parent_constructed(obj);
 
-            self.obj().init();
+            obj.init();
         }
     }
 
@@ -161,7 +161,7 @@ impl SwFeaturedCarousel {
             if position < imp.pages.borrow().len() - 1 {
                 imp.carousel.scroll_to(&imp.pages.borrow()[position + 1].page, true);
             }else{
-                imp.carousel.scroll_to(&imp.pages.borrow()[imp.pages.borrow().len() - 1].page, true);
+                imp.carousel.scroll_to(&imp.pages.borrow()[(imp.pages.borrow().len() - 1)].page, true);
             }
         }));
 
@@ -221,12 +221,15 @@ impl SwFeaturedCarousel {
     fn set_color(&self, color: &gdk::RGBA) {
         let imp = self.imp();
 
-        imp.css_provider.load_from_data(&format!(
-            "carousel {{
+        imp.css_provider.load_from_data(
+            format!(
+                "carousel {{
                   background-color: {};
                 }}",
-            color,
-        ));
+                &color.to_string(),
+            )
+            .as_bytes(),
+        );
 
         // Copied from gtk/gtkcolorswatch.c, INTENSITY() macro
         let intensity = color.red() * 0.30 + color.green() * 0.59 + color.blue() * 0.11;

@@ -1,5 +1,5 @@
 // Shortwave - gstreamer_backend.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -23,7 +23,6 @@ use gstreamer::{Bin, Element, MessageView, PadProbeReturn, PadProbeType, Pipelin
 use gstreamer_audio::{StreamVolume, StreamVolumeFormat};
 use gtk::glib;
 use gtk::glib::Sender;
-use once_cell::unsync::OnceCell;
 
 use crate::app::Action;
 use crate::audio::PlaybackState;
@@ -62,7 +61,6 @@ pub struct GstreamerBackend {
     volume: Arc<Mutex<f64>>,
     volume_signal_id: Option<glib::signal::SignalHandlerId>,
     buffering_state: Arc<Mutex<BufferingState>>,
-    bus_watch_guard: OnceCell<gstreamer::bus::BusWatchGuard>,
     sender: Sender<GstreamerMessage>,
 }
 
@@ -105,9 +103,8 @@ impl GstreamerBackend {
             current_title,
             volume,
             volume_signal_id,
-            buffering_state,
-            bus_watch_guard: OnceCell::default(),
             sender: gst_sender,
+            buffering_state,
         };
 
         gstreamer_backend.setup_signals(app_sender);
@@ -119,7 +116,7 @@ impl GstreamerBackend {
         if let Some(pulsesink) = self.pipeline.by_name("pulsesink") {
             // We have to update the volume if we get changes from pulseaudio (pulsesink).
             // The user is able to control the volume from g-c-c.
-            let (volume_sender, volume_receiver) = glib::MainContext::channel(glib::Priority::LOW);
+            let (volume_sender, volume_receiver) = glib::MainContext::channel(glib::PRIORITY_LOW);
 
             // We need to do message passing (sender/receiver) here, because gstreamer
             // messages are coming from a other thread (and app::Action enum is
@@ -128,7 +125,7 @@ impl GstreamerBackend {
                 None,
                 clone!(@strong app_sender => move |volume| {
                     send!(app_sender, Action::PlaybackSetVolume(volume));
-                    glib::ControlFlow::Continue
+                    glib::Continue(true)
                 }),
             );
 
@@ -189,14 +186,13 @@ impl GstreamerBackend {
 
         // listen for new pipeline / bus messages
         let bus = self.pipeline.bus().expect("Unable to get pipeline bus");
-        let guard = bus.add_watch_local(
+        bus.add_watch_local(
             clone!(@weak self.pipeline as pipeline, @strong self.sender as gst_sender, @strong self.buffering_state as buffering_state, @weak self.current_title as current_title => @default-panic, move |_, message|{
                 Self::parse_bus_message(pipeline, message, gst_sender.clone(), &buffering_state, current_title);
-                glib::ControlFlow::Continue
+                Continue(true)
             }),
         )
         .unwrap();
-        self.bus_watch_guard.set(guard).unwrap();
     }
 
     pub fn set_state(&mut self, state: gstreamer::State) {
@@ -250,7 +246,7 @@ impl GstreamerBackend {
             glib::signal::signal_handler_block(&pulsesink, self.volume_signal_id.as_ref().unwrap());
 
             if volume != 0.0 {
-                pulsesink.set_property("mute", false);
+                pulsesink.set_property("mute", &false);
             }
 
             let pa_volume = StreamVolume::convert_volume(
@@ -258,7 +254,7 @@ impl GstreamerBackend {
                 StreamVolumeFormat::Linear,
                 volume,
             );
-            pulsesink.set_property("volume", pa_volume);
+            pulsesink.set_property("volume", &pa_volume);
 
             *self.volume.lock().unwrap() = volume;
 
@@ -278,7 +274,7 @@ impl GstreamerBackend {
 
         debug!("Set new source URI...");
         let uridecodebin = self.pipeline.by_name("uridecodebin").unwrap();
-        uridecodebin.set_property("uri", source);
+        uridecodebin.set_property("uri", &source);
 
         debug!("Start pipeline...");
         let mut buffering_state = self.buffering_state.lock().unwrap();
@@ -314,7 +310,7 @@ impl GstreamerBackend {
             "queue name=queue ! vorbisenc ! oggmux  ! filesink name=filesink async=false";
         let recorderbin = gstreamer::parse_bin_from_description(description, true)
             .expect("Unable to create recorderbin");
-        recorderbin.set_property("message-forward", true);
+        recorderbin.set_property("message-forward", &true);
 
         // We need to set an offset, otherwise the length of the recorded song would be
         // wrong. Get current clock time and calculate offset
@@ -328,7 +324,7 @@ impl GstreamerBackend {
 
         // Set recording path
         let filesink = recorderbin.by_name("filesink").unwrap();
-        filesink.set_property("location", path.to_str().unwrap());
+        filesink.set_property("location", &(path.to_str().unwrap()));
 
         // First try setting the recording bin to playing: if this fails we know this
         // before it potentially interfered with the other part of the pipeline
@@ -493,7 +489,7 @@ impl GstreamerBackend {
     }
 
     fn check_pulse_support() -> bool {
-        let pulsesink = gstreamer::ElementFactory::make("pulsesink").build();
+        let pulsesink = gstreamer::ElementFactory::make("pulsesink", Some("pulsesink"));
         pulsesink.is_ok()
     }
 
@@ -521,7 +517,7 @@ impl GstreamerBackend {
                 // Only report the state change once the pipeline itself changed a state,
                 // not whenever any of the internal elements does that.
                 // https://gitlab.gnome.org/World/Shortwave/-/issues/528
-                if message.src() == Some(pipeline.upcast_ref::<gstreamer::Object>()) {
+                if message.src().as_ref() == Some(pipeline.upcast_ref::<gstreamer::Object>()) {
                     let playback_state = match sc.current() {
                         gstreamer::State::Playing => PlaybackState::Playing,
                         gstreamer::State::Paused => PlaybackState::Playing,
@@ -592,13 +588,11 @@ impl GstreamerBackend {
                     let message: gstreamer::message::Message = structure.get("message").unwrap();
                     if let MessageView::Eos(_) = &message.view() {
                         // Get recorderbin from message
-                        let recorderbin = match message
-                            .src()
-                            .and_then(|src| src.clone().downcast::<Bin>().ok())
-                        {
-                            Some(src) => src,
-                            None => return,
-                        };
+                        let recorderbin =
+                            match message.src().and_then(|src| src.downcast::<Bin>().ok()) {
+                                Some(src) => src,
+                                None => return,
+                            };
 
                         // And then asynchronously remove it and set its state to Null
                         pipeline.call_async(move |pipeline| {

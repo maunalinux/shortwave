@@ -1,5 +1,5 @@
 // Shortwave - station_sorter.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -16,22 +16,20 @@
 
 use std::cell::{Cell, RefCell};
 
-use glib::{Enum, Properties};
+use glib::{Enum, ParamFlags, ParamSpec, ParamSpecBoolean, ParamSpecEnum, ToValue};
 use gtk::glib;
 use gtk::prelude::*;
 use gtk::subclass::prelude::*;
+use once_cell::sync::Lazy;
 
 use crate::api::SwStation;
 
 mod imp {
     use super::*;
 
-    #[derive(Debug, Default, Properties)]
-    #[properties(wrapper_type = super::SwStationSorter)]
+    #[derive(Debug, Default)]
     pub struct SwStationSorter {
-        #[property(get, set)]
         pub descending: Cell<bool>,
-        #[property(get, set, builder(SwSorting::default()))]
         pub sorting: RefCell<SwSorting>,
     }
 
@@ -42,15 +40,59 @@ mod imp {
         type ParentType = gtk::Sorter;
     }
 
-    #[glib::derived_properties]
-    impl ObjectImpl for SwStationSorter {}
+    impl ObjectImpl for SwStationSorter {
+        fn properties() -> &'static [ParamSpec] {
+            static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
+                vec![
+                    ParamSpecBoolean::new("descending", "", "", false, ParamFlags::READWRITE),
+                    ParamSpecEnum::new(
+                        "sorting",
+                        "",
+                        "",
+                        SwSorting::static_type(),
+                        SwSorting::default() as i32,
+                        ParamFlags::READWRITE,
+                    ),
+                ]
+            });
+
+            PROPERTIES.as_ref()
+        }
+
+        fn property(&self, obj: &Self::Type, _id: usize, pspec: &ParamSpec) -> glib::Value {
+            match pspec.name() {
+                "descending" => obj.descending().to_value(),
+                "sorting" => obj.sorting().to_value(),
+                _ => unimplemented!(),
+            }
+        }
+
+        fn set_property(
+            &self,
+            obj: &Self::Type,
+            _id: usize,
+            value: &glib::Value,
+            pspec: &ParamSpec,
+        ) {
+            match pspec.name() {
+                "descending" => obj.set_descending(value.get().unwrap()),
+                "sorting" => obj.set_descending(value.get().unwrap()),
+                _ => unimplemented!(),
+            }
+        }
+    }
 
     impl SorterImpl for SwStationSorter {
-        fn order(&self) -> gtk::SorterOrder {
+        fn order(&self, _sorter: &Self::Type) -> gtk::SorterOrder {
             gtk::SorterOrder::Total
         }
 
-        fn compare(&self, item1: &glib::Object, item2: &glib::Object) -> gtk::Ordering {
+        fn compare(
+            &self,
+            _sorter: &Self::Type,
+            item1: &glib::Object,
+            item2: &glib::Object,
+        ) -> gtk::Ordering {
             let a = &item1.clone().downcast::<SwStation>().unwrap();
             let b = &item2.clone().downcast::<SwStation>().unwrap();
             super::SwStationSorter::station_cmp(a, b, *self.sorting.borrow(), self.descending.get())
@@ -65,7 +107,25 @@ glib::wrapper! {
 
 impl SwStationSorter {
     pub fn new() -> Self {
-        glib::Object::new()
+        glib::Object::new(&[]).unwrap()
+    }
+
+    pub fn descending(&self) -> bool {
+        self.imp().descending.get()
+    }
+
+    pub fn set_descending(&self, descending: bool) {
+        self.imp().descending.set(descending);
+        self.changed(gtk::SorterChange::Different);
+    }
+
+    pub fn sorting(&self) -> SwSorting {
+        *self.imp().sorting.borrow()
+    }
+
+    pub fn set_sorting(&self, sorting: SwSorting) {
+        *self.imp().sorting.borrow_mut() = sorting;
+        self.changed(gtk::SorterChange::Different);
     }
 
     fn station_cmp(
@@ -112,9 +172,7 @@ impl Default for SwStationSorter {
 #[derive(Display, Copy, Debug, Clone, EnumString, Eq, PartialEq, Enum)]
 #[repr(u32)]
 #[enum_type(name = "SwSorting")]
-#[derive(Default)]
 pub enum SwSorting {
-    #[default]
     Default,
     Name,
     Language,
@@ -123,4 +181,10 @@ pub enum SwSorting {
     Codec,
     Votes,
     Bitrate,
+}
+
+impl Default for SwSorting {
+    fn default() -> Self {
+        SwSorting::Default
+    }
 }

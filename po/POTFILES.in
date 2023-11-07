@@ -14,7 +14,7 @@ data/gtk/song_row.ui
 data/gtk/station_dialog.ui
 data/gtk/streaming_dialog.ui
 data/gtk/toolbar_controller.ui
-data/gtk/player.ui
+data/gtk/window.ui
 
 src/audio/backend/song_backend.rs
 src/audio/player.rs

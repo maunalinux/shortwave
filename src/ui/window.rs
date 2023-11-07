@@ -1,5 +1,5 @@
 // Shortwave - window.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -14,13 +14,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+use std::cell::RefCell;
 use std::rc::Rc;
 
 use adw::prelude::*;
 use adw::subclass::prelude::*;
-use glib::{clone, subclass, Sender};
+use glib::{clone, subclass, Enum, ParamFlags, ParamSpec, ParamSpecEnum, Sender, ToValue};
 use gtk::{gdk, gio, glib, CompositeTemplate};
+use once_cell::sync::Lazy;
 use once_cell::unsync::OnceCell;
+use url::Url;
 
 use crate::app::{Action, SwApplication};
 use crate::audio::Player;
@@ -30,17 +33,28 @@ use crate::settings::{settings_manager, Key};
 use crate::ui::pages::*;
 use crate::ui::SwCreateStationDialog;
 
+#[derive(Display, Copy, Debug, Clone, EnumString, Eq, PartialEq, Enum)]
+#[repr(u32)]
+#[enum_type(name = "SwView")]
+pub enum SwView {
+    Library,
+    Discover,
+    Search,
+    Player,
+}
+
+impl Default for SwView {
+    fn default() -> Self {
+        SwView::Library
+    }
+}
+
 mod imp {
     use super::*;
 
     #[derive(Debug, Default, CompositeTemplate)]
     #[template(resource = "/de/haeckerfelix/Shortwave/gtk/window.ui")]
     pub struct SwApplicationWindow {
-        #[template_child]
-        pub split_view: TemplateChild<adw::OverlaySplitView>,
-        #[template_child]
-        pub navigation_view: TemplateChild<adw::NavigationView>,
-
         #[template_child]
         pub library_page: TemplateChild<SwLibraryPage>,
         #[template_child]
@@ -49,16 +63,38 @@ mod imp {
         pub search_page: TemplateChild<SwSearchPage>,
 
         #[template_child]
+        pub connection_infobar: TemplateChild<gtk::InfoBar>,
+        #[template_child]
         pub mini_controller_box: TemplateChild<gtk::Box>,
         #[template_child]
         pub toolbar_controller_box: TemplateChild<gtk::Box>,
         #[template_child]
         pub toolbar_controller_revealer: TemplateChild<gtk::Revealer>,
         #[template_child]
+        pub window_leaflet: TemplateChild<adw::Leaflet>,
+        #[template_child]
+        pub window_flap: TemplateChild<adw::Flap>,
+        #[template_child]
         pub toast_overlay: TemplateChild<adw::ToastOverlay>,
+        #[template_child]
+        pub add_button: TemplateChild<gtk::Button>,
+        #[template_child]
+        pub back_button: TemplateChild<gtk::Button>,
+        #[template_child]
+        pub search_button: TemplateChild<gtk::ToggleButton>,
+        #[template_child]
+        pub search_revealer: TemplateChild<gtk::Revealer>,
+
+        #[template_child]
+        pub appmenu_button: TemplateChild<gtk::MenuButton>,
+        #[template_child]
+        pub default_menu: TemplateChild<gio::MenuModel>,
+        #[template_child]
+        pub library_menu: TemplateChild<gio::MenuModel>,
 
         pub window_animation_x: OnceCell<adw::TimedAnimation>,
         pub window_animation_y: OnceCell<adw::TimedAnimation>,
+        pub view: RefCell<SwView>,
     }
 
     #[glib::object_subclass]
@@ -77,39 +113,56 @@ mod imp {
     }
 
     impl ObjectImpl for SwApplicationWindow {
-        fn constructed(&self) {
-            self.parent_constructed();
+        fn properties() -> &'static [ParamSpec] {
+            static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
+                vec![ParamSpecEnum::new(
+                    "view",
+                    "View",
+                    "View",
+                    SwView::static_type(),
+                    SwView::default() as i32,
+                    ParamFlags::READWRITE,
+                )]
+            });
 
-            let app = SwApplication::default();
-            let sender = app.imp().sender.clone();
-            let player = app.imp().player.clone();
+            PROPERTIES.as_ref()
+        }
 
-            self.obj().setup_widgets(sender.clone(), player);
-            self.obj().setup_gactions(sender);
+        fn property(&self, obj: &Self::Type, _id: usize, pspec: &ParamSpec) -> glib::Value {
+            match pspec.name() {
+                "view" => obj.view().to_value(),
+                _ => unimplemented!(),
+            }
+        }
+
+        fn set_property(
+            &self,
+            obj: &Self::Type,
+            _id: usize,
+            value: &glib::Value,
+            pspec: &ParamSpec,
+        ) {
+            match pspec.name() {
+                "view" => obj.set_view(value.get().unwrap()),
+                _ => unimplemented!(),
+            }
         }
     }
 
+    // Implement Gtk.Widget for SwApplicationWindow
     impl WidgetImpl for SwApplicationWindow {}
 
-    impl WindowImpl for SwApplicationWindow {
-        fn close_request(&self) -> glib::Propagation {
-            debug!("Saving window geometry.");
-            let width = self.obj().default_size().0;
-            let height = self.obj().default_size().1;
+    // Implement Gtk.Window for SwApplicationWindow
+    impl WindowImpl for SwApplicationWindow {}
 
-            settings_manager::set_integer(Key::WindowWidth, width);
-            settings_manager::set_integer(Key::WindowHeight, height);
-            glib::Propagation::Proceed
-        }
-    }
-
+    // Implement Gtk.ApplicationWindow for SwApplicationWindow
     impl ApplicationWindowImpl for SwApplicationWindow {}
 
+    // Implement Adw.ApplicationWindow for SwApplicationWindow
     impl AdwApplicationWindowImpl for SwApplicationWindow {}
-
-    impl SwApplicationWindow {}
 }
 
+// Wrap imp::SwApplicationWindow into a usable gtk-rs object
 glib::wrapper! {
     pub struct SwApplicationWindow(
         ObjectSubclass<imp::SwApplicationWindow>)
@@ -117,9 +170,21 @@ glib::wrapper! {
         @implements gio::ActionMap, gio::ActionGroup;
 }
 
+// SwApplicationWindow implementation itself
 impl SwApplicationWindow {
-    pub fn new() -> Self {
-        glib::Object::new::<Self>()
+    pub fn new(sender: Sender<Action>, app: SwApplication, player: Rc<Player>) -> Self {
+        // Create new GObject and downcast it into SwApplicationWindow
+        let window = glib::Object::new::<Self>(&[]).unwrap();
+        app.add_window(&window);
+
+        window.setup_widgets(sender.clone(), player);
+        window.setup_signals(sender.clone());
+        window.setup_gactions(sender);
+
+        // Library is the default page
+        window.set_view(SwView::Library);
+
+        window
     }
 
     pub fn setup_widgets(&self, sender: Sender<Action>, player: Rc<Player>) {
@@ -135,14 +200,14 @@ impl SwApplicationWindow {
             .append(&player.mini_controller_widget);
         imp.toolbar_controller_box
             .append(&player.toolbar_controller_widget);
-        imp.split_view.set_sidebar(Some(&player.widget));
+        imp.window_flap.set_flap(Some(&player.widget));
 
         // Animations for smooth mini player transitions
         let x_callback =
             adw::CallbackAnimationTarget::new(clone!(@weak self as this => move |val|{
                 this.set_default_width(val as i32);
             }));
-        let x_animation = adw::TimedAnimation::new(self, 0.0, 0.0, 500, x_callback);
+        let x_animation = adw::TimedAnimation::new(self, 0.0, 0.0, 500, &x_callback);
         x_animation.set_easing(adw::Easing::EaseOutCubic);
         imp.window_animation_x.set(x_animation).unwrap();
 
@@ -150,7 +215,7 @@ impl SwApplicationWindow {
             adw::CallbackAnimationTarget::new(clone!(@weak self as this => move |val|{
                 this.set_default_height(val as i32);
             }));
-        let y_animation = adw::TimedAnimation::new(self, 0.0, 0.0, 500, y_callback);
+        let y_animation = adw::TimedAnimation::new(self, 0.0, 0.0, 500, &y_callback);
         y_animation.set_easing(adw::Easing::EaseOutCubic);
         imp.window_animation_y.set(y_animation).unwrap();
 
@@ -165,59 +230,149 @@ impl SwApplicationWindow {
         self.set_default_size(width, height);
     }
 
-    fn setup_gactions(&self, sender: Sender<Action>) {
-        let app = SwApplication::default();
+    fn setup_signals(&self, _sender: Sender<Action>) {
+        let imp = self.imp();
 
-        self.add_action_entries([
-            // win.open-radio-browser-info
-            gio::ActionEntry::builder("open-radio-browser-info")
-                .activate(|_, _, _| {
-                    gtk::show_uri(
-                        Some(&SwApplicationWindow::default()),
-                        "https://www.radio-browser.info/",
-                        gdk::CURRENT_TIME,
-                    );
-                })
-                .build(),
-            // win.create-new-station
-            gio::ActionEntry::builder("create-new-station")
-                .activate(clone!(@strong sender => move |_, _, _| {
-                    let dialog = SwCreateStationDialog::new(sender.clone());
-                    dialog.show();
-                }))
-                .build(),
-            // win.show-player
-            gio::ActionEntry::builder("show-player")
-                .activate(clone!(@weak self as this => move |_, _, _| {
-                    this.imp().split_view.set_show_sidebar(true);
-                }))
-                .build(),
-            // win.hide-player
-            gio::ActionEntry::builder("hide-player")
-                .activate(clone!(@weak self as this => move |_, _, _| {
-                    this.imp().split_view.set_show_sidebar(false);
-                }))
-                .build(),
-            // win.toggle-playback
-            gio::ActionEntry::builder("toggle-playback")
-                .activate(clone!(@strong sender => move |_, _, _| {
-                    send!(sender, Action::PlaybackToggle);
-                }))
-                .build(),
-            // win.disable-mini-player
-            gio::ActionEntry::builder("disable-mini-player")
-                .activate(clone!(@weak self as this => move |_, _, _| {
-                    this.enable_mini_player(false);
-                }))
-                .build(),
-            // win.enable-mini-player
-            gio::ActionEntry::builder("enable-mini-player")
-                .activate(clone!(@weak self as this => move |_, _, _| {
-                    this.enable_mini_player(true);
-                }))
-                .build(),
-        ]);
+        // flap
+        imp.window_flap
+            .get()
+            .connect_folded_notify(clone!(@strong self as this => move |_| {
+                this.update_visible_view();
+            }));
+        imp.window_flap
+            .get()
+            .connect_reveal_flap_notify(clone!(@strong self as this => move |_| {
+                this.update_visible_view();
+            }));
+
+        // search_button
+        imp.search_button
+            .connect_toggled(clone!(@strong self as this => move |search_button| {
+                if search_button.is_active(){
+                    this.set_view(SwView::Search);
+                }else if *this.imp().view.borrow() != SwView::Player {
+                    this.set_view(SwView::Discover);
+                }
+            }));
+
+        // window gets closed
+        self.connect_close_request(move |window| {
+            debug!("Saving window geometry.");
+            let width = window.default_size().0;
+            let height = window.default_size().1;
+
+            settings_manager::set_integer(Key::WindowWidth, width);
+            settings_manager::set_integer(Key::WindowHeight, height);
+            glib::signal::Inhibit(false)
+        });
+    }
+
+    fn setup_gactions(&self, sender: Sender<Action>) {
+        let imp = self.imp();
+        let app = self.application().unwrap();
+
+        // win.open-radio-browser-info
+        action!(self, "open-radio-browser-info", |_, _| {
+            gtk::show_uri(
+                Some(&SwApplicationWindow::default()),
+                "https://www.radio-browser.info/",
+                gdk::CURRENT_TIME,
+            );
+        });
+
+        // win.create-new-station
+        action!(
+            self,
+            "create-new-station",
+            clone!(@strong sender => move |_, _| {
+                let dialog = SwCreateStationDialog::new(sender.clone());
+                dialog.show();
+            })
+        );
+
+        // win.go-back
+        action!(
+            self,
+            "go-back",
+            clone!(@weak self as this => move |_, _| {
+                this.go_back();
+            })
+        );
+        app.set_accels_for_action("win.go-back", &["Escape"]);
+
+        // win.show-discover
+        action!(
+            self,
+            "show-discover",
+            clone!(@weak self as this => move |_, _| {
+                this.set_view(SwView::Discover);
+            })
+        );
+        app.set_accels_for_action("win.show-discover", &["<primary>d"]);
+
+        // win.show-search
+        action!(
+            self,
+            "show-search",
+            clone!(@weak self as this => move |_, _| {
+                this.set_view(SwView::Search);
+            })
+        );
+        app.set_accels_for_action("win.show-search", &["<primary>f"]);
+
+        // win.show-library
+        action!(
+            self,
+            "show-library",
+            clone!(@weak self as this => move |_, _| {
+                this.set_view(SwView::Library);
+            })
+        );
+        app.set_accels_for_action("win.show-library", &["<primary>l"]);
+
+        // win.show-appmenu
+        action!(
+            self,
+            "show-appmenu",
+            clone!(@strong imp.appmenu_button as appmenu_button => move |_, _| {
+                appmenu_button.popup();
+            })
+        );
+        app.set_accels_for_action("win.show-appmenu", &["F10"]);
+
+        // win.toggle-playback
+        action!(
+            self,
+            "toggle-playback",
+            clone!(@strong sender => move |_, _| {
+                send!(sender, Action::PlaybackToggle);
+            })
+        );
         app.set_accels_for_action("win.toggle-playback", &["<primary>space"]);
+
+        // win.disable-mini-player
+        action!(
+            self,
+            "disable-mini-player",
+            clone!(@weak self as this => move |_, _| {
+                this.enable_mini_player(false);
+            })
+        );
+
+        // win.enable-mini-player
+        action!(
+            self,
+            "enable-mini-player",
+            clone!(@weak self as this => move |_, _| {
+                this.enable_mini_player(true);
+            })
+        );
+
+        // win.refresh-data
+        action!(self, "refresh-data", |_, _| {
+            SwApplication::default().refresh_data();
+        });
+        app.set_accels_for_action("win.refresh-data", &["<primary>r"]);
 
         // Sort / Order menu
         let sorting_action = settings_manager::create_action(Key::ViewSorting);
@@ -227,9 +382,25 @@ impl SwApplicationWindow {
         self.add_action(&order_action);
     }
 
+    pub fn refresh_data(&self, server: &Url) {
+        let imp = self.imp();
+
+        imp.discover_page.refresh_data(server);
+        imp.search_page.refresh_data(server);
+    }
+
+    pub fn show_player_widget(&self) {
+        let imp = self.imp();
+
+        imp.toolbar_controller_revealer.set_visible(true);
+        imp.window_flap.set_locked(false);
+
+        self.update_visible_view();
+    }
+
     pub fn show_notification(&self, text: &str) {
         let toast = adw::Toast::new(text);
-        self.imp().toast_overlay.add_toast(toast);
+        self.imp().toast_overlay.add_toast(&toast);
     }
 
     pub fn set_sorting(&self, sorting: SwSorting, descending: bool) {
@@ -237,6 +408,45 @@ impl SwApplicationWindow {
             .library_page
             .get()
             .set_sorting(sorting, descending);
+    }
+
+    pub fn view(&self) -> SwView {
+        *self.imp().view.borrow()
+    }
+
+    pub fn set_view(&self, view: SwView) {
+        *self.imp().view.borrow_mut() = view;
+
+        // Delay updating the view, otherwise it could invalidate widgets if it gets
+        // called during an allocation and cause glitches (eg. short flickering)
+        glib::idle_add_local(
+            clone!(@weak self as this => @default-return glib::Continue(false), move||{
+                this.update_view(); glib::Continue(false)
+            }),
+        );
+    }
+
+    pub fn enable_offline_mode(&self, enable: bool) {
+        self.imp().connection_infobar.set_revealed(enable);
+
+        if enable {
+            self.set_view(SwView::Library);
+        }
+
+        // Disable discover/search since those are useless
+        // if there's no connectivity to radio-browser.info
+        let action: gio::SimpleAction = self
+            .lookup_action("show-discover")
+            .unwrap()
+            .downcast()
+            .unwrap();
+        action.set_enabled(!enable);
+        let action: gio::SimpleAction = self
+            .lookup_action("show-search")
+            .unwrap()
+            .downcast()
+            .unwrap();
+        action.set_enabled(!enable);
     }
 
     pub fn enable_mini_player(&self, enable: bool) {
@@ -284,6 +494,105 @@ impl SwApplicationWindow {
 
         x_animation.play();
         y_animation.play();
+    }
+
+    pub fn go_back(&self) {
+        debug!("Go back to previous view");
+        let imp = self.imp();
+
+        if *imp.view.borrow() == SwView::Player {
+            imp.window_flap.set_reveal_flap(false);
+        } else {
+            imp.window_leaflet.navigate(adw::NavigationDirection::Back);
+        }
+
+        self.update_visible_view();
+    }
+
+    fn update_visible_view(&self) {
+        let imp = self.imp();
+
+        let view = if imp.window_flap.is_folded() && imp.window_flap.reveals_flap() {
+            SwView::Player
+        } else {
+            let leaflet_child = imp.window_leaflet.visible_child().unwrap();
+            if leaflet_child == imp.library_page.get() {
+                SwView::Library
+            } else if leaflet_child == imp.discover_page.get() {
+                SwView::Discover
+            } else if leaflet_child == imp.search_page.get() {
+                SwView::Search
+            } else {
+                panic!("Unknown leaflet child")
+            }
+        };
+
+        debug!("Update visible view to {:?}", view);
+        self.set_view(view);
+    }
+
+    fn update_view(&self) {
+        let imp = self.imp();
+        let view = *imp.view.borrow();
+        debug!("Set view to {:?}", view);
+
+        // Not enough place to display player sidebar and content side by side (eg.
+        // mobile phones)
+        let slim_mode = imp.window_flap.is_folded();
+        // Whether the player widgets (sidebar / bottom toolbar) should get display or
+        // not.
+        let player_activated = !imp.window_flap.is_locked();
+
+        if player_activated {
+            if slim_mode && view == SwView::Player {
+                imp.window_flap.set_reveal_flap(true);
+                imp.toolbar_controller_revealer.set_reveal_child(false);
+            } else if slim_mode {
+                imp.window_flap.set_reveal_flap(false);
+                imp.toolbar_controller_revealer.set_reveal_child(true);
+            } else {
+                imp.window_flap.set_reveal_flap(true);
+                imp.toolbar_controller_revealer.set_reveal_child(false);
+            }
+        }
+
+        // Show requested view / page
+        match view {
+            SwView::Library => {
+                imp.window_leaflet
+                    .set_visible_child(&imp.library_page.get());
+                imp.appmenu_button
+                    .set_menu_model(Some(&imp.library_menu.get()));
+                imp.search_revealer.set_reveal_child(false);
+                imp.add_button.set_visible(true);
+                imp.back_button.set_visible(false);
+            }
+            SwView::Discover => {
+                imp.window_leaflet
+                    .set_visible_child(&imp.discover_page.get());
+                imp.appmenu_button
+                    .set_menu_model(Some(&imp.default_menu.get()));
+                imp.search_button.set_active(false);
+                imp.search_revealer.set_reveal_child(true);
+                imp.add_button.set_visible(false);
+                imp.back_button.set_visible(true);
+            }
+            SwView::Search => {
+                imp.window_leaflet.set_visible_child(&imp.search_page.get());
+                imp.appmenu_button
+                    .set_menu_model(Some(&imp.default_menu.get()));
+                imp.search_button.set_active(true);
+                imp.search_revealer.set_reveal_child(true);
+                imp.add_button.set_visible(false);
+                imp.back_button.set_visible(true);
+            }
+            SwView::Player => {
+                imp.window_flap.set_reveal_flap(true);
+                imp.search_button.set_active(false);
+                imp.add_button.set_visible(false);
+                imp.back_button.set_visible(true);
+            }
+        }
     }
 }
 

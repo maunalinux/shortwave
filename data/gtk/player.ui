@@ -1,92 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <object class="AdwNavigationPage" id="player">
-    <property name="tag">playback</property>
-    <property name="title" translatable="yes">Playback</property>
-    <property name="child">
-      <object class="AdwToolbarView">
-        <child type="top">
-          <object class="AdwBreakpointBin">
-            <property name="width-request">300</property>
-            <property name="height-request">1</property>
-            <child>
-              <object class="AdwHeaderBar">
-                <property name="show-title">False</property>
-                <child>
-                  <object class="GtkButton" id="back_button">
-                    <property name="action_name">win.hide-player</property>
-                    <property name="icon_name">go-previous-symbolic</property>
-                  </object>
-                </child>
-              </object>
-            </child>
-            <child>
-              <object class="AdwBreakpoint">
-                <condition>max-width: 300px</condition>
-                <setter object="back_button" property="visible">False</setter>
-              </object>
-            </child>
-          </object>
-        </child>
+  <object class="GtkBox" id="player">
+    <child>
+      <object class="GtkScrolledWindow">
+        <property name="hscrollbar_policy">never</property>
         <child>
-          <object class="GtkScrolledWindow">
-            <property name="hscrollbar_policy">never</property>
+          <object class="AdwClamp">
+            <property name="width_request">275</property>
+            <property name="margin_start">6</property>
+            <property name="margin_end">6</property>
+            <property name="maximum_size">400</property>
+            <property name="tightening_threshold">0</property>
             <child>
-              <object class="AdwClamp">
-                <property name="width_request">275</property>
-                <property name="margin_start">6</property>
-                <property name="margin_end">6</property>
-                <property name="maximum_size">400</property>
-                <property name="tightening_threshold">0</property>
+              <object class="GtkBox" id="player_box">
+                <property name="margin_top">22</property>
+                <property name="margin_bottom">22</property>
+                <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkBox" id="player_box">
-                    <property name="margin_top">22</property>
-                    <property name="margin_bottom">22</property>
-                    <property name="orientation">vertical</property>
+                  <object class="GtkRevealer" id="stream_revealer">
                     <child>
-                      <object class="GtkRevealer" id="stream_revealer">
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
                         <child>
-                          <object class="GtkBox">
-                            <property name="orientation">vertical</property>
+                          <object class="GtkSeparator">
+                            <property name="width_request">100</property>
+                            <property name="halign">center</property>
+                            <property name="margin_top">12</property>
+                            <property name="margin_bottom">12</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwPreferencesGroup">
                             <child>
-                              <object class="GtkSeparator">
-                                <property name="width_request">100</property>
-                                <property name="halign">center</property>
-                                <property name="margin_top">12</property>
-                                <property name="margin_bottom">12</property>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="AdwPreferencesGroup">
+                              <object class="AdwActionRow" id="stream_row">
+                                <property name="icon_name">network-wireless-symbolic</property>
+                                <property name="activatable_widget">disconnect_button</property>
                                 <child>
-                                  <object class="AdwActionRow" id="stream_row">
-                                    <property name="icon_name">network-wireless-symbolic</property>
-                                    <property name="activatable_widget">disconnect_button</property>
-                                    <child>
-                                      <object class="GtkButton" id="disconnect_button">
-                                        <property name="icon_name">window-close-symbolic</property>
-                                        <property name="valign">center</property>
-                                      </object>
-                                    </child>
+                                  <object class="GtkButton" id="disconnect_button">
+                                    <property name="icon_name">window-close-symbolic</property>
+                                    <property name="valign">center</property>
                                   </object>
                                 </child>
-                                <style>
-                                  <class name="notice-row"/>
-                                </style>
                               </object>
                             </child>
+                            <style>
+                              <class name="notice-row"/>
+                            </style>
                           </object>
                         </child>
                       </object>
                     </child>
-                    <child>
-                      <object class="GtkSeparator">
-                        <property name="width_request">100</property>
-                        <property name="halign">center</property>
-                        <property name="margin_top">12</property>
-                        <property name="margin_bottom">18</property>
-                      </object>
-                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSeparator">
+                    <property name="width_request">100</property>
+                    <property name="halign">center</property>
+                    <property name="margin_top">12</property>
+                    <property name="margin_bottom">18</property>
                   </object>
                 </child>
               </object>
@@ -94,6 +65,10 @@
           </object>
         </child>
       </object>
-    </property>
+    </child>
+    <style>
+      <class name="background"/>
+    </style>
   </object>
 </interface>
+

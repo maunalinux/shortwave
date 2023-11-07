@@ -1,19 +1,19 @@
 # Turkish translation for shortwave.
-# Copyright (C) 2020-2023 shortwave's COPYRIGHT HOLDER
+# Copyright (C) 2020-2022 shortwave's COPYRIGHT HOLDER
 # This file is distributed under the same license as the shortwave package.
 #
 # Muhammet Kara <muhammetk@gmail.com>, 2021.
-# Sabri Ünal <libreajans@gmail.com>, 2020, 2022, 2023.
+# Sabri Ünal <libreajans@gmail.com>, 2020, 2022.
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020, 2021, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: shortwave master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-05-16 12:59+0000\n"
+"POT-Creation-Date: 2022-12-19 15:41+0000\n"
 "PO-Revision-Date: 2022-12-19 19:31+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
-"Language-Team: Turkish <takim@gnome.org.tr>\n"
+"Language-Team: Turkish <gnometurk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +53,7 @@ msgstr "Yerel İstasyon Oluştur"
 msgid "Change station image"
 msgstr "İstasyon görselini değiştir"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "Ad"
 
@@ -186,7 +186,7 @@ msgid "Toggle playback"
 msgstr "Kayıttan yürütmeyi aç/kapat"
 
 #: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
-#: src/ui/pages/search_page.rs:197
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Oylar"
 
@@ -316,7 +316,7 @@ msgstr ""
 msgid "Information"
 msgstr "Bilgi"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Dil"
 
@@ -328,11 +328,11 @@ msgstr "Etiketler"
 msgid "Location"
 msgstr "Konum"
 
-#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "Ülke"
 
-#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:196
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Eyalet"
 
@@ -340,7 +340,7 @@ msgstr "Eyalet"
 msgid "Audio"
 msgstr "Ses"
 
-#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:198
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Bit oranı"
 
@@ -386,16 +386,16 @@ msgid "Add Stations"
 msgstr "İstasyon Ekle"
 
 #: data/gtk/window.ui:34
-msgid "Back"
-msgstr "Geri"
+msgid "Go Back"
+msgstr "Geri Git"
 
 #: data/gtk/window.ui:41
-msgid "Main Menu"
-msgstr "Ana Menü"
+msgid "Open Application Menu"
+msgstr "Uygulama Menüsünü Aç"
 
 #: data/gtk/window.ui:50
-msgid "Search"
-msgstr "Ara"
+msgid "Open Search"
+msgstr "Aramayı Aç"
 
 #: data/gtk/window.ui:74
 msgid "Unable to connect to radio-browser.info"
@@ -470,31 +470,31 @@ msgstr ""
 "Sabri Ünal <libreajans@gmail.com>, 2022"
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:116
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "İstatistikleri göster"
 
-#: src/ui/pages/discover_page.rs:118
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "30.000’i aşkın istasyona göz at"
 
-#: src/ui/pages/discover_page.rs:120
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "Yeni istasyon ekle"
 
-#: src/ui/pages/discover_page.rs:122
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "Gözde istasyonunuz eksik mi?"
 
-#: src/ui/pages/discover_page.rs:127
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "Web sitesini aç"
 
-#: src/ui/pages/discover_page.rs:129
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "radio-browser.info ile güçlendirildi"
 
-#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "İstasyon verisi alınamadı."
 
@@ -502,7 +502,7 @@ msgstr "İstasyon verisi alınamadı."
 msgid "Welcome to {}"
 msgstr "{} uygulamasına hoş geldiniz"
 
-#: src/ui/pages/search_page.rs:103
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."

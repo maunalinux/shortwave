@@ -1,5 +1,5 @@
 // Shortwave - favicon_downloader.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -16,7 +16,6 @@
 
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
-use std::rc::Rc;
 
 use async_std::io::ReadExt;
 use gdk_pixbuf::Pixbuf;
@@ -52,8 +51,7 @@ impl FaviconDownloader {
             .await?
             .into_body()
             .read_to_end(&mut bytes)
-            .await
-            .map_err(Rc::new)?;
+            .await?;
 
         let input_stream = gio::MemoryInputStream::from_bytes(&glib::Bytes::from(&bytes));
         let pixbuf = Pixbuf::from_stream_at_scale_future(&input_stream, size, size, true).await?;
@@ -71,7 +69,7 @@ impl FaviconDownloader {
         let file = Self::file(url).ok()?;
         if Self::exists(&file) {
             let ios = file
-                .open_readwrite_future(glib::Priority::DEFAULT)
+                .open_readwrite_future(glib::PRIORITY_DEFAULT)
                 .await
                 .expect("Could not open file");
             let data_input_stream = DataInputStream::new(&ios.input_stream());
@@ -91,7 +89,7 @@ impl FaviconDownloader {
 
         let mut path = path::CACHE.clone();
         path.push("favicons");
-        std::fs::create_dir_all(path.as_path()).map_err(Rc::new)?;
+        std::fs::create_dir_all(path.as_path())?;
 
         path.push(hash.to_string());
 

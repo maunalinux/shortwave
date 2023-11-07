@@ -13,9 +13,9 @@ Build-Depends:	debhelper (>= 8.0.0),
 		meson (>= 0.59.0),
 		ninja-build,
 		libshumate-dev,
-		libadwaita-1-dev,
-		git
-Standards-Version: 4.6.1
+		git,
+		libgstreamer-plugins-bad1.0-dev
+Standards-Version: 3.9.3
 
 Package: shortwave
 Architecture: any

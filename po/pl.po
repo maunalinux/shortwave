@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: shortwave\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-05-16 12:59+0000\n"
-"PO-Revision-Date: 2023-05-21 15:19+0200\n"
+"POT-Creation-Date: 2022-12-19 15:41+0000\n"
+"PO-Revision-Date: 2023-02-05 13:49+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -51,7 +51,7 @@ msgstr "Utworzenie lokalnej stacji"
 msgid "Change station image"
 msgstr "Zmienia obraz stacji"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "Nazwa"
 
@@ -184,7 +184,7 @@ msgid "Toggle playback"
 msgstr "Przełączenie odtwarzania"
 
 #: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
-#: src/ui/pages/search_page.rs:197
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Głosy"
 
@@ -315,7 +315,7 @@ msgstr ""
 msgid "Information"
 msgstr "Informacje"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Język"
 
@@ -327,11 +327,11 @@ msgstr "Etykiety"
 msgid "Location"
 msgstr "Położenie"
 
-#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "Kraj"
 
-#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:196
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Stan"
 
@@ -339,7 +339,7 @@ msgstr "Stan"
 msgid "Audio"
 msgstr "Dźwięk"
 
-#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:198
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Gęstość bitowa"
 
@@ -385,16 +385,16 @@ msgid "Add Stations"
 msgstr "Dodaje stacje"
 
 #: data/gtk/window.ui:34
-msgid "Back"
+msgid "Go Back"
 msgstr "Wstecz"
 
 #: data/gtk/window.ui:41
-msgid "Main Menu"
-msgstr "Menu główne"
+msgid "Open Application Menu"
+msgstr "Otwiera menu programu"
 
 #: data/gtk/window.ui:50
-msgid "Search"
-msgstr "Wyszukiwanie"
+msgid "Open Search"
+msgstr "Otwiera wyszukiwanie"
 
 #: data/gtk/window.ui:74
 msgid "Unable to connect to radio-browser.info"
@@ -471,31 +471,31 @@ msgstr ""
 "Aviary.pl <community-poland@mozilla.org>, 2020-2023"
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:116
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "Wyświetl statystyki"
 
-#: src/ui/pages/discover_page.rs:118
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "Przeglądaj ponad 30 000 stacji"
 
-#: src/ui/pages/discover_page.rs:120
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "Dodaj nową stację"
 
-#: src/ui/pages/discover_page.rs:122
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "Brakuje Twojej ulubionej stacji?"
 
-#: src/ui/pages/discover_page.rs:127
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "Otwórz witrynę"
 
-#: src/ui/pages/discover_page.rs:129
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "Korzystamy z witryny radio-browser.info"
 
-#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "Nie można odebrać danych stacji."
 
@@ -503,7 +503,7 @@ msgstr "Nie można odebrać danych stacji."
 msgid "Welcome to {}"
 msgstr "Witamy w programie {}"
 
-#: src/ui/pages/search_page.rs:103
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."

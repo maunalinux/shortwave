@@ -43,6 +43,41 @@
         </child>
         <child>
           <object class="GtkShortcutsGroup">
+            <property name="title" translatable="yes">Window</property>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Open library view</property>
+                <property name="action_name">win.show-library</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Open discover view</property>
+                <property name="action_name">win.show-discover</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Open search view</property>
+                <property name="action_name">win.show-search</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Go back</property>
+                <property name="action_name">win.go-back</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Refresh station data</property>
+                <property name="action_name">win.refresh-data</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
             <property name="title" translatable="yes">Playback</property>
             <child>
               <object class="GtkShortcutsShortcut">

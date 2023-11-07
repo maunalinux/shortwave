@@ -1,5 +1,5 @@
 // Shortwave - station_flowbox.rs
-// Copyright (C) 2021-2023  Felix Häcker <haeckerfelix@gnome.org>
+// Copyright (C) 2021-2022  Felix Häcker <haeckerfelix@gnome.org>
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,9 +15,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 use adw::subclass::prelude::*;
-use glib::{clone, subclass, Properties, Sender};
+use glib::{clone, subclass, ParamFlags, ParamSpec, ParamSpecObject, Sender, ToValue};
 use gtk::prelude::*;
 use gtk::{glib, CompositeTemplate};
+use once_cell::sync::Lazy;
 
 use crate::api::SwStation;
 use crate::app::Action;
@@ -27,17 +28,13 @@ use crate::ui::{SwStationDialog, SwStationRow};
 mod imp {
     use super::*;
 
-    #[derive(Debug, CompositeTemplate, Properties)]
+    #[derive(Debug, CompositeTemplate)]
     #[template(resource = "/de/haeckerfelix/Shortwave/gtk/station_flowbox.ui")]
-    #[properties(wrapper_type = super::SwStationFlowBox)]
     pub struct SwStationFlowBox {
-        #[property(get)]
-        pub model: gtk::SortListModel,
-
         #[template_child]
         pub flowbox: TemplateChild<gtk::FlowBox>,
-
         pub sorter: SwStationSorter,
+        pub model: gtk::SortListModel,
     }
 
     #[glib::object_subclass]
@@ -48,7 +45,7 @@ mod imp {
 
         fn new() -> Self {
             let sorter = SwStationSorter::new();
-            let model = gtk::SortListModel::new(None::<SwStationModel>, Some(sorter.clone()));
+            let model = gtk::SortListModel::new(None::<&SwStationModel>, Some(&sorter));
 
             Self {
                 flowbox: TemplateChild::default(),
@@ -66,8 +63,28 @@ mod imp {
         }
     }
 
-    #[glib::derived_properties]
-    impl ObjectImpl for SwStationFlowBox {}
+    impl ObjectImpl for SwStationFlowBox {
+        fn properties() -> &'static [ParamSpec] {
+            static PROPERTIES: Lazy<Vec<ParamSpec>> = Lazy::new(|| {
+                vec![ParamSpecObject::new(
+                    "model",
+                    "Model",
+                    "Model",
+                    gtk::SortListModel::static_type(),
+                    ParamFlags::READABLE,
+                )]
+            });
+
+            PROPERTIES.as_ref()
+        }
+
+        fn property(&self, obj: &Self::Type, _id: usize, pspec: &ParamSpec) -> glib::Value {
+            match pspec.name() {
+                "model" => obj.model().to_value(),
+                _ => unimplemented!(),
+            }
+        }
+    }
 
     impl WidgetImpl for SwStationFlowBox {}
 
@@ -85,6 +102,10 @@ impl SwStationFlowBox {
         imp.model.set_model(Some(&model));
 
         self.setup_signals(sender);
+    }
+
+    pub fn model(&self) -> gtk::SortListModel {
+        self.imp().model.clone()
     }
 
     pub fn set_sorting(&self, sorting: SwSorting, descending: bool) {
@@ -111,7 +132,7 @@ impl SwStationFlowBox {
                 let row = child.clone().downcast::<SwStationRow>().unwrap();
                 let station = row.station();
 
-                let station_dialog = SwStationDialog::new(&station);
+                let station_dialog = SwStationDialog::new(sender.clone(), station);
                 station_dialog.show();
             }));
     }

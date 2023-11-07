@@ -1,13 +1,13 @@
 # Basque translation for shortwave.
 # Copyright (C) 2020 shortwave's COPYRIGHT HOLDER
 # This file is distributed under the same license as the shortwave package.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2020, 2021, 2022, 2023.
+# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2020, 2021, 2022.
 #
 msgid ""
 msgstr "Project-Id-Version: shortwave master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Shortwave/issues\n"
-"POT-Creation-Date: 2023-06-26 08:10+0000\n"
-"PO-Revision-Date: 2023-09-02 10:00+0000\n"
+"POT-Creation-Date: 2022-10-20 19:07+0000\n"
+"PO-Revision-Date: 2022-11-29 10:00+0000\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -46,7 +46,7 @@ msgstr "Sortu irrati-estazio lokala"
 msgid "Change station image"
 msgstr "Aldatu irrati-estazioaren irudia"
 
-#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:193
+#: data/gtk/create_station_dialog.ui:137 src/ui/pages/search_page.rs:192
 msgid "Name"
 msgstr "Izena"
 
@@ -92,14 +92,26 @@ msgid "General"
 msgstr "Orokorra"
 
 #: data/gtk/settings_window.ui:10
+msgid "Appearance"
+msgstr "Itxura"
+
+#: data/gtk/settings_window.ui:14
+msgid "_Dark Mode"
+msgstr "Gai i_luna"
+
+#: data/gtk/settings_window.ui:16
+msgid "Whether the application should use a dark theme"
+msgstr "Aplikazioak gai iluna erabiliko duen ala ez"
+
+#: data/gtk/settings_window.ui:29
 msgid "Features"
 msgstr "Ezaugarriak"
 
-#: data/gtk/settings_window.ui:13
+#: data/gtk/settings_window.ui:32
 msgid "_Notifications"
 msgstr "_Jakinarazpenak"
 
-#: data/gtk/settings_window.ui:15
+#: data/gtk/settings_window.ui:34
 msgid "Show desktop notifications when a new song gets played"
 msgstr "Erakutsi mahaiganeko jakinarazpenak abesti berriak erreproduzitzen direnean"
 
@@ -120,54 +132,49 @@ msgstr "Ireki hobespenak"
 
 #: data/gtk/help_overlay.ui:32
 msgctxt "shortcut window"
-msgid "Close the window"
-msgstr "Itxi leihoa"
-
-#: data/gtk/help_overlay.ui:38
-msgctxt "shortcut window"
 msgid "Quit the application"
 msgstr "Irten aplikaziotik"
 
-#: data/gtk/help_overlay.ui:46
+#: data/gtk/help_overlay.ui:40
 msgid "Window"
 msgstr "Leihoa"
 
-#: data/gtk/help_overlay.ui:49
+#: data/gtk/help_overlay.ui:43
 msgctxt "shortcut window"
 msgid "Open library view"
 msgstr "Ireki liburutegi-ikuspegia"
 
-#: data/gtk/help_overlay.ui:55
+#: data/gtk/help_overlay.ui:49
 msgctxt "shortcut window"
 msgid "Open discover view"
 msgstr "Ireki aurkitze-ikuspegia"
 
-#: data/gtk/help_overlay.ui:61
+#: data/gtk/help_overlay.ui:55
 msgctxt "shortcut window"
 msgid "Open search view"
 msgstr "Ireki bilaketa-ikuspegia"
 
-#: data/gtk/help_overlay.ui:67
+#: data/gtk/help_overlay.ui:61
 msgctxt "shortcut window"
 msgid "Go back"
 msgstr "Joan atzera"
 
-#: data/gtk/help_overlay.ui:73
+#: data/gtk/help_overlay.ui:67
 msgctxt "shortcut window"
 msgid "Refresh station data"
 msgstr "Freskatu estazioaren datuak"
 
-#: data/gtk/help_overlay.ui:81
+#: data/gtk/help_overlay.ui:75
 msgid "Playback"
 msgstr "Erreproduzitu"
 
-#: data/gtk/help_overlay.ui:84
+#: data/gtk/help_overlay.ui:78
 msgctxt "shortcut window"
 msgid "Toggle playback"
 msgstr "Txandakatu erreprodukzioa"
 
-#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:185
-#: src/ui/pages/search_page.rs:197
+#: data/gtk/search_page.ui:31 data/gtk/station_dialog.ui:200
+#: src/ui/pages/search_page.rs:196
 msgid "Votes"
 msgstr "Botoak"
 
@@ -183,35 +190,35 @@ msgstr "Ez dago emaitzarik"
 msgid "Try using a different search term"
 msgstr "Saiatu berriro bilaketako beste termino batekin"
 
-#: data/gtk/search_page.ui:148 data/gtk/window.ui:171
+#: data/gtk/search_page.ui:148 data/gtk/window.ui:170
 msgid "_Name"
 msgstr "I_zena"
 
-#: data/gtk/search_page.ui:153 data/gtk/window.ui:176
+#: data/gtk/search_page.ui:153 data/gtk/window.ui:175
 msgid "_Language"
 msgstr "_Hizkuntza"
 
-#: data/gtk/search_page.ui:158 data/gtk/window.ui:181
+#: data/gtk/search_page.ui:158 data/gtk/window.ui:180
 msgid "_Country"
 msgstr "He_rrialdea"
 
-#: data/gtk/search_page.ui:163 data/gtk/window.ui:186
+#: data/gtk/search_page.ui:163 data/gtk/window.ui:185
 msgid "S_tate"
 msgstr "E_statuta"
 
-#: data/gtk/search_page.ui:168 data/gtk/window.ui:191
+#: data/gtk/search_page.ui:168 data/gtk/window.ui:190
 msgid "_Votes"
 msgstr "_Botoak"
 
-#: data/gtk/search_page.ui:173 data/gtk/window.ui:196
+#: data/gtk/search_page.ui:173 data/gtk/window.ui:195
 msgid "_Bitrate"
 msgstr "_Bit-emaria"
 
-#: data/gtk/search_page.ui:180 data/gtk/window.ui:203
+#: data/gtk/search_page.ui:180 data/gtk/window.ui:202
 msgid "_Ascending"
 msgstr "Gora_ntz"
 
-#: data/gtk/search_page.ui:185 data/gtk/window.ui:208
+#: data/gtk/search_page.ui:185 data/gtk/window.ui:207
 msgid "_Descending"
 msgstr "Beheran_tz"
 
@@ -292,40 +299,40 @@ msgstr "Informazioa ezin da eguneratu, beharbada estazio hau kendu egin da linea
 msgid "Information"
 msgstr "Informazioa"
 
-#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:194
+#: data/gtk/station_dialog.ui:165 src/ui/pages/search_page.rs:193
 msgid "Language"
 msgstr "Hizkuntza"
 
-#: data/gtk/station_dialog.ui:175
+#: data/gtk/station_dialog.ui:180
 msgid "Tags"
 msgstr "Etiketak"
 
-#: data/gtk/station_dialog.ui:196
+#: data/gtk/station_dialog.ui:216
 msgid "Location"
 msgstr "Kokalekua"
 
-#: data/gtk/station_dialog.ui:201 src/ui/pages/search_page.rs:195
+#: data/gtk/station_dialog.ui:221 src/ui/pages/search_page.rs:194
 msgid "Country"
 msgstr "Herrialdea"
 
-#: data/gtk/station_dialog.ui:211 src/ui/pages/search_page.rs:196
+#: data/gtk/station_dialog.ui:241 src/ui/pages/search_page.rs:195
 msgid "State"
 msgstr "Estatua"
 
-#: data/gtk/station_dialog.ui:245
+#: data/gtk/station_dialog.ui:285
 msgid "Audio"
 msgstr "Audioa"
 
-#: data/gtk/station_dialog.ui:249 src/ui/pages/search_page.rs:198
+#: data/gtk/station_dialog.ui:289 src/ui/pages/search_page.rs:197
 msgid "Bitrate"
 msgstr "Bit-emaria"
 
-#: data/gtk/station_dialog.ui:259
+#: data/gtk/station_dialog.ui:304
 msgid "Codec"
 msgstr "Kodeka"
 
 #. This is a noun/label for the station stream url
-#: data/gtk/station_dialog.ui:269
+#: data/gtk/station_dialog.ui:319
 msgid "Stream"
 msgstr "Korrontea"
 
@@ -360,60 +367,60 @@ msgid "Add Stations"
 msgstr "Gehitu estazioak"
 
 #: data/gtk/window.ui:34
-msgid "Back"
-msgstr "Atzera"
+msgid "Go Back"
+msgstr "Joan atzera"
 
 #: data/gtk/window.ui:41
-msgid "Main Menu"
-msgstr "Menu nagusia"
+msgid "Open Application Menu"
+msgstr "Ireki aplikazioaren menua"
 
-#: data/gtk/window.ui:51
-msgid "Search"
-msgstr "Bilatu"
+#: data/gtk/window.ui:50
+msgid "Open Search"
+msgstr "Ireki bilaketa"
 
-#: data/gtk/window.ui:75
+#: data/gtk/window.ui:74
 msgid "Unable to connect to radio-browser.info"
 msgstr "Ezin da radio-browser.info gunearekin konektatu"
 
-#: data/gtk/window.ui:85
+#: data/gtk/window.ui:84
 msgid ""
 "Access to the public online station database is not available. Ensure that "
 "you are connected to the internet."
 msgstr "Irrati-estazioen lineako datu-base publikoa ez dago erabilgarri. Ziurtatu internetekin konektatuta zaudela."
 
-#: data/gtk/window.ui:94
+#: data/gtk/window.ui:93
 msgid "Try again"
 msgstr "Saiatu berriro"
 
-#: data/gtk/window.ui:160 data/gtk/window.ui:249
+#: data/gtk/window.ui:159 data/gtk/window.ui:248
 msgid "_Enable Mini Player"
 msgstr "Gaitu _mini erreproduzigailua"
 
-#: data/gtk/window.ui:164 data/gtk/window.ui:245
+#: data/gtk/window.ui:163 data/gtk/window.ui:244
 msgid "_Refresh Station Data"
 msgstr "_Freskatu estazioaren datuak"
 
-#: data/gtk/window.ui:168
+#: data/gtk/window.ui:167
 msgid "_Sorting"
 msgstr "O_rdenatu"
 
-#: data/gtk/window.ui:217 data/gtk/window.ui:255
+#: data/gtk/window.ui:216 data/gtk/window.ui:254
 msgid "_Open radio-browser.info <sup>↗</sup>"
 msgstr "_Ireki radio-browser.info <sup>↗</sup>"
 
-#: data/gtk/window.ui:222 data/gtk/window.ui:260
+#: data/gtk/window.ui:221 data/gtk/window.ui:259
 msgid "_Create New Station"
 msgstr "_Sortu irrati-estazio berria"
 
-#: data/gtk/window.ui:229 data/gtk/window.ui:267
+#: data/gtk/window.ui:228 data/gtk/window.ui:266
 msgid "_Preferences"
 msgstr "_Hobespenak"
 
-#: data/gtk/window.ui:233 data/gtk/window.ui:271
+#: data/gtk/window.ui:232 data/gtk/window.ui:270
 msgid "_Keyboard Shortcuts"
 msgstr "Las_ter-teklak"
 
-#: data/gtk/window.ui:237 data/gtk/window.ui:275
+#: data/gtk/window.ui:236 data/gtk/window.ui:274
 msgid "_About Shortwave"
 msgstr "Shortwave aplikazioari _buruz"
 
@@ -440,31 +447,31 @@ msgid "translator-credits"
 msgstr "translator-credits"
 
 #. TODO: Implement show-server-stats action
-#: src/ui/pages/discover_page.rs:116
+#: src/ui/pages/discover_page.rs:117
 msgid "Show statistics"
 msgstr "Erakutsi estatistikak"
 
-#: src/ui/pages/discover_page.rs:118
+#: src/ui/pages/discover_page.rs:119
 msgid "Browse over 30,000 stations"
 msgstr "Arakatu 30.000 irrati-estazio artean"
 
-#: src/ui/pages/discover_page.rs:120
+#: src/ui/pages/discover_page.rs:121
 msgid "Add new station"
 msgstr "Gehitu estazio berria"
 
-#: src/ui/pages/discover_page.rs:122
+#: src/ui/pages/discover_page.rs:123
 msgid "Your favorite station is missing?"
 msgstr "Zure irratirik gogokoena falta al da?"
 
-#: src/ui/pages/discover_page.rs:127
+#: src/ui/pages/discover_page.rs:128
 msgid "Open website"
 msgstr "Ireki webgunea"
 
-#: src/ui/pages/discover_page.rs:129
+#: src/ui/pages/discover_page.rs:130
 msgid "Powered by radio-browser.info"
 msgstr "radio-browser.info darabil"
 
-#: src/ui/pages/discover_page.rs:148 src/ui/pages/search_page.rs:287
+#: src/ui/pages/discover_page.rs:149 src/ui/pages/search_page.rs:286
 msgid "Station data could not be received."
 msgstr "Estazioaren datuak ezin izan dira jaso."
 
@@ -472,7 +479,7 @@ msgstr "Estazioaren datuak ezin izan dira jaso."
 msgid "Welcome to {}"
 msgstr "Ongi etorri {} aplikaziora"
 
-#: src/ui/pages/search_page.rs:103
+#: src/ui/pages/search_page.rs:102
 msgid ""
 "The number of results is limited to {} item. Try using a more specific "
 "search term."
@@ -482,7 +489,7 @@ msgid_plural ""
 msgstr[0] "Emaitza kopurua elementu {}ekoa da. Saiatu bilaketa-termino zehatzagoa erabilita."
 msgstr[1] "Emaitza kopurua {} elementukoa da. Saiatu bilaketa-termino zehatzagoa erabilita."
 
-#: src/ui/station_dialog.rs:273
+#: src/ui/station_dialog.rs:286
 msgid "{} kbit/s"
 msgstr "{} kbit/s"
 
@@ -535,18 +542,6 @@ msgstr "Josturatik gabeko integrazioa GNOME mahaigaineko ingurunearekin"
 #: data/de.haeckerfelix.Shortwave.desktop.in.in:12
 msgid "Gradio;Radio;Stream;Wave;"
 msgstr "Gradio;Irratia;Korrontea;Wave;"
-
-#~ msgid "Appearance"
-#~ msgstr "Itxura"
-
-#~ msgid "_Dark Mode"
-#~ msgstr "Gai i_luna"
-
-#~ msgid "Whether the application should use a dark theme"
-#~ msgstr "Aplikazioak gai iluna erabiliko duen ala ez"
-
-#~ msgid "Open Application Menu"
-#~ msgstr "Ireki aplikazioaren menua"
 
 #~ msgid "Detected songs will appear here."
 #~ msgstr "Detektatutako abestiak hemen agertuko dira."
